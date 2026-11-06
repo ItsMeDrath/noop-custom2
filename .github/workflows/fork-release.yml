@@ -55,7 +55,7 @@ jobs:
           OVERRIDE: ${{ github.event.inputs.version }}
         run: |
           set -euo pipefail
-          CUR=$(grep -m1 'MARKETING_VERSION:' project.yml | sed -E 's/.*"([^"]+)".*/\\1/')
+          CUR=$(grep -m1 'MARKETING_VERSION:' project.yml | sed -E 's/.*"([^"]+)".*/\1/')
           IFS=. read -r MA MI PA <<< "$CUR"; MA=${MA:-0}; MI=${MI:-0}; PA=${PA:-0}
           case "${BUMP:-patch}" in
             major) NEW="$((MA+1)).0.0" ;;
@@ -71,7 +71,7 @@ jobs:
           echo "Version: $CUR -> $NEW  (tag $TAG)"
 
           if [ "$NEW" != "$CUR" ]; then
-            ICODE=$(grep -m1 'CURRENT_PROJECT_VERSION:' project.yml | sed -E 's/.*"([0-9]+)".*/\\1/')
+            ICODE=$(grep -m1 'CURRENT_PROJECT_VERSION:' project.yml | sed -E 's/.*"([0-9]+)".*/\1/')
             sed -i -E "s/MARKETING_VERSION: \"[^\"]+\"/MARKETING_VERSION: \"$NEW\"/" project.yml
             sed -i -E "s/CURRENT_PROJECT_VERSION: \"[0-9]+\"/CURRENT_PROJECT_VERSION: \"$((ICODE+1))\"/" project.yml
             if [ -f "docs/releases/${TAG}.md" ]; then
