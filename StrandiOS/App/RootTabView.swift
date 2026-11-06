@@ -65,12 +65,10 @@ struct RootTabView: View {
     @AppStorage(MoreSectionPrefs.storageKey) private var expandedMoreSectionsCSV = MoreSectionPrefs.defaultCSV
     private var expandedMoreSections: Set<String> { MoreSectionPrefs.decode(expandedMoreSectionsCSV) }
 
-    /// V8 liquid redesign is the default Today; the Settings toggle lets a user fall back to the classic
-    /// Today if they prefer it (keyed identically to the SettingsView toggle). Default ON.
-    @AppStorage("noop.liquidTodayEnabled") private var liquidTodayEnabled = true
+    /// WHOOP-inspired metric-first dashboard is the default. Liquid mode remains opt-in.
+    @AppStorage("noop.liquidTodayEnabled") private var liquidTodayEnabled = false
 
-    /// The metric-first dashboard is the default Home. The alternate liquid dashboard remains
-    /// available when the user explicitly enables it in Appearance settings.
+    /// The metric-first dashboard is the default Home. Liquid mode remains available in settings.
     @ViewBuilder private var todayTabRoot: some View {
         if liquidTodayEnabled { LiquidTodayView() } else { TodayView() }
     }
