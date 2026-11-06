@@ -2,12 +2,9 @@
 # "Check for updates" — which reads GitHub `releases/latest`, and GitHub excludes prereleases —
 # points at this fork.
 #
-# The `bump` input (patch / minor / major / none) increments the version IN SOURCE — both
-# android/app/build.gradle.kts (versionName + versionCode) and project.yml (MARKETING_VERSION +
-# CURRENT_PROJECT_VERSION) — and commits that to the dispatched branch, so the built app actually
-# REPORTS the new version. Then it publishes a fixed, non-prerelease `v<VERSION>` release with the
-# version-stamped artifacts. releases/latest returns it, so UpdateCheck finds it (isNewer strips the
-# `-staging` suffix, so an installed staging build compares clean).
+# The `bump` input increments the iOS app version and build number in project.yml, then publishes a
+# fixed, non-prerelease `v<VERSION>` release containing the unsigned iOS IPA. releases/latest returns
+# it, so UpdateCheck finds the latest iOS build.
 #
 # Contrast with fork-testing-build.yml: THAT publishes the rolling `testing-latest` PRERELEASE (a
 # snapshot), which releases/latest deliberately ignores. THIS never touches testing-latest.
@@ -58,10 +55,7 @@ jobs:
           OVERRIDE: ${{ github.event.inputs.version }}
         run: |
           set -euo pipefail
-          GRADLE=android/app/build.gradle.kts
-
-          # Android versionName is the source of truth UpdateCheck compares against.
-          CUR=$(grep -m1 'versionName = "' "$GRADLE" | sed -E 's/.*"([^"]+)".*/\1/')
+          CUR=$(grep -m1 'MARKETING_VERSION:' project.yml | sed -E 's/.*"([^"]+)".*/\1/')
           IFS=. read -r MA MI PA <<< "$CUR"; MA=${MA:-0}; MI=${MI:-0}; PA=${PA:-0}
           case "${BUMP:-patch}" in
             major) NEW="$((MA+1)).0.0" ;;
@@ -77,27 +71,19 @@ jobs:
           echo "Version: $CUR -> $NEW  (tag $TAG)"
 
           if [ "$NEW" != "$CUR" ]; then
-            # Bump BOTH platforms' version + build number in source, then commit to the branch so the
-            # built artifacts report $NEW (each build number is an independent monotonic counter).
-            ACODE=$(grep -m1 'versionCode = ' "$GRADLE" | sed -E 's/.*versionCode = ([0-9]+).*/\1/')
             ICODE=$(grep -m1 'CURRENT_PROJECT_VERSION:' project.yml | sed -E 's/.*"([0-9]+)".*/\1/')
-            sed -i -E "s/versionName = \"[^\"]+\"/versionName = \"$NEW\"/" "$GRADLE"
-            sed -i -E "s/versionCode = [0-9]+/versionCode = $((ACODE+1))/" "$GRADLE"
             sed -i -E "s/MARKETING_VERSION: \"[^\"]+\"/MARKETING_VERSION: \"$NEW\"/" project.yml
             sed -i -E "s/CURRENT_PROJECT_VERSION: \"[0-9]+\"/CURRENT_PROJECT_VERSION: \"$((ICODE+1))\"/" project.yml
-            # In-app "What's New": generate the AppChangelog entry (both platforms) + bump its constant
-            # from docs/releases/<TAG>.md's whatsnew: front-matter, so the in-app card ships in sync with
-            # this version. Warn (don't fail) if the notes file / its front-matter is missing.
             if [ -f "docs/releases/${TAG}.md" ]; then
               python3 -m pip install --quiet pyyaml==6.0.2 >/dev/null 2>&1 || true
-              python3 Tools/appchangelog-gen.py "docs/releases/${TAG}.md" \
-                || echo "::warning::appchangelog-gen failed for ${TAG} — in-app 'What's New' not updated."
+              python3 Tools/appchangelog-gen.py "docs/releases/${TAG}.md" || echo "::warning::appchangelog-gen failed for ${TAG}."
             else
-              echo "::warning::No docs/releases/${TAG}.md — GitHub notes + in-app 'What's New' will use placeholders."
+              echo "::warning::No docs/releases/${TAG}.md — release notes may use placeholders."
             fi
             git config user.name 'ryanbr'
             git config user.email 'mp3geek@gmail.com'
-            git commit -am "Release ${NEW}: bump version (${BUMP}) + build numbers + What's New"
+            git add project.yml Strand
+            git commit -m "Release ${NEW}: bump iOS version and build number + What's New"
             git push origin "HEAD:${GITHUB_REF_NAME}"
           fi
           echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
@@ -147,118 +133,12 @@ jobs:
               echo "First release (no prior release tag) — skipping the auto PR breakdown."
             fi
             {
-              # The beside-install claim is per-platform, not global: 749c94118 gave the iOS family the
-              # PRODUCTION bundle id, so an iOS sideload REPLACES an installed official app and uses its
-              # data. Android (.staging via -PstagingRelease) and macOS (.noop.staging, kept per #39) do
-              # install beside. Saying "separate data" for all three told iOS users the opposite.
-              printf '\n---\n\n**Downloads:**\n'
-              printf -- '- **Android** — `NOOP-android-v%s.apk` (`com.noop.whoop.staging`) — installs **beside** the official app, with its own data.\n' "$NEW"
-              printf -- '- **macOS** — `NOOP-macos-v%s.zip` (unzip, then right-click → Open) — installs **beside** the official app; on first launch it copies any data the official app already has, leaving the original untouched.\n' "$NEW"
-              printf -- '- **iOS** — `NOOP-ios-unsigned-v%s.ipa` (AltStore / Sideloadly) — carries the **production** bundle id, so it **replaces** an installed official app and uses its data. Not a beside-install.\n' "$NEW"
+              printf '\\n---\\n\\n**iOS download:**\\n'
+              printf -- '- **iOS** — `NOOP-ios-unsigned-v%s.ipa` (AltStore / Sideloadly) — carries the production bundle id, so it replaces an installed official app and uses its data.\\n' "$NEW"
             } >> "$BODY"
             gh release create "$TAG" --repo "$GITHUB_REPOSITORY" --target "$(git rev-parse HEAD)" \
               --title "NOOP ${NEW}" --notes-file "$BODY"
           fi
-
-  android:
-    needs: bump
-    runs-on: ubuntu-latest
-    # Uploads the built APK to the release created by the `bump` job.
-    permissions:
-      contents: write
-    defaults:
-      run:
-        working-directory: android
-    steps:
-      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
-        with:
-          ref: ${{ needs.bump.outputs.sha }}   # build the bumped commit
-      - uses: actions/setup-java@03ad4de0992f5dab5e18fcb136590ce7c4a0ac95 # v5.6.0
-        with:
-          distribution: temurin
-          java-version: '17'
-      - uses: gradle/actions/wrapper-validation@0723195856401067f7a2779048b490ace7a47d7c # v5.0.2
-      - uses: gradle/actions/setup-gradle@0723195856401067f7a2779048b490ace7a47d7c # v5.0.2
-      # Release-only (no debug APK). Signed with the committed fork-debug.keystore via the debug
-      # signingConfig storeFile (release falls back to it when no keystore.properties is present);
-      # -PstagingRelease gives it the .staging app id so it installs beside the official app.
-      - name: Build staging-release APK
-        run: ./gradlew assembleFullRelease -PstagingRelease
-      - name: Version the filename + attach
-        env:
-          GH_TOKEN: ${{ github.token }}
-          VER: ${{ needs.bump.outputs.ver }}
-        run: |
-          cp app/build/outputs/apk/full/release/*.apk "NOOP-android-v${VER}.apk"
-          gh release upload "${{ needs.bump.outputs.tag }}" "NOOP-android-v${VER}.apk" \
-            --repo "$GITHUB_REPOSITORY" --clobber
-
-  macos:
-    needs: bump
-    runs-on: macos-15
-    timeout-minutes: 40
-    # Uploads the built .app zip to the release created by the `bump` job.
-    permissions:
-      contents: write
-    steps:
-      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
-        with:
-          ref: ${{ needs.bump.outputs.sha }}
-      - name: Install XcodeGen
-        # Known unpinned-tooling gap (issue #657): Homebrew core doesn't keep old formula versions
-        # around, so `brew install xcodegen@<version>` / a version-pin syntax isn't available here —
-        # this always installs whatever xcodegen is current in homebrew-core on the runner image at
-        # run time. Left as a tracked gap rather than silently unaddressed.
-        run: brew install xcodegen
-      - name: Generate Xcode project
-        run: xcodegen generate
-      - name: Build NOOP.app (macOS, unsigned, universal)
-        # #51: 'platform=macOS' on an Apple-Silicon runner resolves to the host arch and thins the binary to
-        # arm64-only. That shipped an arm64-only app that won't launch on Intel Macs. Force a true universal
-        # build with the generic destination + explicit ARCHS/ONLY_ACTIVE_ARCH, which override whatever the
-        # configuration says and therefore keep holding after the switch below.
-        #
-        # #2393: Release, matching the iOS leg. macOS shipped Debug for no reason anyone chose — #51 was
-        # about architecture and said so, and "unchanged shipping behaviour" there meant that PR was not
-        # also changing the configuration. The artefact showed it: a 120 KB stub plus a 195 MB
-        # `.debug.dylib` and a `__preview.dylib`, against 53 MB for the same commit built Release. A
-        # reporter measured the shipped build costing a third to half a CPU core at idle, and unoptimised
-        # SwiftUI compounds a hot path that already ran every frame.
-        #
-        # What Release removes beyond the optimisation: `#if DEBUG` code, which here is previews, sample
-        # data and the `--demo-sync` screenshot harness (its own doc already says it is stripped from every
-        # Release build). The iOS artefact has shipped without all of that since it went Release, so this
-        # brings macOS into line rather than into new territory. Use a local Debug build for the harness.
-        run: >-
-          xcodebuild -scheme Strand -configuration Release
-          -destination 'generic/platform=macOS' ARCHS="x86_64 arm64" ONLY_ACTIVE_ARCH=NO
-          -derivedDataPath build/dd
-          CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY=""
-          build
-      - name: Verify universal binary
-        run: |
-          APP=$(find build/dd/Build/Products -maxdepth 3 -name '*.app' -type d | head -1)
-          EXE=$(find "$APP/Contents/MacOS" -maxdepth 1 -type f ! -name '*.dylib' | head -1)
-          echo "archs: $(lipo -archs "$EXE")"
-          { lipo -archs "$EXE" | grep -qw x86_64 && lipo -archs "$EXE" | grep -qw arm64; } \
-            || { echo "::error::macOS binary is not universal (expected x86_64 + arm64)"; exit 1; }
-      - name: Package + attach
-        env:
-          GH_TOKEN: ${{ github.token }}
-          VER: ${{ needs.bump.outputs.ver }}
-        run: |
-          APP=$(find build/dd/Build/Products -maxdepth 3 -name '*.app' -type d | head -1)
-          test -n "$APP" || { echo ".app not found"; exit 1; }
-          # #429: ad-hoc sign the BUNDLE so it has a stable per-build code identity. macOS 26 (Tahoe) won't
-          # bind a Bluetooth TCC grant to an UNSIGNED bundle, so users wedge at CBManagerState .unauthorized
-          # even after a fresh `tccutil reset` + approve. `--sign -` gives a real cdhash-based designated
-          # requirement TCC can grant to. No --entitlements / --options runtime: stays non-sandboxed so BT
-          # goes through plain TCC + the Info.plist usage string. (cdhash still changes per build, so a
-          # future UPDATE still needs the re-toggle the in-app #429/#295 banner already describes.)
-          codesign --force --deep --sign - "$APP"
-          codesign -dvv "$APP" 2>&1 | grep -Ei 'identifier|signature|flags' || true
-          ditto -c -k --keepParent "$APP" "NOOP-macos-v${VER}.zip"
-          gh release upload "${{ needs.bump.outputs.tag }}" "NOOP-macos-v${VER}.zip" --repo "$GITHUB_REPOSITORY" --clobber
 
   ios:
     needs: bump
