@@ -3,101 +3,162 @@ import SwiftUI
 import ActivityKit
 import StrandDesign
 
-/// Live Activity for an active live-HR session — shown on the Lock Screen and in the Dynamic Island.
+/// WHOOP-inspired live heart-rate surface for the Lock Screen and Dynamic Island.
+/// Values remain sourced from NOOP's real ActivityKit session state.
 struct NOOPLiveActivity: Widget {
-    /// The heart rate to draw: none once iOS has marked the banner stale. Each push is fresh for 30 s
-    /// (`LiveActivityController.staleAfter`) and NOOP re-pushes a steady number well inside that, so a stale banner
-    /// means the readings stopped — the strap off the wrist, or out of reach — even while NOOP itself is asleep and
-    /// cannot say so: iOS redraws the banner at the stale date on its own.
+    private static let canvas = Color(hex: "#121518")
+    private static let card = Color(hex: "#25292C")
+    private static let muted = Color(hex: "#9AA4AC")
+    private static let blue = Color(hex: "#4090E0")
+    private static let green = Color(hex: "#03E095")
+    private static let red = Color(hex: "#E0463C")
+
     static func shownBpm(_ context: ActivityViewContext<NOOPActivityAttributes>) -> Int? {
         context.isStale ? nil : context.state.bpm
     }
 
     var body: some WidgetConfiguration {
         ActivityConfiguration(for: NOOPActivityAttributes.self) { context in
-            // Lock Screen / banner presentation.
-            HStack(spacing: 14) {
-                Image(systemName: "waveform.path.ecg")
-                    .font(.title2)
-                    .foregroundStyle(StrandPalette.statusCritical)
-                VStack(alignment: .leading, spacing: 2) {
-                    Text(context.attributes.title)
-                        .font(.caption).foregroundStyle(StrandPalette.textSecondary)
-                    Text("\(Self.shownBpm(context).map(String.init) ?? "–") bpm")
-                        .font(.system(size: 26, weight: .bold, design: .rounded))
-                        .foregroundStyle(StrandPalette.textPrimary)
-                }
-                Spacer()
-                // Charge + Effort (#446) on the banner, mirroring the Dynamic Island expanded stats.
-                HStack(spacing: 12) {
-                    if let r = context.state.recovery {
-                        bannerStat(label: "Charge", value: "\(r)%")
-                    }
-                    if let e = context.state.effort {
-                        bannerStat(label: "Effort", value: "\(e)")
-                    }
-                }
-            }
-            .padding()
-            .activityBackgroundTint(StrandPalette.surfaceBase)
-            .activitySystemActionForegroundColor(StrandPalette.textPrimary)
+            lockScreen(context)
+                .activityBackgroundTint(Self.canvas)
+                .activitySystemActionForegroundColor(.white)
         } dynamicIsland: { context in
             DynamicIsland {
                 DynamicIslandExpandedRegion(.leading) {
-                    Label("\(Self.shownBpm(context).map(String.init) ?? "–")", systemImage: "heart.fill")
-                        .foregroundStyle(StrandPalette.statusCritical)
-                }
-                DynamicIslandExpandedRegion(.trailing) {
-                    // Charge + Effort (#446) — one more stat alongside the leading live HR.
-                    HStack(spacing: 10) {
-                        if let r = context.state.recovery {
-                            statColumn(label: "Charge", value: "\(r)%")
-                        }
-                        if let e = context.state.effort {
-                            statColumn(label: "Effort", value: "\(e)")
+                    VStack(alignment: .leading, spacing: 3) {
+                        Text("LIVE HEART RATE")
+                            .font(.system(size: 9, weight: .bold, design: .rounded))
+                            .tracking(1.1)
+                            .foregroundStyle(Self.muted)
+                        HStack(alignment: .firstTextBaseline, spacing: 3) {
+                            Text(Self.shownBpm(context).map(String.init) ?? "–")
+                                .font(.system(size: 28, weight: .bold, design: .rounded))
+                                .monospacedDigit()
+                                .foregroundStyle(.white)
+                            Text("BPM")
+                                .font(.system(size: 9, weight: .bold))
+                                .foregroundStyle(Self.muted)
                         }
                     }
                 }
+                DynamicIslandExpandedRegion(.trailing) {
+                    VStack(alignment: .trailing, spacing: 8) {
+                        islandStat("RECOVERY", context.state.recovery.map { "\($0)%" }, tint: Self.green)
+                        islandStat("STRAIN", context.state.effort.map(String.init), tint: Self.blue)
+                    }
+                }
                 DynamicIslandExpandedRegion(.bottom) {
-                    Text(context.attributes.title).font(.caption).foregroundStyle(.secondary)
+                    HStack(spacing: 6) {
+                        Circle().fill(context.isStale ? Self.muted : Self.red).frame(width: 6, height: 6)
+                        Text(context.attributes.title.uppercased())
+                            .font(.system(size: 10, weight: .semibold))
+                            .tracking(0.8)
+                            .foregroundStyle(Self.muted)
+                        Spacer()
+                        Text(context.isStale ? "WAITING FOR DATA" : "LIVE")
+                            .font(.system(size: 9, weight: .bold))
+                            .tracking(0.8)
+                            .foregroundStyle(context.isStale ? Self.muted : Self.green)
+                    }
                 }
             } compactLeading: {
-                Image(systemName: "heart.fill").foregroundStyle(StrandPalette.statusCritical)
+                Image(systemName: "heart.fill").foregroundStyle(Self.red)
             } compactTrailing: {
-                Text("\(Self.shownBpm(context).map(String.init) ?? "–")")
+                Text(Self.shownBpm(context).map(String.init) ?? "–")
+                    .font(.system(size: 12, weight: .bold, design: .rounded))
+                    .monospacedDigit()
+                    .foregroundStyle(.white)
             } minimal: {
-                Image(systemName: "heart.fill").foregroundStyle(StrandPalette.statusCritical)
+                Image(systemName: "heart.fill").foregroundStyle(Self.red)
             }
+            .keylineTint(Self.blue)
         }
     }
-}
 
-/// Lock-Screen banner stat column (label over value). File-scope because the `ActivityConfiguration`
-/// content closure isn't a method of `NOOPLiveActivity`.
-///
-/// #759 - the label and value are CENTRE-aligned so each value sits directly under its own label. The
-/// old `.trailing` alignment right-pinned both to the column's edge: when the value was narrower than
-/// the label (e.g. "12" under "Effort") it drifted to the label's right edge instead of under it, which
-/// read as "the number doesn't line up with its label". `fixedSize` stops either line truncating so the
-/// pairing is never clipped at narrow widths.
-@ViewBuilder
-private func bannerStat(label: String, value: String) -> some View {
-    VStack(alignment: .center, spacing: 2) {
-        Text(label).font(.caption2).foregroundStyle(StrandPalette.textSecondary)
-        Text(value).font(.headline).foregroundStyle(StrandPalette.textPrimary)
-    }
-    .multilineTextAlignment(.center)
-    .fixedSize()
-}
+    private func lockScreen(_ context: ActivityViewContext<NOOPActivityAttributes>) -> some View {
+        VStack(alignment: .leading, spacing: 14) {
+            HStack(spacing: 7) {
+                Circle()
+                    .fill(context.isStale ? Self.muted : Self.red)
+                    .frame(width: 7, height: 7)
+                Text("LIVE HEART RATE")
+                    .font(.system(size: 11, weight: .bold, design: .rounded))
+                    .tracking(1.2)
+                    .foregroundStyle(.white)
+                Spacer()
+                Text(context.isStale ? "NO SIGNAL" : "LIVE")
+                    .font(.system(size: 9, weight: .bold))
+                    .tracking(0.9)
+                    .foregroundStyle(context.isStale ? Self.muted : Self.green)
+            }
 
-/// Dynamic Island expanded-region stat column (label over value). File-scope for the same reason as
-/// `bannerStat`. #759 - centre-aligned + `fixedSize` for the same value-under-its-label fix as the banner.
-@ViewBuilder
-private func statColumn(label: String, value: String) -> some View {
-    VStack(alignment: .center, spacing: 1) {
-        Text(label).font(.caption2).foregroundStyle(.secondary)
-        Text(value).font(.headline)
+            HStack(alignment: .center, spacing: 12) {
+                Image(systemName: "heart.fill")
+                    .font(.system(size: 22, weight: .semibold))
+                    .foregroundStyle(Self.red)
+                HStack(alignment: .firstTextBaseline, spacing: 5) {
+                    Text(Self.shownBpm(context).map(String.init) ?? "–")
+                        .font(.system(size: 42, weight: .bold, design: .rounded))
+                        .monospacedDigit()
+                        .foregroundStyle(.white)
+                    Text("BPM")
+                        .font(.system(size: 11, weight: .bold))
+                        .tracking(0.8)
+                        .foregroundStyle(Self.muted)
+                }
+                Spacer(minLength: 0)
+                VStack(alignment: .trailing, spacing: 3) {
+                    Text(context.attributes.title)
+                        .font(.system(size: 11, weight: .semibold))
+                        .foregroundStyle(Self.muted)
+                    Text("WHOOP STYLE · NOOP")
+                        .font(.system(size: 8, weight: .bold))
+                        .tracking(0.7)
+                        .foregroundStyle(Self.muted.opacity(0.8))
+                }
+            }
+
+            Rectangle().fill(Color.white.opacity(0.10)).frame(height: 1)
+
+            HStack(spacing: 0) {
+                bannerStat(label: "RECOVERY", value: context.state.recovery.map { "\($0)%" }, tint: Self.green)
+                Spacer()
+                bannerStat(label: "STRAIN", value: context.state.effort.map(String.init), tint: Self.blue)
+                Spacer()
+                bannerStat(label: "SENSOR", value: context.state.bonded ? "CONNECTED" : "OFFLINE",
+                           tint: context.state.bonded ? Self.green : Self.muted)
+            }
+        }
+        .padding(.horizontal, 18)
+        .padding(.vertical, 16)
+        .background(Self.canvas)
     }
-    .multilineTextAlignment(.center)
-    .fixedSize()
+
+    @ViewBuilder
+    private func bannerStat(label: String, value: String?, tint: Color) -> some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text(label)
+                .font(.system(size: 9, weight: .bold))
+                .tracking(0.8)
+                .foregroundStyle(Self.muted)
+            Text(value ?? "—")
+                .font(.system(size: 14, weight: .bold, design: .rounded))
+                .monospacedDigit()
+                .foregroundStyle(tint)
+        }
+    }
+
+    @ViewBuilder
+    private func islandStat(_ label: String, _ value: String?, tint: Color) -> some View {
+        VStack(alignment: .trailing, spacing: 1) {
+            Text(label)
+                .font(.system(size: 8, weight: .bold))
+                .tracking(0.7)
+                .foregroundStyle(Self.muted)
+            Text(value ?? "—")
+                .font(.system(size: 15, weight: .bold, design: .rounded))
+                .monospacedDigit()
+                .foregroundStyle(tint)
+        }
+    }
 }
