@@ -76,7 +76,9 @@ struct ScreenScaffold<Content: View, Trailing: View>: View {
         .background(alignment: .top) {
             ZStack(alignment: .top) {
                 StrandPalette.surfaceBase
+                #if os(macOS)
                 topBackground
+                #endif
             }
             .ignoresSafeArea()
         }
