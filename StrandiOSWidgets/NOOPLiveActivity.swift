@@ -31,7 +31,7 @@ struct NOOPLiveActivity: Widget {
                             .tracking(1.1)
                             .foregroundStyle(Self.muted)
                         HStack(alignment: .firstTextBaseline, spacing: 3) {
-                            Text(Self.shownBpm(context).map(String.init) ?? "–")
+                            Text(Self.shownBpm(context).map { String($0) } ?? "–")
                                 .font(.system(size: 28, weight: .bold, design: .rounded))
                                 .monospacedDigit()
                                 .foregroundStyle(.white)
@@ -44,7 +44,7 @@ struct NOOPLiveActivity: Widget {
                 DynamicIslandExpandedRegion(.trailing) {
                     VStack(alignment: .trailing, spacing: 8) {
                         islandStat("RECOVERY", context.state.recovery.map { "\($0)%" }, tint: Self.green)
-                        islandStat("STRAIN", context.state.effort.map(String.init), tint: Self.blue)
+                        islandStat("STRAIN", context.state.effort.map { String($0) }, tint: Self.blue)
                     }
                 }
                 DynamicIslandExpandedRegion(.bottom) {
@@ -64,7 +64,7 @@ struct NOOPLiveActivity: Widget {
             } compactLeading: {
                 Image(systemName: "heart.fill").foregroundStyle(Self.red)
             } compactTrailing: {
-                Text(Self.shownBpm(context).map(String.init) ?? "–")
+                Text(Self.shownBpm(context).map { String($0) } ?? "–")
                     .font(.system(size: 12, weight: .bold, design: .rounded))
                     .monospacedDigit()
                     .foregroundStyle(.white)
@@ -97,7 +97,7 @@ struct NOOPLiveActivity: Widget {
                     .font(.system(size: 22, weight: .semibold))
                     .foregroundStyle(Self.red)
                 HStack(alignment: .firstTextBaseline, spacing: 5) {
-                    Text(Self.shownBpm(context).map(String.init) ?? "–")
+                    Text(Self.shownBpm(context).map { String($0) } ?? "–")
                         .font(.system(size: 42, weight: .bold, design: .rounded))
                         .monospacedDigit()
                         .foregroundStyle(.white)
@@ -111,7 +111,7 @@ struct NOOPLiveActivity: Widget {
                     Text(context.attributes.title)
                         .font(.system(size: 11, weight: .semibold))
                         .foregroundStyle(Self.muted)
-                    Text("WHOOP STYLE · NOOP")
+                    Text("NOOP LIVE")
                         .font(.system(size: 8, weight: .bold))
                         .tracking(0.7)
                         .foregroundStyle(Self.muted.opacity(0.8))
@@ -123,7 +123,7 @@ struct NOOPLiveActivity: Widget {
             HStack(spacing: 0) {
                 bannerStat(label: "RECOVERY", value: context.state.recovery.map { "\($0)%" }, tint: Self.green)
                 Spacer()
-                bannerStat(label: "STRAIN", value: context.state.effort.map(String.init), tint: Self.blue)
+                bannerStat(label: "STRAIN", value: context.state.effort.map { String($0) }, tint: Self.blue)
                 Spacer()
                 bannerStat(label: "SENSOR", value: context.state.bonded ? "CONNECTED" : "OFFLINE",
                            tint: context.state.bonded ? Self.green : Self.muted)
