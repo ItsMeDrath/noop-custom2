@@ -26,7 +26,7 @@ public enum NoopVisualStyle {
     public static let mintDeep = Color(light: "#0D765C", dark: "#4090E0")
     public static let mintGlow = Color(light: "#38C99E", dark: "#60A0E0")
 
-    public static let cardRadius: CGFloat = 22
+    public static let cardRadius: CGFloat = 18
     public static let compactRadius: CGFloat = 16
     public static let pillRadius: CGFloat = 999
     public static let pagePadding: CGFloat = 16
@@ -64,12 +64,9 @@ public struct NoopPanelSurface: View {
         // Scrolling stacks contain many panels. Layered translucent gradients and blurred shadows
         // multiply their compositing work, so iOS uses one theme-aware fill and a thin tinted rim.
         // This changes decorative depth only; card geometry and the design-system colors stay the same.
+        // WHOOP reference: cards are separated by subtle fill contrast, not visible outlines.
         shape
             .fill(NoopVisualStyle.surface)
-            .overlay(shape.strokeBorder(
-                tint?.opacity(0.14) ?? NoopVisualStyle.borderHighlight.opacity(elevated ? 0.9 : 0.65),
-                lineWidth: 0.8
-            ))
             .opacity(surfaceOpacity)
         #else
         shape
