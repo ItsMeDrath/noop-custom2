@@ -67,9 +67,10 @@ struct RootTabView: View {
 
     /// V8 liquid redesign is the default Today; the Settings toggle lets a user fall back to the classic
     /// Today if they prefer it (keyed identically to the SettingsView toggle). Default ON.
-    @AppStorage("noop.liquidTodayEnabled") private var liquidTodayEnabled = true
+    @AppStorage("noop.liquidTodayEnabled") private var liquidTodayEnabled = false
 
-    /// The Today tab root, honouring the liquid/classic preference.
+    /// The metric-first dashboard is the default Home. The alternate liquid dashboard remains
+    /// available when the user explicitly enables it in Appearance settings.
     @ViewBuilder private var todayTabRoot: some View {
         if liquidTodayEnabled { LiquidTodayView() } else { TodayView() }
     }
