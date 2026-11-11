@@ -1,4 +1,5 @@
 import SwiftUI
+import WHOOPCore
 
 private struct PulseHomeOffset: PreferenceKey {
     static var defaultValue: CGFloat = 0

@@ -1,4 +1,5 @@
 import SwiftUI
+import WHOOPCore
 
 enum PulseHomePanel: String, Identifiable {
     case sleep, recovery, strain, membership, review, health, stress, alarm, journal, plan, weight, labs, shop, referral, profile, live, strength, activity, session
