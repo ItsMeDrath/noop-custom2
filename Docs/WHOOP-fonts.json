@@ -1,0 +1,26 @@
+[
+  {
+    "file": "App/Resources/dinpro_bold.otf",
+    "postscript_name": "DINPro-Bold",
+    "sha256": "e67ddf8c385e538b5cc80dfc0e7ac15b1bee2c59280a626321c5f8bae467cec0",
+    "origin": "Existing user-supplied WHOOP asset; restored by explicit request."
+  },
+  {
+    "file": "App/Resources/dinpro_medium.otf",
+    "postscript_name": "DINPro-Medium",
+    "sha256": "4f353e87997c254c379a81770045d40814f32baa2c534540d103415337b5fb93",
+    "origin": "Existing user-supplied WHOOP asset; restored by explicit request."
+  },
+  {
+    "file": "App/Resources/dinpro_regular.otf",
+    "postscript_name": "DINPro-Regular",
+    "sha256": "617311af2fbd10bf1a1c15643661740c83fb812ac56fcd83478c00e239eb5080",
+    "origin": "Existing user-supplied WHOOP asset; restored by explicit request."
+  },
+  {
+    "file": "App/Resources/proxima_nova_regular.otf",
+    "postscript_name": "ProximaNova-Regular",
+    "sha256": "0e9dbcd81a017784b6f02abf7d43285f48fa98caa49955ca5e1351ed24239399",
+    "origin": "Existing user-supplied WHOOP asset; restored by explicit request."
+  }
+]

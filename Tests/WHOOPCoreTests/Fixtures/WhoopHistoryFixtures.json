@@ -1,0 +1,171 @@
+{
+  "scope": "Synthetic fixtures, not device captures. Header tables from DEX, trailer zlib.",
+  "common": {
+    "counter": 2271560481,
+    "seconds": 1700000000,
+    "ticks": 16384
+  },
+  "fixtures": [
+    {
+      "name": "gen4-r9",
+      "generation": "gen4",
+      "revision": 9,
+      "payloadHex": "2f09a52143658700f1536500400d7f0f10021213",
+      "frameHex": "aa1800ff2f09a52143658700f1536500400d7f0f10021213a9f3950f"
+    },
+    {
+      "name": "maverick-r9",
+      "generation": "maverick",
+      "revision": 9,
+      "payloadHex": "2f09a52143658700f1536500400d7f0f10021213",
+      "frameHex": "aa7e18008142d6da2f09a52143658700f1536500400d7f0f10021213a9f3950f"
+    },
+    {
+      "name": "goose-r9",
+      "generation": "goose",
+      "revision": 9,
+      "payloadHex": "2f09a52143658700f1536500400d7f0f10021213",
+      "frameHex": "aa7e18008142d6da2f09a52143658700f1536500400d7f0f10021213a9f3950f"
+    },
+    {
+      "name": "gen4-r12",
+      "generation": "gen4",
+      "revision": 12,
+      "payloadHex": "2f0ca52143658700f1536500400d7f0f10021213",
+      "frameHex": "aa1800ff2f0ca52143658700f1536500400d7f0f10021213137e1f31"
+    },
+    {
+      "name": "maverick-r12",
+      "generation": "maverick",
+      "revision": 12,
+      "payloadHex": "2f0ca52143658700f1536500400d7f0f10021213",
+      "frameHex": "aa7e18008142d6da2f0ca52143658700f1536500400d7f0f10021213137e1f31"
+    },
+    {
+      "name": "goose-r12",
+      "generation": "goose",
+      "revision": 12,
+      "payloadHex": "2f0ca52143658700f1536500400d7f0f10021213",
+      "frameHex": "aa7e18008142d6da2f0ca52143658700f1536500400d7f0f10021213137e1f31"
+    },
+    {
+      "name": "gen4-r18",
+      "generation": "gen4",
+      "revision": 18,
+      "payloadHex": "2f12a52143658700f1536500400d7f0f10021213",
+      "frameHex": "aa1800ff2f12a52143658700f1536500400d7f0f100212138f5320b6"
+    },
+    {
+      "name": "maverick-r18",
+      "generation": "maverick",
+      "revision": 18,
+      "payloadHex": "2f12a52143658700f1536500400d7f0f10021213",
+      "frameHex": "aa7e18008142d6da2f12a52143658700f1536500400d7f0f100212138f5320b6"
+    },
+    {
+      "name": "goose-r18",
+      "generation": "goose",
+      "revision": 18,
+      "payloadHex": "2f12a52143658700f1536500400d7f0f10021213",
+      "frameHex": "aa7e18008142d6da2f12a52143658700f1536500400d7f0f100212138f5320b6"
+    },
+    {
+      "name": "gen4-r24",
+      "generation": "gen4",
+      "revision": 24,
+      "payloadHex": "2f18a52143658700f1536500400d7f0f10021213",
+      "frameHex": "aa1800ff2f18a52143658700f1536500400d7f0f10021213fb4835cb"
+    },
+    {
+      "name": "maverick-r24",
+      "generation": "maverick",
+      "revision": 24,
+      "payloadHex": "2f18a52143658700f1536500400d7f0f10021213",
+      "frameHex": "aa7e18008142d6da2f18a52143658700f1536500400d7f0f10021213fb4835cb"
+    },
+    {
+      "name": "goose-r24",
+      "generation": "goose",
+      "revision": 24,
+      "payloadHex": "2f18a52143658700f1536500400d7f0f10021213",
+      "frameHex": "aa7e18008142d6da2f18a52143658700f1536500400d7f0f10021213fb4835cb"
+    },
+    {
+      "name": "gen4-r99",
+      "generation": "gen4",
+      "revision": 99,
+      "payloadHex": "2f63a52143658700f1536500400d7f0f10021213",
+      "frameHex": "aa1800ff2f63a52143658700f1536500400d7f0f10021213e1720c19"
+    },
+    {
+      "name": "maverick-r99",
+      "generation": "maverick",
+      "revision": 99,
+      "payloadHex": "2f63a52143658700f1536500400d7f0f10021213",
+      "frameHex": "aa7e18008142d6da2f63a52143658700f1536500400d7f0f10021213e1720c19"
+    },
+    {
+      "name": "goose-r99",
+      "generation": "goose",
+      "revision": 99,
+      "payloadHex": "2f63a52143658700f1536500400d7f0f10021213",
+      "frameHex": "aa7e18008142d6da2f63a52143658700f1536500400d7f0f10021213e1720c19"
+    },
+    {
+      "name": "short-4-r9",
+      "generation": "gen4",
+      "revision": 9,
+      "payloadHex": "2f090000",
+      "frameHex": "aa0800a82f090000fb5bc4d6"
+    },
+    {
+      "name": "short-4-r18",
+      "generation": "gen4",
+      "revision": 18,
+      "payloadHex": "2f120000",
+      "frameHex": "aa0800a82f1200006a17b7c6"
+    },
+    {
+      "name": "short-8-r9",
+      "generation": "gen4",
+      "revision": 9,
+      "payloadHex": "2f09000000000000",
+      "frameHex": "aa0c00fc2f0900000000000040eaecd0"
+    },
+    {
+      "name": "short-8-r18",
+      "generation": "gen4",
+      "revision": 18,
+      "payloadHex": "2f12000000000000",
+      "frameHex": "aa0c00fc2f12000000000000742235b5"
+    },
+    {
+      "name": "short-12-r9",
+      "generation": "gen4",
+      "revision": 9,
+      "payloadHex": "2f0900000000000000000000",
+      "frameHex": "aa1000572f090000000000000000000063bc3d6a"
+    },
+    {
+      "name": "short-12-r18",
+      "generation": "gen4",
+      "revision": 18,
+      "payloadHex": "2f1200000000000000000000",
+      "frameHex": "aa1000572f1200000000000000000000ecffeae7"
+    },
+    {
+      "name": "short-16-r9",
+      "generation": "gen4",
+      "revision": 9,
+      "payloadHex": "2f090000000000000000000000000000",
+      "frameHex": "aa1400032f0900000000000000000000000000007d401c03"
+    },
+    {
+      "name": "short-16-r18",
+      "generation": "gen4",
+      "revision": 18,
+      "payloadHex": "2f120000000000000000000000000000",
+      "frameHex": "aa1400032f120000000000000000000000000000cc798a99"
+    }
+  ]
+}

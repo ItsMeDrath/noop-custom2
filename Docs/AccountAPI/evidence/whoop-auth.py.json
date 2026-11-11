@@ -1,0 +1,22 @@
+{
+  "source": "whoop/auth.py",
+  "classification": "third-party SDK; not an official WHOOP specification",
+  "sha256": "994436320ca6a4282a88e6e809c7b4fd7cae2e877def05422357a5baf18df3c8",
+  "excerpts": [
+    {
+      "firstLine": 22,
+      "lastLine": 35,
+      "text": "AUTHORIZE_URL = \"https://api.prod.whoop.com/oauth/oauth2/auth\"\nTOKEN_URL = \"https://api.prod.whoop.com/oauth/oauth2/token\"  # noqa: S105 (URL, not a secret)\nREVOKE_URL = \"https://api.prod.whoop.com/developer/v2/user/access\"\n\nDEFAULT_SCOPES = [\n    \"read:profile\",\n    \"read:body_measurement\",\n    \"read:cycles\",\n    \"read:recovery\",\n    \"read:sleep\",\n    \"read:workout\",\n    \"offline\",\n]\n"
+    },
+    {
+      "firstLine": 75,
+      "lastLine": 87,
+      "text": "        self._on_token_refresh = on_token_refresh\n\n        self.session = OAuth2Session(\n            client_id=client_id,\n            client_secret=client_secret,\n            # WHOOP expects credentials in the request body, not a Basic auth header.\n            token_endpoint_auth_method=\"client_secret_post\",  # noqa: S106 (auth method name)\n            scope=\" \".join(scopes if scopes is not None else DEFAULT_SCOPES),\n            redirect_uri=redirect_uri,\n            token=token,\n            token_endpoint=TOKEN_URL,\n            update_token=self._update_token,\n        )"
+    },
+    {
+      "firstLine": 132,
+      "lastLine": 166,
+      "text": "    def fetch_token(\n        self,\n        authorization_response: str | None = None,\n        code: str | None = None,\n        **kwargs: Any,\n    ) -> dict[str, Any]:\n        \"\"\"Exchange an authorization code for an access token.\n\n        Provide either the full `authorization_response` URL the user was redirected\n        to, or the bare `code` extracted from it.\n\n        Args:\n            authorization_response (str | None): The full redirect URL containing the\n                code and state. Defaults to None.\n            code (str | None): The authorization code on its own. Defaults to None.\n            kwargs (dict[str, Any], optional): Additional arguments for `fetch_token()`.\n\n        Returns:\n            dict[str, Any]: The fetched token (access token, refresh token, expiry).\n\n        Raises:\n            ValueError: If neither `authorization_response` nor `code` is provided.\n        \"\"\"\n        if not authorization_response and not code:\n            raise ValueError(\"Provide either authorization_response or code.\")\n\n        # Forward only the argument that was set; passing code=None makes Authlib\n        # build an authorization-code request with a null code instead of failing.\n        if authorization_response:\n            kwargs[\"authorization_response\"] = authorization_response\n        if code:\n            kwargs[\"code\"] = code\n\n        token: dict[str, Any] = self.session.fetch_token(url=TOKEN_URL, **kwargs)\n        return token"
+    }
+  ]
+}

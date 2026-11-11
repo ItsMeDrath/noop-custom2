@@ -1,0 +1,121 @@
+[0/1] Planning build
+Building for debugging...
+[0/4] Write sources
+[2/4] Write swift-version-457096A79D733C59.txt
+[4/6] Compiling WHOOPCore LocalBackup.swift
+[5/6] Emitting module WHOOPCore
+[6/14] Wrapping AST for WHOOPCore for debugging
+[8/18] Compiling WHOOPCoreTests NutritionStorageTests.swift
+[9/18] Emitting module WHOOPCoreTests
+[10/18] Compiling WHOOPCoreTests BackupTests.swift
+[11/18] Compiling WHOOPCoreTests MeasurementExportTests.swift
+[12/19] /tmp/whoop-complete-build/x86_64-unknown-linux-gnu/debug/WHOOPCorePackageDiscoveredTests.derived/all-discovered-tests.swift
+[13/20] Write sources
+[14/20] Wrapping AST for WHOOPCoreTests for debugging
+[16/23] Compiling WHOOPCorePackageDiscoveredTests all-discovered-tests.swift
+[17/23] Emitting module WHOOPCorePackageDiscoveredTests
+[18/23] Compiling WHOOPCorePackageDiscoveredTests WHOOPCoreTests.swift
+[19/24] /tmp/whoop-complete-build/x86_64-unknown-linux-gnu/debug/WHOOPCorePackageTests.derived/runner.swift
+[20/25] Write sources
+[21/25] Wrapping AST for WHOOPCorePackageDiscoveredTests for debugging
+[23/27] Emitting module WHOOPCorePackageTests
+[24/27] Compiling WHOOPCorePackageTests runner.swift
+[25/27] Write Objects.LinkFileList
+[26/27] Linking WHOOPCorePackageTests.xctest
+Build complete! (7.66s)
+Test Suite 'Selected tests' started at 2026-11-10 19:39:20.523
+Test Suite 'BackupTests' started at 2026-11-10 19:39:20.527
+Test Case 'BackupTests.testAccountIdentityRoundtripAndLegacyAbsence' started at 2026-11-10 19:39:20.527
+Test Case 'BackupTests.testAccountIdentityRoundtripAndLegacyAbsence' passed (0.024 seconds)
+Test Case 'BackupTests.testActivityIdentifiersNamesDurationAndStrainAreValidated' started at 2026-11-10 19:39:20.551
+Test Case 'BackupTests.testActivityIdentifiersNamesDurationAndStrainAreValidated' passed (0.196 seconds)
+Test Case 'BackupTests.testByteLimitAndBackupLargerThanDayImportLimit' started at 2026-11-10 19:39:20.747
+Test Case 'BackupTests.testByteLimitAndBackupLargerThanDayImportLimit' passed (0.594 seconds)
+Test Case 'BackupTests.testCombinedRecordLimitIncludesHeartRatesJournalAndActivities' started at 2026-11-10 19:39:21.341
+Test Case 'BackupTests.testCombinedRecordLimitIncludesHeartRatesJournalAndActivities' passed (13.367 seconds)
+Test Case 'BackupTests.testCompleteRoundTripPreservesAllFieldsAndMilliseconds' started at 2026-11-10 19:39:34.708
+Test Case 'BackupTests.testCompleteRoundTripPreservesAllFieldsAndMilliseconds' passed (0.002 seconds)
+Test Case 'BackupTests.testDailyAndJournalDaysAreUniqueInUTC' started at 2026-11-10 19:39:34.711
+Test Case 'BackupTests.testDailyAndJournalDaysAreUniqueInUTC' passed (0.006 seconds)
+Test Case 'BackupTests.testEmptyBackupIsValidAndRetainsSelection' started at 2026-11-10 19:39:34.717
+Test Case 'BackupTests.testEmptyBackupIsValidAndRetainsSelection' passed (0.001 seconds)
+Test Case 'BackupTests.testEveryDailyMetricRangeIsValidated' started at 2026-11-10 19:39:34.718
+Test Case 'BackupTests.testEveryDailyMetricRangeIsValidated' passed (0.024 seconds)
+Test Case 'BackupTests.testHeartRateConflictsAndWrongDayRejectWholeBackup' started at 2026-11-10 19:39:34.742
+Test Case 'BackupTests.testHeartRateConflictsAndWrongDayRejectWholeBackup' passed (0.011 seconds)
+Test Case 'BackupTests.testJournalNoteAndEntryLimits' started at 2026-11-10 19:39:34.754
+Test Case 'BackupTests.testJournalNoteAndEntryLimits' passed (1.039 seconds)
+Test Case 'BackupTests.testMissingRequiredEnvelopeFieldsAndMalformedUUIDReject' started at 2026-11-10 19:39:35.793
+Test Case 'BackupTests.testMissingRequiredEnvelopeFieldsAndMalformedUUIDReject' passed (0.007 seconds)
+Test Case 'BackupTests.testNonfiniteValuesAndUnrepresentableDatesCannotBeExported' started at 2026-11-10 19:39:35.800
+Test Case 'BackupTests.testNonfiniteValuesAndUnrepresentableDatesCannotBeExported' passed (0.0 seconds)
+Test Case 'BackupTests.testRoutingRecognizesDamagedEnvelopesAndLeavesDayArchivesAlone' started at 2026-11-10 19:39:35.800
+Test Case 'BackupTests.testRoutingRecognizesDamagedEnvelopesAndLeavesDayArchivesAlone' passed (0.001 seconds)
+Test Case 'BackupTests.testWrongMagicAndFutureVersionRejectWithoutDayFallback' started at 2026-11-10 19:39:35.801
+Test Case 'BackupTests.testWrongMagicAndFutureVersionRejectWithoutDayFallback' passed (0.004 seconds)
+Test Suite 'BackupTests' passed at 2026-11-10 19:39:35.805
+	 Executed 14 tests, with 0 failures (0 unexpected) in 15.277 (15.277) seconds
+Test Suite 'MeasurementExportTests' started at 2026-11-10 19:39:35.805
+Test Case 'MeasurementExportTests.testConflictingSamplesAndDuplicateDatesFailInsteadOfDroppingData' started at 2026-11-10 19:39:35.805
+Test Case 'MeasurementExportTests.testConflictingSamplesAndDuplicateDatesFailInsteadOfDroppingData' passed (0.003 seconds)
+Test Case 'MeasurementExportTests.testDailyCSVRetainsUnitsAndLeavesUnavailableScoresEmpty' started at 2026-11-10 19:39:35.808
+Test Case 'MeasurementExportTests.testDailyCSVRetainsUnitsAndLeavesUnavailableScoresEmpty' passed (0.002 seconds)
+Test Case 'MeasurementExportTests.testEmptyRangeDoesNotFallBackToAllData' started at 2026-11-10 19:39:35.810
+Test Case 'MeasurementExportTests.testEmptyRangeDoesNotFallBackToAllData' passed (0.001 seconds)
+Test Case 'MeasurementExportTests.testExamplesAndEmptyInputNeverProduceAnExport' started at 2026-11-10 19:39:35.811
+Test Case 'MeasurementExportTests.testExamplesAndEmptyInputNeverProduceAnExport' passed (0.001 seconds)
+Test Case 'MeasurementExportTests.testHeartRateCSVIsSortedDeduplicatedAndCanBeImportedAgain' started at 2026-11-10 19:39:35.812
+Test Case 'MeasurementExportTests.testHeartRateCSVIsSortedDeduplicatedAndCanBeImportedAgain' passed (0.004 seconds)
+Test Case 'MeasurementExportTests.testHeartRateCSVNeverSynthesizesATraceFromSummaryMeasurements' started at 2026-11-10 19:39:35.816
+Test Case 'MeasurementExportTests.testHeartRateCSVNeverSynthesizesATraceFromSummaryMeasurements' passed (0.003 seconds)
+Test Case 'MeasurementExportTests.testInclusiveUTCDayRangeAcrossMidnightAndOffset' started at 2026-11-10 19:39:35.820
+Test Case 'MeasurementExportTests.testInclusiveUTCDayRangeAcrossMidnightAndOffset' passed (0.006 seconds)
+Test Case 'MeasurementExportTests.testInvalidDatesFailBeforeFormatting' started at 2026-11-10 19:39:35.825
+Test Case 'MeasurementExportTests.testInvalidDatesFailBeforeFormatting' passed (0.001 seconds)
+Test Case 'MeasurementExportTests.testInvalidMetricsRejectEveryExportFormat' started at 2026-11-10 19:39:35.826
+Test Case 'MeasurementExportTests.testInvalidMetricsRejectEveryExportFormat' passed (0.005 seconds)
+Test Case 'MeasurementExportTests.testJSONAddsHighlightsMetadataButNoUnrelatedAppState' started at 2026-11-10 19:39:35.831
+Test Case 'MeasurementExportTests.testJSONAddsHighlightsMetadataButNoUnrelatedAppState' passed (0.003 seconds)
+Test Case 'MeasurementExportTests.testJSONExcludesExamplesAndRoundTripsRealValuesAndFractionalSamples' started at 2026-11-10 19:39:35.834
+Test Case 'MeasurementExportTests.testJSONExcludesExamplesAndRoundTripsRealValuesAndFractionalSamples' passed (0.004 seconds)
+Test Case 'MeasurementExportTests.testOutOfDayHeartRateSamplesFail' started at 2026-11-10 19:39:35.837
+Test Case 'MeasurementExportTests.testOutOfDayHeartRateSamplesFail' passed (0.002 seconds)
+Test Case 'MeasurementExportTests.testRecordBudgetIsCheckedBeforeSerialization' started at 2026-11-10 19:39:35.839
+Test Case 'MeasurementExportTests.testRecordBudgetIsCheckedBeforeSerialization' passed (0.001 seconds)
+Test Suite 'MeasurementExportTests' passed at 2026-11-10 19:39:35.840
+	 Executed 13 tests, with 0 failures (0 unexpected) in 0.034 (0.034) seconds
+Test Suite 'ProfilePersonalizationTests' started at 2026-11-10 19:39:35.840
+Test Case 'ProfilePersonalizationTests.testAgeHasNoNumericUpperLimitAndKeepsExactDecimalText' started at 2026-11-10 19:39:35.840
+Test Case 'ProfilePersonalizationTests.testAgeHasNoNumericUpperLimitAndKeepsExactDecimalText' passed (0.001 seconds)
+Test Case 'ProfilePersonalizationTests.testChosenProfileValuesNeverReplaceCalculatedRecords' started at 2026-11-10 19:39:35.841
+Test Case 'ProfilePersonalizationTests.testChosenProfileValuesNeverReplaceCalculatedRecords' passed (0.003 seconds)
+Test Case 'ProfilePersonalizationTests.testExamplesFutureRowsEmptyDaysAndDuplicateDatesDoNotInflateStreaks' started at 2026-11-10 19:39:35.845
+Test Case 'ProfilePersonalizationTests.testExamplesFutureRowsEmptyDaysAndDuplicateDatesDoNotInflateStreaks' passed (0.0 seconds)
+Test Case 'ProfilePersonalizationTests.testFullBackupPreservesProfileAndLegacyBackupWithoutProfileStillWorks' started at 2026-11-10 19:39:35.845
+Test Case 'ProfilePersonalizationTests.testFullBackupPreservesProfileAndLegacyBackupWithoutProfileStillWorks' passed (0.003 seconds)
+Test Case 'ProfilePersonalizationTests.testHighlightsCSVIncludesCustomValuesUnitsDatesAndNeutralizesFormulas' started at 2026-11-10 19:39:35.848
+Test Case 'ProfilePersonalizationTests.testHighlightsCSVIncludesCustomValuesUnitsDatesAndNeutralizesFormulas' passed (0.003 seconds)
+Test Case 'ProfilePersonalizationTests.testHighlightsMatchSavedValuesAndTieDatesAreDeterministic' started at 2026-11-10 19:39:35.851
+Test Case 'ProfilePersonalizationTests.testHighlightsMatchSavedValuesAndTieDatesAreDeterministic' passed (0.0 seconds)
+Test Case 'ProfilePersonalizationTests.testInvalidAgesAndNegativeChosenStreakAreRejected' started at 2026-11-10 19:39:35.851
+Test Case 'ProfilePersonalizationTests.testInvalidAgesAndNegativeChosenStreakAreRejected' passed (0.0 seconds)
+Test Case 'ProfilePersonalizationTests.testLegacyDayJSONAndHeartRateCSVStillImport' started at 2026-11-10 19:39:35.851
+Test Case 'ProfilePersonalizationTests.testLegacyDayJSONAndHeartRateCSVStillImport' passed (0.002 seconds)
+Test Case 'ProfilePersonalizationTests.testMissingDatesAndThresholdFailuresBreakStreaks' started at 2026-11-10 19:39:35.853
+Test Case 'ProfilePersonalizationTests.testMissingDatesAndThresholdFailuresBreakStreaks' passed (0.0 seconds)
+Test Case 'ProfilePersonalizationTests.testNamesAreNormalizedAndInitialsFollowPersonalization' started at 2026-11-10 19:39:35.854
+Test Case 'ProfilePersonalizationTests.testNamesAreNormalizedAndInitialsFollowPersonalization' passed (0.101 seconds)
+Test Case 'ProfilePersonalizationTests.testPersonalizedArchiveReimportValidatesProfileAndIgnoresTamperedHighlights' started at 2026-11-10 19:39:35.955
+Test Case 'ProfilePersonalizationTests.testPersonalizedArchiveReimportValidatesProfileAndIgnoresTamperedHighlights' passed (0.006 seconds)
+Test Case 'ProfilePersonalizationTests.testProfileAndHighlightsExportHonorSelectedRange' started at 2026-11-10 19:39:35.961
+Test Case 'ProfilePersonalizationTests.testProfileAndHighlightsExportHonorSelectedRange' passed (0.006 seconds)
+Test Case 'ProfilePersonalizationTests.testProfileOnlyExportAndReimportPreserveUnlimitedAge' started at 2026-11-10 19:39:35.967
+Test Case 'ProfilePersonalizationTests.testProfileOnlyExportAndReimportPreserveUnlimitedAge' passed (0.001 seconds)
+Test Suite 'ProfilePersonalizationTests' passed at 2026-11-10 19:39:35.968
+	 Executed 13 tests, with 0 failures (0 unexpected) in 0.128 (0.128) seconds
+Test Suite 'Selected tests' passed at 2026-11-10 19:39:35.968
+	 Executed 40 tests, with 0 failures (0 unexpected) in 15.439 (15.439) seconds
+◇ Test run started.
+↳ Testing Library Version: 6.2.1 (c9d57c83568b06d)
+↳ Target Platform: x86_64-unknown-linux-gnu
+✔ Test run with 0 tests in 0 suites passed after 0.001 seconds.

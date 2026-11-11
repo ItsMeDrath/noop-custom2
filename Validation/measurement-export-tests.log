@@ -1,0 +1,78 @@
+[0/1] Planning build
+Building for debugging...
+[0/12] Write sources
+[0/12] Copying Fixtures
+[3/12] Write swift-version-457096A79D733C59.txt
+[5/19] Emitting module WHOOPCore
+[6/19] Compiling WHOOPCore LiveWorkoutAttributes.swift
+[7/19] Compiling WHOOPCore LocalBackup.swift
+[8/20] Compiling WHOOPCore WhoopHistory.swift
+[9/20] Compiling WHOOPCore WhoopAccountData.swift
+[10/20] Compiling WHOOPCore WhoopDeviceTime.swift
+[11/20] Compiling WHOOPCore MeasurementExport.swift
+[12/20] Compiling WHOOPCore NutritionModels.swift
+[13/21] Wrapping AST for WHOOPCore for debugging
+[15/32] Emitting module WHOOPCoreTests
+[16/35] Compiling WHOOPCoreTests NutritionStorageTests.swift
+[17/35] Compiling WHOOPCoreTests SleepIntervalTests.swift
+[18/35] Compiling WHOOPCoreTests WhoopAccountTests.swift
+[19/35] Compiling WHOOPCoreTests WhoopHistoryTests.swift
+[20/35] Compiling WHOOPCoreTests WhoopLiveSessionTests.swift
+[21/35] Compiling WHOOPCoreTests resource_bundle_accessor.swift
+[22/35] Compiling WHOOPCoreTests WhoopCommandTests.swift
+[23/35] Compiling WHOOPCoreTests WhoopDeviceTimeTests.swift
+[24/35] Compiling WHOOPCoreTests WhoopFrameTests.swift
+[25/35] Compiling WHOOPCoreTests BackupTests.swift
+[26/35] Compiling WHOOPCoreTests CoreTests.swift
+[27/35] Compiling WHOOPCoreTests LiveStrainTests.swift
+[28/35] Compiling WHOOPCoreTests MeasurementExportTests.swift
+[29/36] /tmp/whoop-complete-build/x86_64-unknown-linux-gnu/debug/WHOOPCorePackageDiscoveredTests.derived/all-discovered-tests.swift
+[30/37] Write sources
+[31/37] Wrapping AST for WHOOPCoreTests for debugging
+[33/40] Compiling WHOOPCorePackageDiscoveredTests all-discovered-tests.swift
+[34/40] Emitting module WHOOPCorePackageDiscoveredTests
+[35/40] Compiling WHOOPCorePackageDiscoveredTests WHOOPCoreTests.swift
+[36/41] /tmp/whoop-complete-build/x86_64-unknown-linux-gnu/debug/WHOOPCorePackageTests.derived/runner.swift
+[37/42] Write sources
+[38/42] Wrapping AST for WHOOPCorePackageDiscoveredTests for debugging
+[40/44] Compiling WHOOPCorePackageTests runner.swift
+[41/44] Emitting module WHOOPCorePackageTests
+[42/44] Write Objects.LinkFileList
+[43/44] Linking WHOOPCorePackageTests.xctest
+Build complete! (6.42s)
+Test Suite 'Selected tests' started at 2026-11-10 03:45:20.431
+Test Suite 'MeasurementExportTests' started at 2026-11-10 03:45:20.434
+Test Case 'MeasurementExportTests.testConflictingSamplesAndDuplicateDatesFailInsteadOfDroppingData' started at 2026-11-10 03:45:20.434
+Test Case 'MeasurementExportTests.testConflictingSamplesAndDuplicateDatesFailInsteadOfDroppingData' passed (0.008 seconds)
+Test Case 'MeasurementExportTests.testDailyCSVRetainsUnitsAndLeavesUnavailableScoresEmpty' started at 2026-11-10 03:45:20.442
+Test Case 'MeasurementExportTests.testDailyCSVRetainsUnitsAndLeavesUnavailableScoresEmpty' passed (0.102 seconds)
+Test Case 'MeasurementExportTests.testEmptyRangeDoesNotFallBackToAllData' started at 2026-11-10 03:45:20.545
+Test Case 'MeasurementExportTests.testEmptyRangeDoesNotFallBackToAllData' passed (0.001 seconds)
+Test Case 'MeasurementExportTests.testExamplesAndEmptyInputNeverProduceAnExport' started at 2026-11-10 03:45:20.546
+Test Case 'MeasurementExportTests.testExamplesAndEmptyInputNeverProduceAnExport' passed (0.001 seconds)
+Test Case 'MeasurementExportTests.testHeartRateCSVIsSortedDeduplicatedAndCanBeImportedAgain' started at 2026-11-10 03:45:20.547
+Test Case 'MeasurementExportTests.testHeartRateCSVIsSortedDeduplicatedAndCanBeImportedAgain' passed (0.003 seconds)
+Test Case 'MeasurementExportTests.testHeartRateCSVNeverSynthesizesATraceFromSummaryMeasurements' started at 2026-11-10 03:45:20.549
+Test Case 'MeasurementExportTests.testHeartRateCSVNeverSynthesizesATraceFromSummaryMeasurements' passed (0.003 seconds)
+Test Case 'MeasurementExportTests.testInclusiveUTCDayRangeAcrossMidnightAndOffset' started at 2026-11-10 03:45:20.552
+Test Case 'MeasurementExportTests.testInclusiveUTCDayRangeAcrossMidnightAndOffset' passed (0.004 seconds)
+Test Case 'MeasurementExportTests.testInvalidDatesFailBeforeFormatting' started at 2026-11-10 03:45:20.556
+Test Case 'MeasurementExportTests.testInvalidDatesFailBeforeFormatting' passed (0.001 seconds)
+Test Case 'MeasurementExportTests.testInvalidMetricsRejectEveryExportFormat' started at 2026-11-10 03:45:20.557
+Test Case 'MeasurementExportTests.testInvalidMetricsRejectEveryExportFormat' passed (0.004 seconds)
+Test Case 'MeasurementExportTests.testJSONExcludesExamplesAndRoundTripsRealValuesAndFractionalSamples' started at 2026-11-10 03:45:20.560
+Test Case 'MeasurementExportTests.testJSONExcludesExamplesAndRoundTripsRealValuesAndFractionalSamples' passed (0.002 seconds)
+Test Case 'MeasurementExportTests.testJSONHasOnlyTheDayArchiveAndNoUnrelatedAppState' started at 2026-11-10 03:45:20.563
+Test Case 'MeasurementExportTests.testJSONHasOnlyTheDayArchiveAndNoUnrelatedAppState' passed (0.102 seconds)
+Test Case 'MeasurementExportTests.testOutOfDayHeartRateSamplesFail' started at 2026-11-10 03:45:20.665
+Test Case 'MeasurementExportTests.testOutOfDayHeartRateSamplesFail' passed (0.001 seconds)
+Test Case 'MeasurementExportTests.testRecordBudgetIsCheckedBeforeSerialization' started at 2026-11-10 03:45:20.666
+Test Case 'MeasurementExportTests.testRecordBudgetIsCheckedBeforeSerialization' passed (0.001 seconds)
+Test Suite 'MeasurementExportTests' passed at 2026-11-10 03:45:20.668
+	 Executed 13 tests, with 0 failures (0 unexpected) in 0.234 (0.234) seconds
+Test Suite 'Selected tests' passed at 2026-11-10 03:45:20.668
+	 Executed 13 tests, with 0 failures (0 unexpected) in 0.234 (0.234) seconds
+◇ Test run started.
+↳ Testing Library Version: 6.2.1 (c9d57c83568b06d)
+↳ Target Platform: x86_64-unknown-linux-gnu
+✔ Test run with 0 tests in 0 suites passed after 0.001 seconds.

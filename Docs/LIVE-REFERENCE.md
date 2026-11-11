@@ -1,0 +1,44 @@
+# Full-screen Live camera
+
+Open Home → **+** beside My Day → **Create WHOOP Live**. The action now presents `ReferenceLiveView` full screen instead of the former local explanation sheet. More → Export Data remains available.
+
+## Reference layout
+
+The supplied Overview screenshot is the primary reference: a 9:16 camera canvas, three lower dials, supplied WHOOP wordmark, gallery / settings / shutter / light / camera-flip controls, and a bottom Live / Overview / Strain / Recovery / Sleep selector. Strain, Recovery and Sleep use the large-gauge compositions from the earlier references. Tap a mode or swipe horizontally over the camera. The bottom triangle opens controls.
+
+Settings, date selection, workout controls, media sharing, microphone and Live Activities are in the drawer. They no longer take space above the camera. The side chevron in the supplied phone capture is not an app control and is not reproduced.
+
+See [Overview](../design/live/01-Overview.png), [Strain](../design/live/02-Strain.png), [Recovery](../design/live/03-Recovery.png), [Sleep](../design/live/04-Sleep.png), [Live](../design/live/05-Live.png), [gallery](../design/live/Live-gallery.jpg), and [measured geometry](../design/tokens/live.json).
+
+These images are browser interpretations with an explicitly illustrative camera background. They are not simulator captures or photos taken by the app. The reference image is visible in chat, but its original bytes are not available for an exact image diff. Original official animation timing is unverified.
+
+## Known visible differences
+
+The browser uses an illustrative ceiling background; the app uses the actual camera or chosen photo. An Example/recorded-date badge remains visible. The gallery tile shows an icon until a photo is selected. System icons approximate the original custom icons, native font rendering is unverified, and the operating system supplies the real camera privacy indicator. Layout/motion has not been compared in a simulator. Fixed Live metric cards do not implement the earlier reference's draggable/removable editor.
+
+## Data behavior
+
+Overview presents saved day Strain, Recovery and actual hours asleep, rather than substituting Sleep Performance for duration. With Home in example mode, its existing single fixture supplies 15.8, 38% and 3:44 and the overlay retains an **EXAMPLE** date badge. These fixtures are not written into AppStore and remain excluded from measurement exports. Saved non-example imports take precedence when present. The recorded-day picker can select other stored days.
+
+Live heart rate uses an actually received, timestamped reading. Missing, future or over-ten-second-old samples show **Connect**. Historical/example samples are never turned into live BPM. Missing day scores show **Sync**. Calories are explicitly **DAY CALORIES**, not a calculated workout calorie estimate. Local workout Strain remains separate from the day Strain displayed in the overlay.
+
+## Capture and export
+
+- Opening Live requests camera access and starts the native camera preview. Microphone audio is optional and off by default.
+- Overview / Strain / Recovery / Sleep shutter takes a still using `AVCapturePhotoOutput`. The request has an ID and timeout, and callbacks are serialized on the existing capture queue.
+- Live shutter records video; tap again to finish. Clips stop at five minutes or when the app leaves the foreground. Closing while recording stops the video and opens review controls.
+- The photo picker accepts a supported image up to 30 MB. Images are downsampled, centered to a 9:16 crop and composed with the selected day overlay.
+- Preview, still photos, imported-photo output, transparent PNG and movie frames share `LiveOverlayRenderer`. The supplied wordmark path is reused by both UIKit export and SwiftUI display.
+- Camera flipping and the torch use actual supported hardware. Unsupported torch requests show an error. Capture preparation and file-writing errors are visible; no successful capture is fabricated.
+- A finished photo/video can be shared through iOS or saved to Photos with explicit add permission. No automatic sharing or social posting occurs.
+- The existing recorder and ActivityKit driver are shared from the app root. Starting/pausing/saving a workout remains explicit. Closing the camera does not silently discard a separate workout.
+
+## Validation and remaining limits
+
+Seven new portable tests cover Overview/detail consistency, actual sleep duration, HR freshness and future timestamps, missing/invalid values, Recovery thresholds, day-calorie labels and bounded timers. All 130 portable Core tests passed. The Swift UI sources pass frontend syntax parsing and the Xcode project validator includes all 34 app sources and the widget extension.
+
+Seven browser layout checks cover all five modes, reference values, disconnected live HR, controls drawer, truthful unavailable browser capture, canvas aspect ratio and JS errors. Browser preview values are generated by the actual Swift presenter from the single Home fixture.
+
+This Linux executor has no Apple SDK/simulator or connected camera. Native compilation, permission transitions, preview/frame orientation, front-camera mirroring, torch, photo callbacks, audio/video sync, Photos and Share flows, ActivityKit behavior and exact visual parity remain unverified on iPhone. Live metric cards are fixed in this implementation; the draggable/removable widget editor shown in a separate earlier reference is not reproduced. No native recording or IPA was produced here.
+
+The prior form-based `LiveView` remains in the source for legacy callers; current Home uses the full-screen reference view.

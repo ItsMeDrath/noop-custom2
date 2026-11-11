@@ -1,39 +1,38 @@
+# Manual cloud build: Codemagic supplies the Mac; no Apple secrets for this unsigned IPA.
 workflows:
-  noop-ios:
-    name: NOOP iOS unsigned IPA
-    max_build_duration: 60
+  whoop-unsigned-ipa:
+    name: WHOOP - unsigned iPhone IPA for Sideloadly
     instance_type: mac_mini_m2
+    max_build_duration: 45
     environment:
       xcode: latest
-      vars:
-        BUNDLE_ID_PREFIX: com.noopapp
     scripts:
-      - name: Install XcodeGen
-        script: |
-          brew install xcodegen
-      - name: Generate Xcode project
-        script: |
-          xcodegen generate
-      - name: Build NOOP for iPhone
-        script: |
-          xcodebuild -scheme NOOPiOS -configuration Release \
-            -destination 'generic/platform=iOS' \
-            -derivedDataPath build/dd \
-            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" \
-            build
-      - name: Package unsigned IPA
+      - name: Check project and Apple build tools
         script: |
           set -euo pipefail
-          APP=$(find build/dd/Build/Products/Release-iphoneos -maxdepth 1 -name '*.app' -type d | head -1)
-          test -n "$APP" || { echo "iOS app bundle not found"; exit 1; }
-          rm -rf "$APP/Watch"
-          test -d "$APP/PlugIns/NOOPWidgets.appex" || {
-            echo "NOOPWidgets.appex missing from iOS build"; exit 1;
-          }
-          Tools/prepare-ios-sideload-app.sh "$APP"
-          mkdir -p build/ipa/Payload
-          cp -R "$APP" build/ipa/Payload/
-          VER=$(grep -m1 'MARKETING_VERSION:' project.yml | sed -E 's/.*"([^"]+)".*/\1/')
-          (cd build/ipa && zip -qr "NOOP-ios-unsigned-v${VER}.ipa" Payload)
+          cd "$CM_BUILD_DIR"
+          test -f Package.swift
+          test -d WHOOP.xcodeproj
+          test -f Scripts/package-ipa-on-mac.sh
+          xcodebuild -version
+          swift --version
+          python3 --version
+      - name: Test portable core and device-package validator
+        script: |
+          set -euo pipefail
+          cd "$CM_BUILD_DIR"
+          python3 Scripts/validate-nutrition-resource.py
+          swift test --parallel
+          python3 -m unittest discover -s Scripts/tests -v
+      - name: Build arm64 iPhone application and package IPA
+        script: |
+          set -euo pipefail
+          cd "$CM_BUILD_DIR"
+          bash Scripts/package-ipa-on-mac.sh
     artifacts:
-      - build/ipa/*.ipa
+      - build/WHOOP-unsigned.ipa
+      - build/WHOOP-unsigned.ipa.sha256
+      - build/device-build.*/xcodebuild.log
+      - build/device-build.*/package-check.json
+      - build/device-build.*/WHOOP.xcresult/**
+# No triggering or publishing block: start manually; no email, store submission or deployment.

@@ -1,0 +1,22 @@
+{
+  "retrieved_at_utc": "2026-11-08T18:09:17.929486+00:00",
+  "scope": "Codemagic-owned public docs repository source snapshots; master is mutable, retrieved byte hashes retained. Documentation evidence only, not a dispatched build.",
+  "website_attempt": "docs.codemagic.io CONNECT denied 403 by existing policy; no policy changed.",
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/codemagic-ci-cd/codemagic-docs/master/content/yaml-quick-start/building-a-native-ios-app.md",
+      "file": "official-ios-guide.source.txt",
+      "sha256": "cd253da098283bf3bd60a0e1f11ccf63b96a3f0619242a895aa91993659c6da4"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/codemagic-ci-cd/codemagic-docs/master/content/partials/quickstart/add-app-to-codemagic.md",
+      "file": "add-app.source.txt",
+      "sha256": "226da916155fbd68c36b902ebbbc1a5102c5015fdd17110ca7db51415023c81b"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/codemagic-ci-cd/codemagic-docs/master/content/yaml-basic-configuration/yaml-getting-started.md",
+      "file": "yaml-guide.source.txt",
+      "sha256": "bc44ee7389ef401421529d4498faa8db596cc0c5d03fc0c45c3cbfc1c850756d"
+    }
+  ]
+}

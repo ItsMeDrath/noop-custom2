@@ -1,0 +1,85 @@
+{
+  "modes" : {
+    "live" : [
+      {
+        "available" : false,
+        "fraction" : null,
+        "label" : "BPM",
+        "tone" : "neutral",
+        "value" : "Connect"
+      },
+      {
+        "available" : true,
+        "fraction" : 0.7523809523809524,
+        "label" : "DAY STRAIN",
+        "tone" : "cyan",
+        "value" : "15.8"
+      },
+      {
+        "available" : true,
+        "fraction" : 0.02886,
+        "label" : "DAY CALORIES",
+        "tone" : "neutral",
+        "value" : "2886"
+      },
+      {
+        "available" : true,
+        "fraction" : null,
+        "label" : "TIMER",
+        "tone" : "neutral",
+        "value" : "0:00"
+      }
+    ],
+    "overview" : [
+      {
+        "available" : true,
+        "fraction" : 0.7523809523809524,
+        "label" : "DAY STRAIN",
+        "tone" : "cyan",
+        "value" : "15.8"
+      },
+      {
+        "available" : true,
+        "fraction" : 0.38,
+        "label" : "RECOVERY",
+        "tone" : "yellow",
+        "value" : "38%"
+      },
+      {
+        "available" : true,
+        "fraction" : null,
+        "label" : "HOURS\nOF SLEEP",
+        "tone" : "neutral",
+        "value" : "3:44"
+      }
+    ],
+    "recovery" : [
+      {
+        "available" : true,
+        "fraction" : 0.38,
+        "label" : "RECOVERY",
+        "tone" : "yellow",
+        "value" : "38%"
+      }
+    ],
+    "sleep" : [
+      {
+        "available" : true,
+        "fraction" : null,
+        "label" : "HOURS\nOF SLEEP",
+        "tone" : "neutral",
+        "value" : "3:44"
+      }
+    ],
+    "strain" : [
+      {
+        "available" : true,
+        "fraction" : 0.7523809523809524,
+        "label" : "DAY STRAIN",
+        "tone" : "cyan",
+        "value" : "15.8"
+      }
+    ]
+  },
+  "source" : "EXAMPLE · 2026-11-09"
+}

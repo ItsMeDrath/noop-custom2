@@ -1,0 +1,20 @@
+[0/1] Planning build
+Building for debugging...
+[0/2] Write swift-version-457096A79D733C59.txt
+Build complete! (0.33s)
+Test Suite 'Selected tests' started at 2026-11-09 09:45:16.857
+Test Suite 'BluetoothTests' started at 2026-11-09 09:45:16.860
+Test Case 'BluetoothTests.testEightBitAndOtherFlags' started at 2026-11-09 09:45:16.860
+Test Case 'BluetoothTests.testEightBitAndOtherFlags' passed (0.003 seconds)
+Test Case 'BluetoothTests.testSixteenBitIsLittleEndian' started at 2026-11-09 09:45:16.864
+Test Case 'BluetoothTests.testSixteenBitIsLittleEndian' passed (0.003 seconds)
+Test Case 'BluetoothTests.testTruncatedAndUnsupportedRates' started at 2026-11-09 09:45:16.866
+Test Case 'BluetoothTests.testTruncatedAndUnsupportedRates' passed (0.002 seconds)
+Test Suite 'BluetoothTests' passed at 2026-11-09 09:45:16.869
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.008 (0.008) seconds
+Test Suite 'Selected tests' passed at 2026-11-09 09:45:16.869
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.008 (0.008) seconds
+◇ Test run started.
+↳ Testing Library Version: 6.2.1 (c9d57c83568b06d)
+↳ Target Platform: x86_64-unknown-linux-gnu
+✔ Test run with 0 tests in 0 suites passed after 0.001 seconds.

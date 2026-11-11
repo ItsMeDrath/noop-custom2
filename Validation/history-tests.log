@@ -1,0 +1,53 @@
+warning: 'whoop-ios': found 1 file(s) which are unhandled; explicitly declare them as resources or exclude from the target
+    /workspace/WHOOP-iOS/Tests/WHOOPCoreTests/Fixtures/WhoopHistoryFixtures.json
+[0/1] Planning build
+Building for debugging...
+[0/13] Write sources
+[2/13] Write swift-version-457096A79D733C59.txt
+[4/15] Compiling WHOOPCore WhoopAccountData.swift
+[5/15] Emitting module WHOOPCore
+[6/16] Wrapping AST for WHOOPCore for debugging
+[8/25] Emitting module WHOOPCoreTests
+[9/27] Compiling WHOOPCoreTests WhoopDeviceTimeTests.swift
+[10/27] Compiling WHOOPCoreTests WhoopFrameTests.swift
+[11/27] Compiling WHOOPCoreTests WhoopHistoryTests.swift
+[12/27] Compiling WHOOPCoreTests WhoopLiveSessionTests.swift
+[13/27] Compiling WHOOPCoreTests BackupTests.swift
+[14/27] Compiling WHOOPCoreTests CoreTests.swift
+[15/27] Compiling WHOOPCoreTests LiveStrainTests.swift
+[16/27] Compiling WHOOPCoreTests SleepIntervalTests.swift
+[17/27] Compiling WHOOPCoreTests WhoopAccountTests.swift
+[18/27] Compiling WHOOPCoreTests WhoopCommandTests.swift
+[19/28] /tmp/whoop-history-build/x86_64-unknown-linux-gnu/debug/WHOOPCorePackageDiscoveredTests.derived/all-discovered-tests.swift
+[20/28] Write sources
+[21/28] Wrapping AST for WHOOPCoreTests for debugging
+[23/31] Emitting module WHOOPCorePackageDiscoveredTests
+[24/31] Compiling WHOOPCorePackageDiscoveredTests all-discovered-tests.swift
+[25/31] Compiling WHOOPCorePackageDiscoveredTests WHOOPCoreTests.swift
+[26/32] /tmp/whoop-history-build/x86_64-unknown-linux-gnu/debug/WHOOPCorePackageTests.derived/runner.swift
+[27/32] Write sources
+[28/32] Wrapping AST for WHOOPCorePackageDiscoveredTests for debugging
+[30/34] Emitting module WHOOPCorePackageTests
+[31/34] Compiling WHOOPCorePackageTests runner.swift
+[32/35] Wrapping AST for WHOOPCorePackageTests for debugging
+[33/35] Write Objects.LinkFileList
+[34/35] Linking WHOOPCorePackageTests.xctest
+Build complete! (8.55s)
+Test Suite 'Selected tests' started at 2026-11-08 15:59:47.286
+Test Suite 'WhoopHistoryTests' started at 2026-11-08 15:59:47.288
+Test Case 'WhoopHistoryTests.testIndependentFramesPreserveRawAndDecodeOnlyKnownHeader' started at 2026-11-08 15:59:47.288
+Test Case 'WhoopHistoryTests.testIndependentFramesPreserveRawAndDecodeOnlyKnownHeader' passed (0.005 seconds)
+Test Case 'WhoopHistoryTests.testNoncanonicalTimeIsRetainedAndNotConverted' started at 2026-11-08 15:59:47.293
+Test Case 'WhoopHistoryTests.testNoncanonicalTimeIsRetainedAndNotConverted' passed (0.001 seconds)
+Test Case 'WhoopHistoryTests.testRealtimeFrameIsNotHistorical' started at 2026-11-08 15:59:47.294
+Test Case 'WhoopHistoryTests.testRealtimeFrameIsNotHistorical' passed (0.0 seconds)
+Test Case 'WhoopHistoryTests.testTruncatedCommonHeaderAndRevisionFlagRemainOpaqueAndLossless' started at 2026-11-08 15:59:47.294
+Test Case 'WhoopHistoryTests.testTruncatedCommonHeaderAndRevisionFlagRemainOpaqueAndLossless' passed (0.101 seconds)
+Test Suite 'WhoopHistoryTests' passed at 2026-11-08 15:59:47.396
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.108 (0.108) seconds
+Test Suite 'Selected tests' passed at 2026-11-08 15:59:47.396
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.108 (0.108) seconds
+◇ Test run started.
+↳ Testing Library Version: 6.2.1 (c9d57c83568b06d)
+↳ Target Platform: x86_64-unknown-linux-gnu
+✔ Test run with 0 tests in 0 suites passed after 0.001 seconds.

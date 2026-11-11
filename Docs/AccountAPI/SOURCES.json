@@ -1,0 +1,69 @@
+{
+  "checkedAt": "2026-11-08",
+  "method": "curl using inherited HTTPS proxy and CA; downloaded source read only, never executed",
+  "officialEvidence": [],
+  "officialAttempts": [
+    {
+      "url": "https://developer.whoop.com/api/openapi.json",
+      "result": "CONNECT tunnel denied HTTP 403 by existing egress policy; no content retrieved",
+      "sha256": null
+    },
+    {
+      "url": "https://raw.githubusercontent.com/WHOOP/developer.whoop.com/main/openapi.json",
+      "result": "HTTP 404; not a specification",
+      "sha256": null
+    }
+  ],
+  "thirdPartyEvidence": [
+    {
+      "url": "https://raw.githubusercontent.com/hedgertronic/whoop/main/README.md",
+      "pinnedURL": "https://raw.githubusercontent.com/hedgertronic/whoop/af099c974341284555dd738e23d5bcc80d2dbf67/README.md",
+      "sha256": "b03ab41c05ab00bc33e6ac200d9e18b84cda1d7fedf23a19c9be80ea456395ce",
+      "bytes": 25560,
+      "classification": "third-party",
+      "localExcerpts": "evidence/README.md.json",
+      "pinnedRetrievalMatchesSHA256": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hedgertronic/whoop/main/whoop/auth.py",
+      "pinnedURL": "https://raw.githubusercontent.com/hedgertronic/whoop/af099c974341284555dd738e23d5bcc80d2dbf67/whoop/auth.py",
+      "sha256": "994436320ca6a4282a88e6e809c7b4fd7cae2e877def05422357a5baf18df3c8",
+      "bytes": 7905,
+      "classification": "third-party",
+      "localExcerpts": "evidence/whoop-auth.py.json",
+      "pinnedRetrievalMatchesSHA256": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hedgertronic/whoop/main/whoop/client.py",
+      "pinnedURL": "https://raw.githubusercontent.com/hedgertronic/whoop/af099c974341284555dd738e23d5bcc80d2dbf67/whoop/client.py",
+      "sha256": "d47d040c35e71927e584b197ebe249a072aea412282dce4be1869953da0a529a",
+      "bytes": 19652,
+      "classification": "third-party",
+      "localExcerpts": "evidence/whoop-client.py.json",
+      "pinnedRetrievalMatchesSHA256": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hedgertronic/whoop/main/tests/conftest.py",
+      "pinnedURL": "https://raw.githubusercontent.com/hedgertronic/whoop/af099c974341284555dd738e23d5bcc80d2dbf67/tests/conftest.py",
+      "sha256": "5c0484e7ab2416c6540c061bf35ad63ef0cdccd63d4cb456e88e7166b824e085",
+      "bytes": 4453,
+      "classification": "third-party",
+      "localExcerpts": "evidence/tests-conftest.py.json",
+      "pinnedRetrievalMatchesSHA256": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hedgertronic/whoop/main/tests/test_client.py",
+      "pinnedURL": "https://raw.githubusercontent.com/hedgertronic/whoop/af099c974341284555dd738e23d5bcc80d2dbf67/tests/test_client.py",
+      "sha256": "aaed235a6e7da27ebf35cb99c094cfe97b5992e1e23e5fbae881723f09b27e43",
+      "bytes": 7819,
+      "classification": "third-party",
+      "localExcerpts": "evidence/tests-test_client.py.json",
+      "pinnedRetrievalMatchesSHA256": true
+    }
+  ],
+  "limitations": [
+    "Official specification unavailable in this environment. Routes and field shapes corroborated by retrievable third-party public SDK source and synthetic fixtures only.",
+    "No credentials, login, token exchange or private/account API request performed. No live WHOOP integration validated.",
+    "SDK fixture shapes can differ from current official service; confirm against official WHOOP documentation before production use."
+  ]
+}

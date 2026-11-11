@@ -1,0 +1,66 @@
+[0/1] Planning build
+Building for debugging...
+[0/2] Write swift-version-457096A79D733C59.txt
+Build complete! (0.23s)
+Test Suite 'Selected tests' started at 2026-11-09 09:44:44.365
+Test Suite 'WhoopCommandTests' started at 2026-11-09 09:44:44.368
+Test Case 'WhoopCommandTests.testEnableDisableGoldenFramesAndExplicitSequences' started at 2026-11-09 09:44:44.368
+Test Case 'WhoopCommandTests.testEnableDisableGoldenFramesAndExplicitSequences' passed (0.003 seconds)
+Test Case 'WhoopCommandTests.testHelloGoldenFramesAndDecode' started at 2026-11-09 09:44:44.371
+Test Case 'WhoopCommandTests.testHelloGoldenFramesAndDecode' passed (0.002 seconds)
+Test Case 'WhoopCommandTests.testResponseUsesOriginatingSequenceAndKnownResults' started at 2026-11-09 09:44:44.374
+Test Case 'WhoopCommandTests.testResponseUsesOriginatingSequenceAndKnownResults' passed (0.001 seconds)
+Test Case 'WhoopCommandTests.testTruncatedAndUnknownResultResponsesAreRejected' started at 2026-11-09 09:44:44.374
+Test Case 'WhoopCommandTests.testTruncatedAndUnknownResultResponsesAreRejected' passed (0.001 seconds)
+Test Suite 'WhoopCommandTests' passed at 2026-11-09 09:44:44.375
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.006 (0.006) seconds
+Test Suite 'WhoopFrameTests' started at 2026-11-09 09:44:44.375
+Test Case 'WhoopFrameTests.testBoundedLargeNoiseAndManyFrames' started at 2026-11-09 09:44:44.375
+Test Case 'WhoopFrameTests.testBoundedLargeNoiseAndManyFrames' passed (0.349 seconds)
+Test Case 'WhoopFrameTests.testCRCDoesNotIncludeHeaderButHeaderHasIndependentIntegrity' started at 2026-11-09 09:44:44.724
+Test Case 'WhoopFrameTests.testCRCDoesNotIncludeHeaderButHeaderHasIndependentIntegrity' passed (0.0 seconds)
+Test Case 'WhoopFrameTests.testCRCValidUnalignedAndEmptyLengthRejected' started at 2026-11-09 09:44:44.725
+Test Case 'WhoopFrameTests.testCRCValidUnalignedAndEmptyLengthRejected' passed (0.001 seconds)
+Test Case 'WhoopFrameTests.testEmbeddedSOFDoesNotSplitAnIncompleteGoodFrame' started at 2026-11-09 09:44:44.725
+Test Case 'WhoopFrameTests.testEmbeddedSOFDoesNotSplitAnIncompleteGoodFrame' passed (0.0 seconds)
+Test Case 'WhoopFrameTests.testEveryTwoFragmentBoundary' started at 2026-11-09 09:44:44.726
+Test Case 'WhoopFrameTests.testEveryTwoFragmentBoundary' passed (0.002 seconds)
+Test Case 'WhoopFrameTests.testIndependentCRCCheckValues' started at 2026-11-09 09:44:44.727
+Test Case 'WhoopFrameTests.testIndependentCRCCheckValues' passed (0.0 seconds)
+Test Case 'WhoopFrameTests.testIndependentFixturesAndRecoveredFields' started at 2026-11-09 09:44:44.728
+Test Case 'WhoopFrameTests.testIndependentFixturesAndRecoveredFields' passed (0.0 seconds)
+Test Case 'WhoopFrameTests.testMaximumLengthCandidateCompletesThenRecovers' started at 2026-11-09 09:44:44.728
+Test Case 'WhoopFrameTests.testMaximumLengthCandidateCompletesThenRecovers' passed (0.035 seconds)
+Test Case 'WhoopFrameTests.testNoiseHeaderCRCAndPayloadCRCResynchronize' started at 2026-11-09 09:44:44.763
+Test Case 'WhoopFrameTests.testNoiseHeaderCRCAndPayloadCRCResynchronize' passed (0.0 seconds)
+Test Case 'WhoopFrameTests.testNotificationDataWithNonzeroStartIndex' started at 2026-11-09 09:44:44.764
+Test Case 'WhoopFrameTests.testNotificationDataWithNonzeroStartIndex' passed (0.0 seconds)
+Test Case 'WhoopFrameTests.testOffWristAndZeroAreKeptRawAndExcludedFromLiveHeartRate' started at 2026-11-09 09:44:44.764
+Test Case 'WhoopFrameTests.testOffWristAndZeroAreKeptRawAndExcludedFromLiveHeartRate' passed (0.0 seconds)
+Test Case 'WhoopFrameTests.testOneByteFragmentsAndConcatenatedFrames' started at 2026-11-09 09:44:44.765
+Test Case 'WhoopFrameTests.testOneByteFragmentsAndConcatenatedFrames' passed (0.001 seconds)
+Test Case 'WhoopFrameTests.testPartialFrameRetainedAndLaterCompletion' started at 2026-11-09 09:44:44.766
+Test Case 'WhoopFrameTests.testPartialFrameRetainedAndLaterCompletion' passed (0.0 seconds)
+Test Case 'WhoopFrameTests.testShortRealtimeAndEarlierRevisionRemainGuarded' started at 2026-11-09 09:44:44.766
+Test Case 'WhoopFrameTests.testShortRealtimeAndEarlierRevisionRemainGuarded' passed (0.0 seconds)
+Test Case 'WhoopFrameTests.testUnknownPacketTypePreservedWithoutRealtimeInterpretation' started at 2026-11-09 09:44:44.766
+Test Case 'WhoopFrameTests.testUnknownPacketTypePreservedWithoutRealtimeInterpretation' passed (0.0 seconds)
+Test Suite 'WhoopFrameTests' passed at 2026-11-09 09:44:44.767
+	 Executed 15 tests, with 0 failures (0 unexpected) in 0.391 (0.391) seconds
+Test Suite 'WhoopLiveSessionTests' started at 2026-11-09 09:44:44.767
+Test Case 'WhoopLiveSessionTests.testFailuresAbortAndRetryDoesNotReuseStaleSequence' started at 2026-11-09 09:44:44.767
+Test Case 'WhoopLiveSessionTests.testFailuresAbortAndRetryDoesNotReuseStaleSequence' passed (0.0 seconds)
+Test Case 'WhoopLiveSessionTests.testHelloSuccessMustMatchBeforeStreamAndNoDuplicateWrites' started at 2026-11-09 09:44:44.767
+Test Case 'WhoopLiveSessionTests.testHelloSuccessMustMatchBeforeStreamAndNoDuplicateWrites' passed (0.002 seconds)
+Test Case 'WhoopLiveSessionTests.testOtherFrameKindsAndGenerationCannotAdvance' started at 2026-11-09 09:44:44.769
+Test Case 'WhoopLiveSessionTests.testOtherFrameKindsAndGenerationCannotAdvance' passed (0.0 seconds)
+Test Case 'WhoopLiveSessionTests.testTimeoutTransportAndBoundedSequenceWrap' started at 2026-11-09 09:44:44.769
+Test Case 'WhoopLiveSessionTests.testTimeoutTransportAndBoundedSequenceWrap' passed (0.004 seconds)
+Test Suite 'WhoopLiveSessionTests' passed at 2026-11-09 09:44:44.773
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.006 (0.006) seconds
+Test Suite 'Selected tests' passed at 2026-11-09 09:44:44.773
+	 Executed 23 tests, with 0 failures (0 unexpected) in 0.404 (0.404) seconds
+◇ Test run started.
+↳ Testing Library Version: 6.2.1 (c9d57c83568b06d)
+↳ Target Platform: x86_64-unknown-linux-gnu
+✔ Test run with 0 tests in 0 suites passed after 0.001 seconds.

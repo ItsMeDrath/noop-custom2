@@ -1,0 +1,19 @@
+{
+  "scope": "Browser review only, not native SDK execution or reference pixel diff",
+  "checks": [
+    "reference score labels and values",
+    "original wordmark, monogram, and DIN display font loaded",
+    "date control centered independently of avatar and battery widths",
+    "no membership-expiry banner or expiry date",
+    "four activities and eight dashboard metrics",
+    "mini-rings appear in scrolled Home header",
+    "five-row quick action menu opens and closes",
+    "dashboard customization changes the selected metric only",
+    "tracker route retains real-native-data boundary",
+    "sample date navigation refreshes rings",
+    "Coach sheet explicitly uses sample conversation",
+    "no page errors or external service requests"
+  ],
+  "mock_sha256": "edf837964ace0a64d820d310ede7eb5df74c781b5341a15abe1b95a40d4386dc",
+  "tokens_sha256": "df8afcf2acf78ad25b5ae03dcca4cd90e4c9e03a458f8dc51d533852747b48c9"
+}

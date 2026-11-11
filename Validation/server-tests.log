@@ -1,0 +1,43 @@
+✔ missing and malformed config stays unconfigured, health redacts values (77.909931ms)
+✔ real local routes: OAuth state, proof-bound native pairing, import and encrypted disconnect (65.336887ms)
+✔ provider and native TTLs expire; callback nonce and duplicates are checked (23.028298ms)
+✔ provider denial redirects with generic error and original app state, consumes state (13.968714ms)
+✔ concurrent callback and pairing replays exchange and persist only once (19.696508ms)
+✔ pagination uses fixed host, ISO bounds and nextToken; unknown targets rejected (26.334301ms)
+✔ repeated cursors and row/response bounds fail instead of truncating (20.31055ms)
+✔ expired access token refresh is single-flight during concurrent requests and rotation persists (38.453345ms)
+✔ upstream 401 refreshes once, concurrent stale responses share rotated access token (31.096505ms)
+✔ disconnect racing refresh never resurrects encrypted provider session (35.823933ms)
+✔ invalid refresh grant removes saved session, provider errors and exceptions are redacted (32.085055ms)
+✔ storage authenticates ciphertext, refuses permissive files and excludes multiple writers (23.044763ms)
+✔ malformed input, JSON size, auth, bounded pending state and rate limiting are enforced (42.71622ms)
+✔ session expiry is enforced and refreshed tokens cannot extend bridge bearer life (19.045097ms)
+▶ row, page, upstream response size and malformed envelopes are bounded with redacted errors
+  ✔ row-limit (18.781925ms)
+  ✔ page-limit (13.976169ms)
+  ✔ page-size (29.681976ms)
+  ✔ cursor-type (23.58496ms)
+  ✔ record-type (15.726776ms)
+  ✔ body-limit (18.371665ms)
+✔ row, page, upstream response size and malformed envelopes are bounded with redacted errors (122.115889ms)
+▶ upstream 429, 500, non-JSON and second 401 use generic errors
+  ✔ rate-limit (14.567529ms)
+  ✔ server-error (13.08947ms)
+  ✔ non-json (14.540319ms)
+  ✔ invalid-json (15.811742ms)
+  ✔ second-unauthorized (21.413379ms)
+✔ upstream 429, 500, non-JSON and second 401 use generic errors (80.742325ms)
+✔ whole import deadline aborts a stalled fake upstream without leaking its details (39.715859ms)
+✔ chunked JSON bodies enforce the 64 KiB limit without relying on Content-Length (9.723667ms)
+✔ historical end timestamp selects a bounded window for every upstream collection (22.575437ms)
+✔ historical end rejects invalid, duplicate, non-UTC, pre-2000 and future values before upstream access (23.574511ms)
+✔ historical end accepts exact boundary timestamps; absent end retains current default window (21.829024ms)
+✔ upstream literal unsafe integers and nonfinite numbers fail generically; fractional scores survive (52.086266ms)
+ℹ tests 33
+ℹ suites 0
+ℹ pass 33
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1006.249705

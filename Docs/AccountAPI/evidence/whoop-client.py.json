@@ -1,0 +1,37 @@
+{
+  "source": "whoop/client.py",
+  "classification": "third-party SDK; not an official WHOOP specification",
+  "sha256": "d47d040c35e71927e584b197ebe249a072aea412282dce4be1869953da0a529a",
+  "excerpts": [
+    {
+      "firstLine": 18,
+      "lastLine": 18,
+      "text": "REQUEST_URL = \"https://api.prod.whoop.com/developer\""
+    },
+    {
+      "firstLine": 82,
+      "lastLine": 82,
+      "text": "        return self._make_request(method=\"GET\", url_slug=\"v2/user/profile/basic\")"
+    },
+    {
+      "firstLine": 153,
+      "lastLine": 163,
+      "text": "                    },\n                    ...\n                ]\n        \"\"\"\n        start, end = self._format_dates(start_date, end_date)\n\n        return self._make_paginated_request(\n            method=\"GET\",\n            url_slug=\"v2/cycle\",\n            params={\"start\": start, \"end\": end, \"limit\": 25},\n        )"
+    },
+    {
+      "firstLine": 248,
+      "lastLine": 256,
+      "text": "                ]\n        \"\"\"\n        start, end = self._format_dates(start_date, end_date)\n\n        return self._make_paginated_request(\n            method=\"GET\",\n            url_slug=\"v2/recovery\",\n            params={\"start\": start, \"end\": end, \"limit\": 25},\n        )"
+    },
+    {
+      "firstLine": 321,
+      "lastLine": 329,
+      "text": "                ]\n        \"\"\"\n        start, end = self._format_dates(start_date, end_date)\n\n        return self._make_paginated_request(\n            method=\"GET\",\n            url_slug=\"v2/activity/sleep\",\n            params={\"start\": start, \"end\": end, \"limit\": 25},\n        )"
+    },
+    {
+      "firstLine": 438,
+      "lastLine": 469,
+      "text": "                ]\n        \"\"\"\n        start, end = self._format_dates(start_date, end_date)\n\n        return self._make_paginated_request(\n            method=\"GET\",\n            url_slug=\"v2/activity/workout\",\n            params={\"start\": start, \"end\": end, \"limit\": 25},\n        )\n\n    ####################################################################################\n    # API HELPER METHODS\n\n    def _make_paginated_request(\n        self, method: str, url_slug: str, **kwargs: Any\n    ) -> list[dict[str, Any]]:\n        params = kwargs.pop(\"params\", {})\n        response_data: list[dict[str, Any]] = []\n\n        while True:\n            response = self._make_request(\n                method=method,\n                url_slug=url_slug,\n                params=params,\n                **kwargs,\n            )\n\n            response_data += response[\"records\"]\n\n            if next_token := response[\"next_token\"]:\n                params[\"nextToken\"] = next_token\n"
+    }
+  ]
+}

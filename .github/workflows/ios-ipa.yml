@@ -1,0 +1,60 @@
+name: Build iPhone IPA
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  device-ipa:
+    runs-on: macos-15
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - name: Find standalone project
+        id: project
+        shell: bash
+        run: |
+          if [[ -f Package.swift && -d WHOOP.xcodeproj ]]; then
+            echo 'directory=.' >> "$GITHUB_OUTPUT"
+          elif [[ -f WHOOP-iOS/Package.swift && -d WHOOP-iOS/WHOOP.xcodeproj ]]; then
+            echo 'directory=WHOOP-iOS' >> "$GITHUB_OUTPUT"
+          else
+            echo 'Place the extracted WHOOP-iOS project at the repository root or in WHOOP-iOS/.' >&2
+            exit 1
+          fi
+      - name: Check build tools
+        run: |
+          xcodebuild -version
+          swift --version
+          python3 --version
+      - name: Test portable core and package validator
+        working-directory: ${{ steps.project.outputs.directory }}
+        run: |
+          python3 Scripts/validate-nutrition-resource.py
+          swift test --parallel
+          python3 -m unittest discover -s Scripts/tests -v
+      - name: Build real arm64 device application and package
+        working-directory: ${{ steps.project.outputs.directory }}
+        run: bash Scripts/package-ipa-on-mac.sh
+      - name: Upload unsigned IPA for device signing
+        uses: actions/upload-artifact@v4
+        with:
+          name: WHOOP-unsigned-iphone-ipa
+          path: |
+            ${{ steps.project.outputs.directory }}/build/WHOOP-unsigned.ipa
+            ${{ steps.project.outputs.directory }}/build/WHOOP-unsigned.ipa.sha256
+          if-no-files-found: error
+          retention-days: 7
+      - name: Upload build diagnostics
+        if: always() && steps.project.outcome == 'success'
+        uses: actions/upload-artifact@v4
+        with:
+          name: WHOOP-build-diagnostics
+          path: |
+            ${{ steps.project.outputs.directory }}/build/device-build.*/xcodebuild.log
+            ${{ steps.project.outputs.directory }}/build/device-build.*/package-check.json
+            ${{ steps.project.outputs.directory }}/build/device-build.*/WHOOP.xcresult
+          if-no-files-found: ignore
+          retention-days: 7

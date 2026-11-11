@@ -1,0 +1,14 @@
+{
+  "scope": "Browser layout only, not native camera execution",
+  "checks": [
+    "overview labels and actual Swift-presenter values",
+    "all five overlay modes select and render",
+    "no fabricated live heart rate in disconnected preview",
+    "bottom drawer opens and closes",
+    "browser capture cannot claim a real photo or video",
+    "camera canvas uses the reference 9:16 aspect ratio",
+    "no JavaScript errors"
+  ],
+  "source": "Core/CameraOverlayData.swift",
+  "metrics_sha256": "6c61b4c771db445e4e1c681898b2e7064b3d8ed4730926cc9efdc3c539531682"
+}

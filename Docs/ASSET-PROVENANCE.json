@@ -1,0 +1,34 @@
+{
+  "source_base_sha256": "f2f84ab1b49fb69e5298ecab5acda706a47cd556df726662792f1cfd6a512c9a",
+  "scope": "User-requested original WHOOP branding assets copied for local iOS reconstruction; no visual parity established.",
+  "assets": [
+    {
+      "member": "res/drawable/design_ic_whoop_logo_text.xml",
+      "sha256": "0b9ae2761d94f5172dbc349a47ef3f619a20b7bcbed1c2f5e80523ea916a4685"
+    },
+    {
+      "member": "res/drawable/whoop_logo_vector.xml",
+      "sha256": "6bf855da9c07d7651cb6dc7cf69412f00de1248046bd4d7e5303baa9b2bcd7df"
+    },
+    {
+      "member": "res/font/dinpro_bold.otf",
+      "sha256": "e67ddf8c385e538b5cc80dfc0e7ac15b1bee2c59280a626321c5f8bae467cec0"
+    },
+    {
+      "member": "res/font/dinpro_medium.otf",
+      "sha256": "4f353e87997c254c379a81770045d40814f32baa2c534540d103415337b5fb93"
+    },
+    {
+      "member": "res/font/dinpro_regular.otf",
+      "sha256": "617311af2fbd10bf1a1c15643661740c83fb812ac56fcd83478c00e239eb5080"
+    },
+    {
+      "member": "res/font/proxima_nova_regular.otf",
+      "sha256": "0e9dbcd81a017784b6f02abf7d43285f48fa98caa49955ca5e1351ed24239399"
+    },
+    {
+      "apkm_member": "icon.png",
+      "sha256": "ce5cce0f7da62aea92b5d34d755833b2004d76041a489290f6da16dff4f28c42"
+    }
+  ]
+}

@@ -1,0 +1,198 @@
+{
+  "checked_at": "2026-11-09",
+  "environment": {
+    "os": "Linux",
+    "swift": "6.2.1 x86_64-unknown-linux-gnu, Swift 5 language mode",
+    "node": "24.22.1",
+    "xcodebuild": null
+  },
+  "portable_core": {
+    "tests_passed": 110,
+    "failures": 0,
+    "log": {
+      "path": "Validation/core-tests.log",
+      "sha256": "1a1bb9eb47a563c2eade4ecbe8384d8baf68f27bfde26a1255bb43025351f853"
+    },
+    "tested_source_sha256": {
+      "Core/ExampleData.swift": "3014187bc99caa707a89b7ce935fc879727dbdb92a980d03a6fc87da17498533",
+      "Core/HeartRateMeasurement.swift": "91149cc3c1fac027601dde3dfed0886bd78726af618a08e5e327d4530466620f",
+      "Core/ImportReader.swift": "845307926a5163e1224867c398233e9c28d2d7178f200127a1f15148abeaaa1e",
+      "Core/LiveStrainEngine.swift": "af8b522eda52790d6e625296b8b57db0c2510378f5aa355286fcd1b3d92002e7",
+      "Core/LiveWorkoutAttributes.swift": "eb0c7aa9580f30f2550031673a620bc5ef7ef2ac6a45c5f59dced1b11f268df9",
+      "Core/LocalBackup.swift": "3c1c512808ed207b1eb4ebe0dbbce82682745b261158116336f826f9c722cc09",
+      "Core/Models.swift": "db3cb4fc8019eac673737fab59a388549cc52d0f2445f5c36497224259455203",
+      "Core/NutritionModels.swift": "8b344270f871210b4d426f80ebab9c00294a918b66170ceb0b95ded2fc9eeca6",
+      "Core/Resources/strain-lookup.json": "28b114fa360be19aafeb805f58d52ff49ae9de1c5d400bd58904a082af404ad2",
+      "Core/SleepIntervals.swift": "4aaf0b699b181db2bc4be0be48edad755799fd42568362ee8885366620814bb2",
+      "Core/StrainCalculator.swift": "885df96dbddd11f3600ffd6a8fd1d9d244828a60bd00205d343768dce1b3aff8",
+      "Core/WhoopAccountData.swift": "5a43226095b711853a948b05f52c573735d27700b18bb1564392ac2be08dcfd5",
+      "Core/WhoopCommands.swift": "2a6d475843d318cf64149a4288b5ba0c9d77571177bb94e333d60136c7dc3c0b",
+      "Core/WhoopDeviceTime.swift": "536fb296b0d826533133961a686acc69c41634f8d5144fa288a1469b73042bed",
+      "Core/WhoopFrames.swift": "7820cd7672ee856d74a48948bc5fd48e6ed69711e4199beb211880d384cfedef",
+      "Core/WhoopHistory.swift": "ba2d26900c5faaceb5c28f64c61a9602616c6bcd3ec6c7f870ef92a5e7e0d417",
+      "Core/WhoopLiveSession.swift": "89b489fd3b5e712e1237c6c337e8b5ffe389675fd2f4574ec44ba48a6149cfa2",
+      "Tests/WHOOPCoreTests/BackupTests.swift": "0fdeee36dc5a38a4ca4ed24bd475353bfd467a2115442c5d5edda52b433e908e",
+      "Tests/WHOOPCoreTests/CoreTests.swift": "0850e96a0c80f743a40fc74c61df8d690da187b68c8a7ce3565060bd3af73b65",
+      "Tests/WHOOPCoreTests/Fixtures/NutritionCalculation.json": "75f7b393dcecb2d2b6ce03e2012d94eeac106c4dadcff63afd7c704e8f2e31ad",
+      "Tests/WHOOPCoreTests/Fixtures/WhoopHistoryFixtures.json": "c7662cde803af553689c8cc48613a853f834c0fd07f9c24047ade76e73ae9417",
+      "Tests/WHOOPCoreTests/LiveStrainTests.swift": "3a5757393de63b014128c3e959dbc6d0a4ab1bb0041c8ad0f58fb0b56dce78a5",
+      "Tests/WHOOPCoreTests/NutritionStorageTests.swift": "3c3b314bdf5ba782bb7ad40c5682fa9caf0b038a234b39ae14e4d5eb79001c9c",
+      "Tests/WHOOPCoreTests/SleepIntervalTests.swift": "7e5dc422a0c159e0700e75a51d4f47baf4b37c2225a367a5ca9a02cb993bac1b",
+      "Tests/WHOOPCoreTests/WhoopAccountTests.swift": "19be616461334abca474857ada85406d5b9a5c90782a02fdacc6c3a179025382",
+      "Tests/WHOOPCoreTests/WhoopCommandTests.swift": "995ac43a8eb82b046a3ab7d0ea5e27e255611e98d7f140e0af97f77cb504c2dd",
+      "Tests/WHOOPCoreTests/WhoopDeviceTimeTests.swift": "a3ea200d5e1a71d5132d8f93b64d3374eeb347ac6fe1baf2bafd904882cfdcd8",
+      "Tests/WHOOPCoreTests/WhoopFrameTests.swift": "23f86e103f619fba9f24878f3f680caefcc0c274b3a65d2215b023e52afbe6ff",
+      "Tests/WHOOPCoreTests/WhoopHistoryTests.swift": "3efd74b31fee57163d23c738bfd0021c859ac295efba88442c73331aa0617c69",
+      "Tests/WHOOPCoreTests/WhoopLiveSessionTests.swift": "c3061c6d8fb7844f8505df0baca4f5ddd3253a569be94cb9567db5a264a62511",
+      "Package.swift": "baafdfae0c6046eebf23c73203dbdefe4721551814a029e52ca33c4cd9c221fa"
+    }
+  },
+  "nutrition_and_server": {
+    "type_script_build_and_strict_typecheck": "passed",
+    "nutrition_tests_passed": 20,
+    "bridge_tests_passed": 35,
+    "failures": 0,
+    "scope": "Offline calculator, generated runner equivalence, AI schema/retry/error contracts and local authenticated HTTP handlers with synthetic upstreams; no external WHOOP/AI requests",
+    "log": {
+      "path": "Validation/nutrition-and-server-tests.log",
+      "sha256": "802b99b1176cf7b883f002c188b44dd42510633cec4cee1b30b50ca73d456c34"
+    },
+    "tested_source_sha256": {
+      "lib/nutrition/calc.ts": "7d1ba1480ce96874cca6b1b15e117818b53026cfbe6009663c290e3e9e4a97c2",
+      "lib/nutrition/prompts.ts": "f2a29052beb32ed4a980a1786118e74e0efd761e769e199027208b3922440f45",
+      "lib/nutrition/routes.ts": "1ac4dbbc798b62a4b41bfeff4d954bf7f4fef51b6d3bf301514c8c6916680b44",
+      "lib/nutrition/tests/calc.test.mjs": "36695171bbd5ff0198b2be27273d996a3ad7a92b3bcda493616c34b84778f74b",
+      "lib/nutrition/tests/routes.test.mjs": "ca308e5970d6a9a178e1cd246b76a95e6a9d8d021df9e0d3df1c629f22ba6bef",
+      "Server/.env.example": "83423a9c8c0a74b412854065bfe9384926cd7bb7dfb34a356e0e7e55ed9e33a5",
+      "Server/.gitignore": "8770d3862f55451e8b8bcba3b2f0099efef7cfa644df79be9bfc169a9c98fde4",
+      "Server/bridge.mjs": "83e94163ef71e387217f36c12fc8ae648a0a378afcb09fbffa0615b82567dfa8",
+      "Server/config.mjs": "0534446e17173f73eabcce24ed9add701cc8ff6851a466690e327c033a19c197",
+      "Server/package.json": "858ed1492ed2cc5d968fc3e350b4b94fbefb234af17e32b156d8e675453ac4ae",
+      "Server/server.mjs": "43861742a59baa6a82f3770f72b5470c42e188b6e1f9b8b45a87143a355b0b4e",
+      "Server/store.mjs": "56a079aa54ad73024b67c947dc875b735ad6d259a9eb462377e08e0927be3ece",
+      "Server/test/bridge.test.mjs": "76473d786000d7ea12383f1271e0a5cee3a22578d7b4e9c93b77fe2c0a3923d8",
+      "package.json": "927e8f33e63a11a6b748cffc6eb936bb426ba1b4ce16219a924c7c1c4a71fee8",
+      "package-lock.json": "a4c45bcbc04d6c46c48a4cfb756ad645dbf1269b41805e55e3f0f6483e036fa3",
+      "tsconfig.json": "9e7417e6e13024eb982fed0fb945f2293c3d0c265685da4a7c135af7a0f5f378",
+      "Scripts/build-nutrition.mjs": "9a211de40d5f117e710a3792828219101f9245ebd03f181cdc5c5ebd12f7162c",
+      "App/Resources/nutrition-calc.js": "297e74a6019a4abc22780138c7a7032c29703bdbabd83b4ec4a064c5d2bcfca7",
+      "App/Resources/nutrition-calc-provenance.json": "a56364833de4fc00f70b0df0f9e3b1556e2fd6cbe1a59d0f14e7fc737a709247"
+    }
+  },
+  "native_source": {
+    "app_swift_files": 25,
+    "widget_swift_files": 1,
+    "frontend_syntax_parse": "passed",
+    "apple_sdk_typecheck": false,
+    "log": {
+      "path": "Validation/app-syntax.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "source_sha256": {
+      "App/AccountModel.swift": "78d8d4870211f2cbde8672f50798867c25d026a69ec751bcfc9de1c153e8c9e6",
+      "App/AppStore.swift": "c7d71fb9a9f5a2792d34be7103f1b1fe998eac020f03374077f0d84860aaf5e8",
+      "App/DeviceModel.swift": "a714933ec3e3bed76a998c46b061bd22988533338f234c7f80048eb20cd7cb6d",
+      "App/HealthDataModel.swift": "59b0aba61746b7285db934a57d7ff78cedc29ea1928b2edfa9d65d777ddabf4d",
+      "App/LiveActivityDriver.swift": "9843e2124a31376eeb16ec5c54c7f57304acbdf9a791a025d634657ba5553a4e",
+      "App/LiveCamera.swift": "15b049d654dafe92ece199418a5ff20876b86dbef34aae12902ddd623dd5b9d5",
+      "App/NutritionModel.swift": "bb38876e9bfaf31a38895e8a9731d52c0a93e1910b5b0e811d0c25c1b2e34e7a",
+      "App/Resources/BrandColors.xcassets/Contents.json": "e8e8ef4b27126d62305af321d12a6e64b866ca0b160f0f83efae90111f0ee576",
+      "App/Resources/BrandColors.xcassets/LaunchBackground.colorset/Contents.json": "5e0b374752291359adf06d09c885a97f345643a0c83a371e9f89b794882be2d6",
+      "App/Resources/Inter-OFL.txt": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57",
+      "App/Resources/Inter.ttf": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031",
+      "App/Resources/PrivacyInfo.xcprivacy": "6452295a6ad29254c92c668038f2c6a2cfd440c07cda81f814e996ac215b8415",
+      "App/Resources/WhoopIcon.png": "ce5cce0f7da62aea92b5d34d755833b2004d76041a489290f6da16dff4f28c42",
+      "App/Resources/dinpro_bold.otf": "e67ddf8c385e538b5cc80dfc0e7ac15b1bee2c59280a626321c5f8bae467cec0",
+      "App/Resources/dinpro_medium.otf": "4f353e87997c254c379a81770045d40814f32baa2c534540d103415337b5fb93",
+      "App/Resources/dinpro_regular.otf": "617311af2fbd10bf1a1c15643661740c83fb812ac56fcd83478c00e239eb5080",
+      "App/Resources/nutrition-calc-provenance.json": "a56364833de4fc00f70b0df0f9e3b1556e2fd6cbe1a59d0f14e7fc737a709247",
+      "App/Resources/nutrition-calc.js": "297e74a6019a4abc22780138c7a7032c29703bdbabd83b4ec4a064c5d2bcfca7",
+      "App/Resources/proxima_nova_regular.otf": "0e9dbcd81a017784b6f02abf7d43285f48fa98caa49955ca5e1351ed24239399",
+      "App/Views/AccountView.swift": "3f25fda8b60da1ed8775a586f26fa1f43c9a13b53dde76ce307f67915a721ab1",
+      "App/Views/DashboardViews.swift": "d9f70c3761ae45b28d4bdb12efe3ccd3d9c8acfba483f17e5bca905c9b8b38c3",
+      "App/Views/DetailViews.swift": "502f516c5e1629d6a09cffcbcf38ceda9bb3f62616b4379b2328b1fe6ed22fa5",
+      "App/Views/ExperienceTierView.swift": "b3b32643c63d3a136c0361be030604f1ba96369e263d55bc381236585f3ab179",
+      "App/Views/HealthImportView.swift": "7c42d6618b114e68e06d34d878765dda35343935796e32989ee6ed998d90718c",
+      "App/Views/LiveView.swift": "2d57402630102962d81e566537f7ac00312e640b359618f463fccc194c09cc68",
+      "App/Views/NutritionComponents.swift": "d7d1d751332aedba1edef0b7570da1059ed54a058ddeab43759a25c72b66d111",
+      "App/Views/NutritionForms.swift": "0652e1ae7f6c689a35dd21de05aa1d7beba92eb744efbd8f66849141490791a4",
+      "App/Views/NutritionSettings.swift": "33ace4db4a5c199f2bf84666bfc48f2b3cbe566120b83811830df9eb49aa49cb",
+      "App/Views/NutritionViews.swift": "126b84438a0e77704a6a3cd968fed38831f9746305d06f803b720ae5a06fd4f8",
+      "App/Views/ReferenceComponents.swift": "342866efe0556a47f1cc3b1f1f88dfcc0ee57f212a4bbf3fa9fce7f0ea9524b6",
+      "App/Views/RootView.swift": "e6704e5f6bd0b496ae90eceaf60f10418486667ecdd39c27dd8da2697c94cc1a",
+      "App/Views/SecondaryViews.swift": "8329fcff68526936bb708e5c1f2e97f7f83db3566df8f471b04504175ffde4cd",
+      "App/Views/Theme.swift": "ee09f79d550e450bf3a9eeca74937a82f2ce45621f2842795d63f4e0f1554baa",
+      "App/Views/WorkoutView.swift": "c2c15a48e35d9ca42290f898454e4f2644d7fa7e37d67860379ac7a6bb707384",
+      "App/WHOOPApp.swift": "d9e8828be441edc1997a9823ba76c1df034b2c3f2b76f2d6689881bb360475d2",
+      "App/WhoopWordmark.swift": "bc7378d50a113546c12bce64d0e251983da0489b18ec77db552cb37c7df67c75",
+      "App/WorkoutRecorder.swift": "e40a23db8345215f9e8f9b08718b12a0afb36edf779843ccf49963cfcc046a00",
+      "LiveActivityWidget/Info.plist": "efb5963747e1d510f127918c846a32948545ea5e9c711fedc24c47a600a8da02",
+      "LiveActivityWidget/WorkoutLiveWidget.swift": "6177066814d96e0fa9599c9b1e4fc6aea34f337c6068f389902063867222724a",
+      "Configuration/Info.plist": "9acbbeeb52daad8c009648df25f61d8364a3c005741ce476c4acd6ecd7c84c6c",
+      "Configuration/WHOOP.entitlements": "e82a7f6e130b0fe65a40214c15b4116c5245125329c63954d9ccdd9cc80f039e",
+      "WHOOP.xcodeproj/project.pbxproj": "e87cf8d0e272da3e960a35515cc5e1da7a4da0bb87a8019f0ce08c6d8ce46a7f",
+      "WHOOP.xcodeproj/xcshareddata/xcschemes/WHOOP.xcscheme": "c0ffabfac234e24874d7d29fe6d2766864c0398b7f765068bc4aafcd122317cc",
+      "Scripts/generate-project.py": "5b2528ef8f03ba694aec77889dd373cb7b3a3006d456cf026b143673a83a7497"
+    }
+  },
+  "project_structure": {
+    "result": "passed",
+    "scope": "OpenStep project parse; source/resource/font references, app-extension dependency and embed phase; no Apple SDK build",
+    "log": {
+      "path": "Validation/project-structure.log",
+      "sha256": "ece6b403e765151d994a14db603bae32c6ca065f8fd2799830450b9cadbc7538"
+    }
+  },
+  "ipa_tooling": {
+    "synthetic_validator_tests_passed": 12,
+    "failures": 0,
+    "log": {
+      "path": "Validation/ipa-validator-tests.log",
+      "sha256": "5492b822db0061b7872e593848702464e3b7bebcb2b99ec3f5d91c6a0b97fd9e"
+    },
+    "shell_syntax": "passed",
+    "source_sha256": {
+      "Scripts/validate-ipa.py": "8befeb4d4a3510c1cccc988c7ec89383b54608241f0f4750a5a5ae456f27f2cb",
+      "Scripts/tests/test_validate_ipa.py": "6e91676f24879b994239263e6d40fadc4943017424aa99fec16b97772cf9b60b",
+      "Scripts/package-ipa-on-mac.sh": "6d3f692e5566122447610f8cb0b99473e41f6d017ea45a014a2cf426d879d6ef",
+      "Scripts/export-signed-ipa-on-mac.sh": "fd0d961bb48e7da226814aa50a5a6eb302b90e5b91d1310b4a3952c40aa4c8a3",
+      "Scripts/build-on-mac.sh": "23038249c6de9f5b8cd1852f2b3771dc09042dede9778e18ab094bb9ac43c2c0",
+      "Build IPA.command": "1f13cdfed7d8f281f88f35482f81be126260ecd93970845ffb0a0d4cbddedd10",
+      "codemagic.yaml": "3469cd93fab24d6cf4ae49aa7608c7e51cdf1a6b936fa7201fd41229d009d1fd",
+      ".github/workflows/ios-ipa.yml": "286f3c8a3a59900ba46869e4ad3b71321bf9429efde399d435d76326f1eab1de"
+    }
+  },
+  "codemagic_package": {
+    "files": 84,
+    "archive_sha256": "a186ebc04b7fe9ba650ff932ffb47824a4865ab340ba5b0767a5f3baf47c4b70",
+    "manifest_hashes_verified": true,
+    "extracted_project_and_nutrition_bundle_checks": "passed",
+    "extracted_synthetic_validator_tests_passed": 12,
+    "log": {
+      "path": "Validation/codemagic-package-check.log",
+      "sha256": "d27691fe033d4d5c9abf27fc26e45e3032b7c8a6d461333189aa706f20f6a08f"
+    },
+    "cloud_build_dispatched": false
+  },
+  "nutrition_browser_preview": {
+    "scope": "Browser approximation, not native iPhone runtime. Illustrative input only; app starts empty. Uses actual generated nutrition calculator.",
+    "checks": [
+      "calories dial opens deep dive",
+      "30-day selector shows 30 calendar slots",
+      "manual draft save updates canonical totals",
+      "day navigation recalculates selected-day totals"
+    ],
+    "calculator_sha256": "7d1ba1480ce96874cca6b1b15e117818b53026cfbe6009663c290e3e9e4a97c2",
+    "font_sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031"
+  },
+  "native_runtime_tested": false,
+  "camera_audio_photo_device_tested": false,
+  "live_activities_device_tested": false,
+  "healthkit_ble_device_tested": false,
+  "external_ai_provider_tested": false,
+  "live_whoop_oauth_tested": false,
+  "server_deployed": false,
+  "signed_ipa_produced": false,
+  "official_whoop_parity_established": false,
+  "limitations": "Linux lacks Apple SDK/Xcode. Source syntax and project structure do not establish successful iOS compilation or runtime. Workout calories/zones are unavailable. Local edition preference grants no official subscription."
+}

@@ -1,0 +1,28 @@
+{
+  "reference": "User-provided WHOOP Profile and Data Highlights screenshots; geometry visually estimated, no native pixel comparison.",
+  "colors": "Existing PulseColor palette, warm-to-dark profile backdrop, peach avatar and decorative gold age orb.",
+  "avatarDiameter": 92,
+  "cardRadius": 11,
+  "profileMetricCardHeight": 140,
+  "highlightRingDiameter": 65,
+  "highlightRingStroke": 3.4,
+  "pageInset": 15,
+  "sectionGap": 26,
+  "toolbarTouchTarget": 44,
+  "highlightPeriods": [
+    "1M",
+    "3M",
+    "ALL TIME"
+  ],
+  "fonts": {
+    "body": "ProximaNova-Regular",
+    "numbersAndLabels": "DINPro-Bold"
+  },
+  "semantics": {
+    "age": "user-entered non-negative decimal text, no numeric ceiling",
+    "whoopAge": "custom display value, not a derived health-age score",
+    "dayStreak": "user override or consecutive saved UTC days",
+    "records": "calculated from saved non-example measurements",
+    "savedDaysCard": "real saved-day count; no fabricated WHOOP membership level"
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "scope": "Conversation attachment index; image bytes are not present as local files",
+  "screens": [
+    {
+      "attachment": 1,
+      "screen": "Profile",
+      "state": "Top, achievements and membership",
+      "implementationStage": "Pending Home approval"
+    },
+    {
+      "attachment": 2,
+      "screen": "Live",
+      "state": "Recovery gauge",
+      "implementationStage": "Pending Home approval"
+    },
+    {
+      "attachment": 3,
+      "screen": "Home",
+      "state": "Stress graph and metric rows",
+      "implementationStage": "Home review"
+    },
+    {
+      "attachment": 4,
+      "screen": "Live",
+      "state": "Three-ring overview",
+      "implementationStage": "Pending Home approval"
+    },
+    {
+      "attachment": 5,
+      "screen": "Stress Monitor",
+      "state": "Gauge, graph and daily breakdown",
+      "implementationStage": "Pending Home approval"
+    },
+    {
+      "attachment": 6,
+      "screen": "Home",
+      "state": "Banner, hero, insight and monitor cards",
+      "implementationStage": "Home review"
+    },
+    {
+      "attachment": 7,
+      "screen": "More",
+      "state": "Shop and membership cards",
+      "implementationStage": "Pending Home approval"
+    },
+    {
+      "attachment": 8,
+      "screen": "Coach",
+      "state": "Bottom sheet over More",
+      "implementationStage": "Pending Home approval"
+    },
+    {
+      "attachment": 9,
+      "screen": "Home",
+      "state": "Quick-action popover",
+      "implementationStage": "Home review"
+    },
+    {
+      "attachment": 10,
+      "screen": "Health",
+      "state": "Labs, monitor and stress cards",
+      "implementationStage": "Pending Home approval"
+    },
+    {
+      "attachment": 11,
+      "screen": "Add Activity",
+      "state": "Selection, times and wear location",
+      "implementationStage": "Pending Home approval"
+    },
+    {
+      "attachment": 12,
+      "screen": "Profile",
+      "state": "Activity totals and referral card",
+      "implementationStage": "Pending Home approval"
+    },
+    {
+      "attachment": 13,
+      "screen": "Live",
+      "state": "Movable metric tiles and real-time HR",
+      "implementationStage": "Pending Home approval"
+    },
+    {
+      "attachment": 14,
+      "screen": "Live",
+      "state": "Day Strain gauge",
+      "implementationStage": "Pending Home approval"
+    },
+    {
+      "attachment": 15,
+      "screen": "Health Monitor",
+      "state": "Heart rate and five metric tiles",
+      "implementationStage": "Pending Home approval"
+    },
+    {
+      "attachment": 16,
+      "screen": "Live",
+      "state": "Hours of sleep gauge",
+      "implementationStage": "Pending Home approval"
+    },
+    {
+      "attachment": 17,
+      "screen": "Device Settings",
+      "state": "WHOOP 4.0 and broadcast toggle",
+      "implementationStage": "Pending Home approval"
+    },
+    {
+      "attachment": 18,
+      "screen": "Profile",
+      "state": "Notable metrics and activity summary",
+      "implementationStage": "Pending Home approval"
+    },
+    {
+      "attachment": 19,
+      "screen": "Profile",
+      "state": "Achievements and data highlights",
+      "implementationStage": "Pending Home approval"
+    },
+    {
+      "attachment": 20,
+      "screen": "Health",
+      "state": "Heart Screener and disclaimer",
+      "implementationStage": "Pending Home approval"
+    },
+    {
+      "attachment": 21,
+      "screen": "Home",
+      "state": "Dashboard and weekly Strain & Recovery chart",
+      "implementationStage": "Home review"
+    },
+    {
+      "attachment": 22,
+      "screen": "Home",
+      "state": "Journal, plan and first dashboard rows",
+      "implementationStage": "Home review"
+    },
+    {
+      "attachment": 23,
+      "screen": "Home",
+      "state": "Discover More and footer",
+      "implementationStage": "Home review"
+    },
+    {
+      "attachment": 24,
+      "screen": "Home",
+      "state": "Day In Review, evening sleep and four activities",
+      "implementationStage": "Home review"
+    },
+    {
+      "attachment": 25,
+      "screen": "Community",
+      "state": "Family plan, referrals and teams",
+      "implementationStage": "Pending Home approval"
+    },
+    {
+      "attachment": 26,
+      "screen": "Health",
+      "state": "Upgrade and Blood Pressure Insights",
+      "implementationStage": "Pending Home approval"
+    },
+    {
+      "attachment": 27,
+      "screen": "Health",
+      "state": "Age orb and pace of aging",
+      "implementationStage": "Pending Home approval"
+    }
+  ]
+}

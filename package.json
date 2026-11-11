@@ -1,0 +1,12 @@
+{
+  "name": "native-nutrition-tooling",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=24.5" },
+  "scripts": {
+    "build": "node Scripts/build-nutrition.mjs && tsc --noEmit",
+    "test": "npm run build && node --test lib/nutrition/tests/*.test.mjs && npm test --prefix Server"
+  },
+  "dependencies": { "zod": "^4.0.0" },
+  "devDependencies": { "typescript": "~5.9.0", "@types/node": "^24.0.0" }
+}

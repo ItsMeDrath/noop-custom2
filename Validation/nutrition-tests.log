@@ -1,0 +1,39 @@
+✔ Mifflin–St Jeor, sex coefficient, activity and goal offsets are explicit (7.755373ms)
+✔ imperial profile and later weight logs normalize before target calculation (1.672564ms)
+✔ manual overrides work without a profile and macro percentages are calculated centrally (0.626514ms)
+✔ unlogged days never fabricate deficits, fat changes or averages (0.709971ms)
+✔ meal totals, exercise and 7700-kcal energy equivalent use only matching dates (1.191894ms)
+✔ weekly totals include completed days only; incomplete eating still appears on intake chart (0.746198ms)
+✔ 7/30-day averages ignore missing logs; protein chart uses actual totals (1.223603ms)
+✔ logging streak deduplicates same-day foods and stops at calendar gaps (0.666158ms)
+✔ rolling weight averages use seven calendar days and retain recorded dates (10.500187ms)
+✔ malformed dates, duplicate IDs, unsupported ranges and nonfinite values fail before calculation (1.200469ms)
+✔ dial fill is bounded; status text accompanies over-target values (0.50161ms)
+✔ generated offline native bundle produces exactly the canonical response (18.266841ms)
+✖ text, photo, exercise and review contracts are validated with typed output (40.451565ms)
+✔ invalid provider JSON retries exactly once and the second valid schema succeeds (3.572104ms)
+✔ invalid values never bypass zod; two failures return a friendly redacted error (2.508711ms)
+✔ missing keys do not contact any provider (0.468608ms)
+✔ HTTP rate limits and provider failures do not retry or expose their bodies (1.810152ms)
+✔ empty text, remote image URLs, invalid image headers and invalid weights are rejected before upstream access (2.525372ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 17
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 295.734689
+
+✖ failing tests:
+
+test at lib/nutrition/tests/routes.test.mjs:7:1
+✖ text, photo, exercise and review contracts are validated with typed output (40.451565ms)
+  Error: The AI could not return usable estimates. Try a clearer description or enter values manually.
+      at ask (file:///workspace/WHOOP-iOS/lib/nutrition/routes.ts:54:42)
+      at async TestContext.<anonymous> (file:///workspace/WHOOP-iOS/lib/nutrition/tests/routes.test.mjs:9:19)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    status: 502,
+    code: 'ai_invalid_response'
+  }

@@ -1,0 +1,72 @@
+{
+  "scope": "Personalized profile, unlimited display-age text, chosen day streak and exported saved-data highlights",
+  "checked_at": "2026-11-10",
+  "entry": "Home avatar \u2192 Edit; More \u2192 Export Data",
+  "portable_core": {
+    "tests_passed": 143,
+    "new_profile_tests": 13,
+    "failures": 0
+  },
+  "swift_frontend_syntax": "passed",
+  "project_structure": "passed",
+  "app_swift_sources": 34,
+  "browser": {
+    "scope": "Illustrative browser layout; native storage and Files picker not exercised",
+    "checks": [
+      "chosen streak and age shown on profile",
+      "highlights match actual Swift export fixture",
+      "age inputs have no upper bound and custom streak saves in layout preview",
+      "invalid age is visible in editor",
+      "four export choices and profile/highlights summary",
+      "no JavaScript errors"
+    ]
+  },
+  "logs": {
+    "profile-targeted-tests.log": {
+      "path": "Validation/profile-targeted-tests.log",
+      "sha256": "8be564833827e6e61ba02f19a433ca0c1b1f3c9b92f3170f354ae6fc335711e1"
+    },
+    "profile-all-core-tests.log": {
+      "path": "Validation/profile-all-core-tests.log",
+      "sha256": "0d4e7b3e220140e1e7772e6eed653bae36906beb6f6c328cb6d4af7dcbcdfffe"
+    },
+    "profile-swift-syntax.log": {
+      "path": "Validation/profile-swift-syntax.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "profile-project.log": {
+      "path": "Validation/profile-project.log",
+      "sha256": "6874f982dcd0680d020e6de57e88704665798e1fa6cdaeb6e9fef03163d92e99"
+    }
+  },
+  "changed_source_sha256": {
+    "Core/Models.swift": "b422b2f77f387f24d26ebd8afdb355b4bc53282b0cc79b99cc768935a806ae32",
+    "Core/MeasurementExport.swift": "be5b70ed4f793dbfcf3291285c80ca3009bb9a887570808fe8210d16db59fd01",
+    "Core/LocalBackup.swift": "d947d96aaf2763e7d643e9c436e14442424c1baa7c938d62f01b1958b7210582",
+    "App/AppStore.swift": "8b5a451bdd5744e293286c05918968b35dde6ea88f7b68acf1d72e16798972c5",
+    "App/Pulse/PulseHomeView.swift": "19262dd9edfeca5c39f52f1fa89c2772c53d21ac9609c0f7f2d61948da0cb5fd",
+    "App/Pulse/PulseHomePanels.swift": "c19f1e45ab30d71efdbb1dc539298838a0a2a6ec5bde29f639130e6776398641",
+    "App/Pulse/PulseComponents.swift": "d7488e4d58a8132cdcc7abbe4c6e420af46ec56deac36ae5ce2b2c33bdd14655",
+    "App/Views/MeasurementExportView.swift": "9fcd0185e898389f92c7eed9dd046cd88d3c256e048573045d71e48b9626d62d",
+    "App/Views/RootView.swift": "75e470ab1ac687e740f303c390f267cf58293f4eb406f0daff603500d949614d",
+    "Tests/WHOOPCoreTests/MeasurementExportTests.swift": "b8a2d0080c5dba13b3068f90cacf6146d21db5dbad41266779ae1faf9115b326"
+  },
+  "export_formats": [
+    "personalized JSON",
+    "profile/highlights CSV",
+    "daily CSV",
+    "heart-rate CSV"
+  ],
+  "profile_persists_in_existing_store": true,
+  "age_numeric_upper_limit": null,
+  "age_representation": "non-negative decimal string",
+  "chosen_values_separate_from_measured_highlights": true,
+  "legacy_backups_supported": true,
+  "example_days_in_exported_highlights": false,
+  "apple_sdk_build": false,
+  "native_persistence_test": false,
+  "native_file_exporter_test": false,
+  "exact_visual_match": false,
+  "signed_ipa_produced": false,
+  "review": "Docs/PROFILE-PERSONALIZATION.md"
+}

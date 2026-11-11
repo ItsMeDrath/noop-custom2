@@ -1,0 +1,12 @@
+import { readFile, writeFile, mkdir } from 'node:fs/promises';
+import { stripTypeScriptTypes } from 'node:module';
+import { createHash } from 'node:crypto';
+const source = await readFile(new URL('../lib/nutrition/calc.ts', import.meta.url), 'utf8');
+const plain = stripTypeScriptTypes(source).replace('export function calculateNutrition', 'function calculateNutrition');
+if (/\bexport\s+(?:function|const|class|\{)/.test(plain)) throw new Error('Unexpected runtime export in calculator.');
+const output = `/* Generated from lib/nutrition/calc.ts. Run npm run build; do not edit. */\nglobalThis.NutritionCalc = (() => {\n${plain}\nreturn { calculate: json => JSON.stringify(calculateNutrition(JSON.parse(json))) };\n})();\n`;
+const directory = new URL('../App/Resources/', import.meta.url); await mkdir(directory, {recursive:true});
+await writeFile(new URL('nutrition-calc.js', directory), output);
+const sha = value => createHash('sha256').update(value).digest('hex');
+await writeFile(new URL('nutrition-calc-provenance.json', directory), JSON.stringify({source:'lib/nutrition/calc.ts',source_sha256:sha(source),bundle_sha256:sha(output)},null,2)+'\n');
+console.info('Generated native offline nutrition calculator from the single TypeScript source.');

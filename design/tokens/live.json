@@ -1,0 +1,59 @@
+{
+  "reference": "User supplied WHOOP Live Overview screenshot, displayed 945 \u00d7 2048; earlier Live/Strain/Recovery/Sleep references retained.",
+  "provenance": "Estimated from the displayed attachment; original screenshot bytes unavailable. No sampled-color or native pixel-match claim.",
+  "viewport": {
+    "width": 393,
+    "height": 852
+  },
+  "camera": {
+    "aspectRatio": "9:16",
+    "width": 393,
+    "height": 698.6667,
+    "top": 53.3333,
+    "cornerRadius": 8
+  },
+  "overview": {
+    "ringDiameterWidthFraction": 0.222,
+    "ringStrokeWidthFraction": 0.011,
+    "centerYCameraFraction": 0.713,
+    "centerXWidthFractions": [
+      0.205,
+      0.5,
+      0.795
+    ],
+    "numberFontWidthFraction": 0.083,
+    "labelFontWidthFraction": 0.025,
+    "labelTrackingWidthFraction": 0.004,
+    "arcCap": "butt",
+    "sleepRing": "outline only; actual sleep duration, not Sleep Performance"
+  },
+  "detail": {
+    "ringDiameterWidthFraction": 0.75,
+    "ringStrokeWidthFraction": 0.038,
+    "centerYCameraFraction": 0.5,
+    "numberFontWidthFraction": 0.22,
+    "wordmarkWidthFraction": 0.24
+  },
+  "controls": {
+    "shutterOuter": 69,
+    "shutterInner": 56,
+    "minimumTouchHeight": 44,
+    "controlsCenterYCameraFraction": 0.933,
+    "footerHeight": 100,
+    "modeCenterY": 30,
+    "caretCenterY": 68,
+    "modeWidth": 108
+  },
+  "typography": {
+    "numbersAndLabels": "DINPro-Bold",
+    "body": "ProximaNova-Regular",
+    "wordmark": "shared supplied vector path"
+  },
+  "motion": {
+    "modeSeconds": 0.22,
+    "modeCurve": "easeInOut",
+    "respectReduceMotion": true,
+    "source": "Implementation timings, not verified against the running official app."
+  },
+  "intentionalLabels": "Example and recorded-day date labels stay visible in preview and exported media; missing live HR says Connect and missing day scores say Sync."
+}

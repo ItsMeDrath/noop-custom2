@@ -1,0 +1,16 @@
+{
+  "scope": "Browser interpretation, not native rendering or pixel match",
+  "checks": [
+    "ring context changes",
+    "previous sample day updates scores",
+    "day menu restores selected date",
+    "daily check-in expands",
+    "statistic list collapses and restores",
+    "seven statistic rows present",
+    "tracker action explains native Bluetooth boundary",
+    "Sleep Recovery Strain labels restored",
+    "no page script errors"
+  ],
+  "mock_sha256": "c6967e40bc799ff6c562fd991ec3429b9a324ab7bfefac8fc3a0faed510cd59c",
+  "tokens_sha256": "98fef982f395d1b5915284820085d1e7ad7c1a08cebde921fb424cc436b3e7ff"
+}

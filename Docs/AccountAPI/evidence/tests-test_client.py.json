@@ -1,0 +1,12 @@
+{
+  "source": "tests/test_client.py",
+  "classification": "third-party SDK; not an official WHOOP specification",
+  "sha256": "aaed235a6e7da27ebf35cb99c094cfe97b5992e1e23e5fbae881723f09b27e43",
+  "excerpts": [
+    {
+      "firstLine": 1,
+      "lastLine": 30,
+      "text": "\"\"\"Tests for whoop.client: data endpoints, pagination, date formatting.\n\nEvery endpoint funnels through `_make_request`, which is exercised for real by\npatching `session.request` to return a fake response. Synthetic fixtures only.\n\"\"\"\n\nfrom __future__ import annotations\n\nfrom datetime import UTC, datetime, timedelta\n\nimport pytest\n\nfrom whoop import REQUEST_URL, WhoopClient\n\nfrom . import conftest as fx\n\n\ndef _called_url(mock) -> str:\n    return mock.call_args.kwargs[\"url\"]\n\n\ndef _called_params(mock) -> dict:\n    return mock.call_args.kwargs.get(\"params\", {})\n\n\n# --- Single-record endpoints -------------------------------------------------\n\n\ndef test_get_profile(client: WhoopClient, patched_request):\n    mock = patched_request(fx.PROFILE)"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "days": [
+    {
+      "date": "2026-11-01",
+      "source": "example",
+      "recovery": 78,
+      "strain": 10.4,
+      "sleepPerformance": 89,
+      "sleepMinutes": 445,
+      "sleepNeededMinutes": 500,
+      "restingHeartRate": 52,
+      "hrv": 74,
+      "respiratoryRate": 14.2,
+      "steps": 8000,
+      "energyKcal": 2300,
+      "heartRates": [
+        {
+          "timestamp": "2026-11-01T08:00:00.125Z",
+          "bpm": 72
+        },
+        {
+          "timestamp": "2026-11-01T08:00:01.125Z",
+          "bpm": 74
+        }
+      ]
+    }
+  ]
+}

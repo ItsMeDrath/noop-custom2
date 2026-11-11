@@ -1,0 +1,22 @@
+{
+  "source": "tests/conftest.py",
+  "classification": "third-party SDK; not an official WHOOP specification",
+  "sha256": "5c0484e7ab2416c6540c061bf35ad63ef0cdccd63d4cb456e88e7166b824e085",
+  "excerpts": [
+    {
+      "firstLine": 1,
+      "lastLine": 6,
+      "text": "\"\"\"Shared fixtures for the WHOOP client test suite.\n\nAll values here are synthetic and fabricated. No real WHOOP accounts, tokens,\nemails, or biometric data appear anywhere. Every test runs fully offline; the\nnetwork is never touched.\n\"\"\""
+    },
+    {
+      "firstLine": 25,
+      "lastLine": 33,
+      "text": "    \"token_type\": \"bearer\",\n    \"expires_at\": 9999999999,\n    \"scope\": \"read:profile offline\",\n}\n\n\nclass FakeResponse:\n    \"\"\"Minimal stand-in for a requests Response object.\"\"\"\n"
+    },
+    {
+      "firstLine": 77,
+      "lastLine": 175,
+      "text": "\n\n# --- Synthetic v2 fixture shapes (fabricated values, accurate keys) ----------\n# v2 detail: cycle & recovery use INTEGER ids; sleep & workout use UUID strings.\n\nPROFILE = {\n    \"user_id\": 12345,\n    \"email\": \"test@example.com\",\n    \"first_name\": \"Test\",\n    \"last_name\": \"User\",\n}\n\nBODY = {\n    \"height_meter\": 1.8,\n    \"weight_kilogram\": 80.0,\n    \"max_heart_rate\": 190,\n}\n\nCYCLE = {\n    \"id\": 111,\n    \"user_id\": 12345,\n    \"created_at\": \"2026-04-24T11:25:44.774Z\",\n    \"updated_at\": \"2026-04-24T14:25:44.774Z\",\n    \"start\": \"2026-04-24T02:25:44.774Z\",\n    \"end\": \"2026-04-24T10:25:44.774Z\",\n    \"timezone_offset\": \"-05:00\",\n    \"score_state\": \"SCORED\",\n    \"score\": {\n        \"strain\": 5.0,\n        \"kilojoule\": 8000.0,\n        \"average_heart_rate\": 60,\n        \"max_heart_rate\": 140,\n    },\n}\n\nSLEEP_UUID = \"5c060dd1-975d-4544-880c-3def81bdfb0d\"\nWORKOUT_UUID = \"a1b2c3d4-0000-4444-8888-1234567890ab\"\n\nACTIVITY_MAPPING = {\n    \"v2_activity_id\": SLEEP_UUID,\n}\n\nRECOVERY = {\n    \"cycle_id\": 111,\n    \"sleep_id\": SLEEP_UUID,\n    \"user_id\": 12345,\n    \"score_state\": \"SCORED\",\n    \"score\": {\n        \"user_calibrating\": False,\n        \"recovery_score\": 50,\n        \"resting_heart_rate\": 60,\n        \"hrv_rmssd_milli\": 30.0,\n        \"spo2_percentage\": 95.0,\n        \"skin_temp_celsius\": 33.0,\n    },\n}\n\nSLEEP = {\n    \"id\": SLEEP_UUID,\n    \"user_id\": 12345,\n    \"nap\": False,\n    \"score_state\": \"SCORED\",\n    \"score\": {\n        \"stage_summary\": {},\n        \"sleep_needed\": {},\n        \"respiratory_rate\": 16.0,\n        \"sleep_performance_percentage\": 90,\n        \"sleep_consistency_percentage\": 85,\n        \"sleep_efficiency_percentage\": 90.0,\n    },\n}\n\nSLEEP_STREAM = {\n    \"stream\": [\n        {\n            \"timestamp\": \"2026-04-24T02:25:44Z\",\n            \"hr\": 55,\n            \"is_sleeping\": True,\n        }\n    ],\n    \"algorithm_version\": \"v1\",\n}\n\nWORKOUT = {\n    \"id\": WORKOUT_UUID,\n    \"user_id\": 12345,\n    \"score_state\": \"SCORED\",\n    \"score\": {\n        \"strain\": 8.0,\n        \"average_heart_rate\": 120,\n        \"max_heart_rate\": 150,\n        \"kilojoule\": 1500.0,\n    },\n}\n\n\ndef envelope(item: Any, next_token: str | None = None) -> dict[str, Any]:\n    \"\"\"Wrap one record in a collection-response envelope.\"\"\"\n    return {\"records\": [item], \"next_token\": next_token}"
+    }
+  ]
+}

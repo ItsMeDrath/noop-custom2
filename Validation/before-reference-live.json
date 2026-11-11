@@ -1,0 +1,72 @@
+{
+  "scope": "In-app saved-measurement export, Home branding and prior features retained",
+  "checked_at": "2026-11-10",
+  "entry": "More \u2192 Export Data",
+  "formats": [
+    "JSON day archive",
+    "daily summary CSV",
+    "heart-rate CSV"
+  ],
+  "example_days_exported": false,
+  "official_whoop_only_provenance_claimed": false,
+  "portable_core": {
+    "tests_passed": 123,
+    "export_tests_passed": 13,
+    "failures": 0
+  },
+  "swift_frontend_syntax": "passed",
+  "project_structure": "passed",
+  "app_swift_sources": 33,
+  "logs": {
+    "measurement-export-tests.log": {
+      "path": "Validation/measurement-export-tests.log",
+      "sha256": "919892c70bb91dd504b894a746d439c05d72590695da342ce556cad769f465eb"
+    },
+    "measurement-export-all-core-tests.log": {
+      "path": "Validation/measurement-export-all-core-tests.log",
+      "sha256": "584dea30651819590ad1faad78b19b5ee1fbfea0844006ef24af3f17bafc063c"
+    },
+    "measurement-export-swift-syntax.log": {
+      "path": "Validation/measurement-export-swift-syntax.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "measurement-export-project.log": {
+      "path": "Validation/measurement-export-project.log",
+      "sha256": "1685098410881f2af14bdfb8a1468743e3cf8ce5da3010a1a36c0b66ddb2ffdc"
+    }
+  },
+  "changed_source_sha256": {
+    "Core/MeasurementExport.swift": "9077a93aab5116d6c7cdfcd156526577302a53e99d037d709060f1856d2240b0",
+    "App/Views/MeasurementExportView.swift": "cf91d50d76cc664eaef2192ef73750c045b99dfe995e8de9d30b54c1591a678d",
+    "App/WHOOPApp.swift": "69c07b52ae62e0d1a3a46dc3d82af027e189bdbdb9a8066cd975025ef67c854c",
+    "App/Pulse/PulseComponents.swift": "5e2060a828d263f715392b1d7aa9dde40d1a0d253a9ed4c10942950f78dc8494",
+    "App/Pulse/PulseHomeView.swift": "eb3f7daad5bb3483b6650509accb16f16e03670c519d8dd8ee8aed7a85404646",
+    "App/Views/RootView.swift": "d624c602c8f58ea675b333dce1ee56419d43263fa6b899bfe5d52f5583cf043a",
+    "Tests/WHOOPCoreTests/MeasurementExportTests.swift": "500797d9f50e4aeacdd10338801d97e7d478369e92b4ef12f14a9380032a2587",
+    "WHOOP.xcodeproj/project.pbxproj": "0b5ea91f428de2281515e8797dda902705feba53d973b8cdf788a899f33aed41"
+  },
+  "core_source_sha256": {
+    "Core/ExampleData.swift": "3014187bc99caa707a89b7ce935fc879727dbdb92a980d03a6fc87da17498533",
+    "Core/HeartRateMeasurement.swift": "91149cc3c1fac027601dde3dfed0886bd78726af618a08e5e327d4530466620f",
+    "Core/ImportReader.swift": "845307926a5163e1224867c398233e9c28d2d7178f200127a1f15148abeaaa1e",
+    "Core/LiveStrainEngine.swift": "af8b522eda52790d6e625296b8b57db0c2510378f5aa355286fcd1b3d92002e7",
+    "Core/LiveWorkoutAttributes.swift": "eb0c7aa9580f30f2550031673a620bc5ef7ef2ac6a45c5f59dced1b11f268df9",
+    "Core/LocalBackup.swift": "3c1c512808ed207b1eb4ebe0dbbce82682745b261158116336f826f9c722cc09",
+    "Core/MeasurementExport.swift": "9077a93aab5116d6c7cdfcd156526577302a53e99d037d709060f1856d2240b0",
+    "Core/Models.swift": "db3cb4fc8019eac673737fab59a388549cc52d0f2445f5c36497224259455203",
+    "Core/NutritionModels.swift": "8b344270f871210b4d426f80ebab9c00294a918b66170ceb0b95ded2fc9eeca6",
+    "Core/SleepIntervals.swift": "4aaf0b699b181db2bc4be0be48edad755799fd42568362ee8885366620814bb2",
+    "Core/StrainCalculator.swift": "885df96dbddd11f3600ffd6a8fd1d9d244828a60bd00205d343768dce1b3aff8",
+    "Core/WhoopAccountData.swift": "5a43226095b711853a948b05f52c573735d27700b18bb1564392ac2be08dcfd5",
+    "Core/WhoopCommands.swift": "2a6d475843d318cf64149a4288b5ba0c9d77571177bb94e333d60136c7dc3c0b",
+    "Core/WhoopDeviceTime.swift": "536fb296b0d826533133961a686acc69c41634f8d5144fa288a1469b73042bed",
+    "Core/WhoopFrames.swift": "7820cd7672ee856d74a48948bc5fd48e6ed69711e4199beb211880d384cfedef",
+    "Core/WhoopHistory.swift": "ba2d26900c5faaceb5c28f64c61a9602616c6bcd3ec6c7f870ef92a5e7e0d417",
+    "Core/WhoopLiveSession.swift": "89b489fd3b5e712e1237c6c337e8b5ffe389675fd2f4574ec44ba48a6149cfa2"
+  },
+  "apple_sdk_build": false,
+  "native_file_exporter_test": false,
+  "user_account_data_exported_here": false,
+  "signed_ipa_produced": false,
+  "review": "Docs/DATA-EXPORT.md"
+}

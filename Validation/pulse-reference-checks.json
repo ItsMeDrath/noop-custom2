@@ -1,0 +1,16 @@
+{
+  "scope": "Browser review only, not native SDK execution or reference pixel diff",
+  "checks": [
+    "reference score labels and values",
+    "four activities and eight dashboard metrics",
+    "mini-rings appear in scrolled Home header",
+    "five-row quick action menu opens and closes",
+    "dashboard customization changes the selected metric only",
+    "tracker route retains real-native-data boundary",
+    "sample date navigation refreshes rings",
+    "Coach sheet explicitly uses sample conversation",
+    "no page errors or external service requests"
+  ],
+  "mock_sha256": "30e5e09cd6df243aca8a60fc29c3d40ede864ed2140dce92203cf0126911e013",
+  "tokens_sha256": "3f93583d885756bf5b504bd9498d8c24753d1e9de0ea9da20253384e5a83e5c1"
+}

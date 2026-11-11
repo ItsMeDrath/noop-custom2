@@ -1,0 +1,156 @@
+{
+  "brand": "WHOOP",
+  "reference": "Latest 27 user-supplied screenshots: 945 \u00d7 2048 displayed images; primary Home image with membership banner and 33 / 38 / 15.8 rings, plus four Home scroll positions.",
+  "provenance": "Geometry estimated from displayed attachment coordinates using 945/393 scale. Colors visually estimated, not extracted from image bytes. Native rendering and pixel equality remain unverified.",
+  "viewport": {
+    "width": 393,
+    "height": 852,
+    "referenceImageWidth": 945,
+    "referenceImageHeight": 2048,
+    "displayScale": 2.404580152671756,
+    "safeTop": 47,
+    "safeBottom": 34
+  },
+  "colors": {
+    "background": "#101517",
+    "backgroundTop": "#263239",
+    "card": "#2B3135",
+    "elevated": "#41484C",
+    "border": "#FFFFFF04",
+    "text": "#F4F6F7",
+    "muted": "#9FA9AF",
+    "sleep": "#7CA5BB",
+    "recovery": "#FFE000",
+    "strain": "#009FE7",
+    "mint": "#00DCA4",
+    "yellow": "#FFAA15",
+    "ringTrack": "#FFFFFF16",
+    "coach": "#292A44"
+  },
+  "typography": {
+    "family": "Proxima Nova body; DIN Pro numbers and uppercase labels",
+    "brand": {
+      "asset": "WhoopWordmark",
+      "width": 65,
+      "height": 12
+    },
+    "dial": {
+      "size": 26,
+      "weight": 700,
+      "tracking": -1,
+      "percentSize": 17,
+      "family": "DINPro-Bold"
+    },
+    "section": {
+      "size": 20,
+      "weight": 600,
+      "tracking": -0.6
+    },
+    "cardTitle": {
+      "size": 13.5,
+      "weight": 600
+    },
+    "body": {
+      "size": 13,
+      "weight": 400,
+      "lineHeight": 18,
+      "family": "ProximaNova-Regular"
+    },
+    "label": {
+      "size": 9,
+      "weight": 600,
+      "tracking": 0.9,
+      "family": "DINPro-Bold"
+    },
+    "micro": {
+      "size": 8,
+      "weight": 500,
+      "tracking": 0.5
+    },
+    "compactValues": {
+      "family": "DINPro-Medium",
+      "size": 10
+    }
+  },
+  "spacing": [
+    4,
+    6,
+    8,
+    10,
+    12,
+    16,
+    20,
+    24,
+    32
+  ],
+  "radii": {
+    "card": 11,
+    "chip": 5,
+    "date": 20,
+    "button": 6,
+    "tabBar": 30,
+    "coach": 22,
+    "quickMenu": 19
+  },
+  "components": {
+    "pageInset": 14.5,
+    "headerHeight": 43,
+    "heroGap": 12,
+    "ringDiameter": 81,
+    "ringStroke": 5.8,
+    "ringCap": "round",
+    "ringStartDegrees": -90,
+    "ringPreviousTickStroke": 1.8,
+    "cardPadding": 14,
+    "cardBorder": 0,
+    "monitorHeight": 85,
+    "outlookHeight": 44,
+    "activityRowHeight": 51,
+    "tabBarHeight": 58,
+    "tabIcon": 20,
+    "tabLabel": 9,
+    "plusDiameter": 34,
+    "minTouch": 44,
+    "tabBarWidth": 302,
+    "coachDiameter": 58,
+    "tabBarBottomInset": 26,
+    "initialContentTopInset": 22,
+    "cardAlpha": 0.92,
+    "dashboardRowHeight": 56,
+    "weeklyChartCardHeight": 279,
+    "dashboardHeadingHeight": 34,
+    "dateCenterWidth": 75
+  },
+  "motion": {
+    "ringSeconds": 0.7,
+    "ringCurve": "easeOut",
+    "contentSeconds": 0.22,
+    "respectReduceMotion": true,
+    "source": "Implementation choices; screenshots do not establish official timings.",
+    "pressSeconds": 0.12,
+    "pressScale": 0.98,
+    "menuSeconds": 0.18,
+    "compactHeaderSeconds": 0.18,
+    "numericTransition": "iOS 17 numericText"
+  },
+  "requiredNativeComparison": "Blocked: Linux executor has no Xcode, xcrun or Apple simulator. No exact-match claim is made.",
+  "revision": 5,
+  "sectionOrder": [
+    "WHOOP wordmark and score rings",
+    "Pushing Limits insight",
+    "Health Monitor and Stress Monitor",
+    "My Day and Day In Review",
+    "Tonight\u2019s Sleep",
+    "Today\u2019s Activities",
+    "My Journal",
+    "My Plan",
+    "My Dashboard: calories, steps, RHR",
+    "Strain & Recovery chart",
+    "Stress Monitor chart",
+    "HRV, HR zones, strength, VO2 max, weight",
+    "Discover More",
+    "WHOOP Peak footer"
+  ],
+  "revisionNotes": "WHOOP identity restored by explicit user request; original supplied wordmark/monogram and bundled DIN Pro/Proxima Nova fonts. Expiry banner remains removed. Date pill has a separate selected center. Original-app animation timing is unverified.",
+  "membershipExpiryBanner": false
+}

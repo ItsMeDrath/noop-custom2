@@ -1,0 +1,1380 @@
+{
+  "scope": "WHOOP with personalized profile, saved-data highlights, Live camera and measurement export in the existing iOS project, with legacy reconstruction source retained. No signed iPhone binary or account credentials.",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 173,
+      "sha256": "98d98085f8878851d21c084471fca5870692a3f1cb8da1ae14e07f85a7143f69"
+    },
+    {
+      "path": ".github/workflows/ios-ipa.yml",
+      "bytes": 2215,
+      "sha256": "286f3c8a3a59900ba46869e4ad3b71321bf9429efde399d435d76326f1eab1de"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 132,
+      "sha256": "9ea6bd128fdc8a1ddf0ad162ecac09e61eb81855d9eb16661ecb483af0ea3f38"
+    },
+    {
+      "path": "ACCOUNT-CONTRACT.md",
+      "bytes": 4402,
+      "sha256": "7bd9bfb702233d1c239b6e6a905952ddd3f47c2d2a4066c214da9b55dc7886ee"
+    },
+    {
+      "path": "ATTRIBUTION.md",
+      "bytes": 7161,
+      "sha256": "ef1a2c0ebf39a0d5bcdf7b892bfccd69a50366113eb3cdcbc154c4d94ac8530e"
+    },
+    {
+      "path": "App/AccountModel.swift",
+      "bytes": 22774,
+      "sha256": "78d8d4870211f2cbde8672f50798867c25d026a69ec751bcfc9de1c153e8c9e6"
+    },
+    {
+      "path": "App/AppStore.swift",
+      "bytes": 17857,
+      "sha256": "8b5a451bdd5744e293286c05918968b35dde6ea88f7b68acf1d72e16798972c5"
+    },
+    {
+      "path": "App/DeviceModel.swift",
+      "bytes": 18406,
+      "sha256": "a714933ec3e3bed76a998c46b061bd22988533338f234c7f80048eb20cd7cb6d"
+    },
+    {
+      "path": "App/HealthDataModel.swift",
+      "bytes": 14482,
+      "sha256": "59b0aba61746b7285db934a57d7ff78cedc29ea1928b2edfa9d65d777ddabf4d"
+    },
+    {
+      "path": "App/LiveActivityDriver.swift",
+      "bytes": 3174,
+      "sha256": "9843e2124a31376eeb16ec5c54c7f57304acbdf9a791a025d634657ba5553a4e"
+    },
+    {
+      "path": "App/LiveCamera.swift",
+      "bytes": 28331,
+      "sha256": "0a36e85e4f1d40512061227e338da50e6a35fb710fc9bf233e06ab181146133c"
+    },
+    {
+      "path": "App/NutritionModel.swift",
+      "bytes": 6569,
+      "sha256": "bb38876e9bfaf31a38895e8a9731d52c0a93e1910b5b0e811d0c25c1b2e34e7a"
+    },
+    {
+      "path": "App/Pulse/PulseComponents.swift",
+      "bytes": 13480,
+      "sha256": "d7488e4d58a8132cdcc7abbe4c6e420af46ec56deac36ae5ce2b2c33bdd14655"
+    },
+    {
+      "path": "App/Pulse/PulseHomeCards.swift",
+      "bytes": 7241,
+      "sha256": "b133a9dc59190acad5f07cfe1663ec5c30c49c05373c1338c22aa6595ceca555"
+    },
+    {
+      "path": "App/Pulse/PulseHomeCharts.swift",
+      "bytes": 7044,
+      "sha256": "0cb8c0f2a12c01f4fb68c04e20e6b972bb449f0ce45d44fc26c38d1b5ea37126"
+    },
+    {
+      "path": "App/Pulse/PulseHomeData.swift",
+      "bytes": 2250,
+      "sha256": "7f482a72501ecf1142ed48980898ac1d7bf3387876b2b7d3ae30b9c5b68b4a2a"
+    },
+    {
+      "path": "App/Pulse/PulseHomePanels.swift",
+      "bytes": 26871,
+      "sha256": "c19f1e45ab30d71efdbb1dc539298838a0a2a6ec5bde29f639130e6776398641"
+    },
+    {
+      "path": "App/Pulse/PulseHomeView.swift",
+      "bytes": 21917,
+      "sha256": "19262dd9edfeca5c39f52f1fa89c2772c53d21ac9609c0f7f2d61948da0cb5fd"
+    },
+    {
+      "path": "App/Pulse/PulseTrackerView.swift",
+      "bytes": 8427,
+      "sha256": "08f448af977f8762434e27b1bccd779c15910853d12b75ed08d9736c296d7b35"
+    },
+    {
+      "path": "App/Resources/BrandColors.xcassets/Contents.json",
+      "bytes": 43,
+      "sha256": "e8e8ef4b27126d62305af321d12a6e64b866ca0b160f0f83efae90111f0ee576"
+    },
+    {
+      "path": "App/Resources/BrandColors.xcassets/LaunchBackground.colorset/Contents.json",
+      "bytes": 316,
+      "sha256": "5e0b374752291359adf06d09c885a97f345643a0c83a371e9f89b794882be2d6"
+    },
+    {
+      "path": "App/Resources/BrandColors.xcassets/WhoopAppIcon.appiconset/Contents.json",
+      "bytes": 205,
+      "sha256": "234d449d07db9bcb488f283aa1d695435e42d80d4498c4530bbf81d4737bed84"
+    },
+    {
+      "path": "App/Resources/BrandColors.xcassets/WhoopAppIcon.appiconset/WhoopIcon.png",
+      "bytes": 42331,
+      "sha256": "d05d093f5bdb53d8e04eceafe86de7a2fda506391af717e95bfcf212490423bd"
+    },
+    {
+      "path": "App/Resources/Inter-OFL.txt",
+      "bytes": 4377,
+      "sha256": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57"
+    },
+    {
+      "path": "App/Resources/Inter.ttf",
+      "bytes": 876576,
+      "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031"
+    },
+    {
+      "path": "App/Resources/PrivacyInfo.xcprivacy",
+      "bytes": 551,
+      "sha256": "6452295a6ad29254c92c668038f2c6a2cfd440c07cda81f814e996ac215b8415"
+    },
+    {
+      "path": "App/Resources/WhoopIcon.png",
+      "bytes": 43181,
+      "sha256": "ce5cce0f7da62aea92b5d34d755833b2004d76041a489290f6da16dff4f28c42"
+    },
+    {
+      "path": "App/Resources/dinpro_bold.otf",
+      "bytes": 90228,
+      "sha256": "e67ddf8c385e538b5cc80dfc0e7ac15b1bee2c59280a626321c5f8bae467cec0"
+    },
+    {
+      "path": "App/Resources/dinpro_medium.otf",
+      "bytes": 89060,
+      "sha256": "4f353e87997c254c379a81770045d40814f32baa2c534540d103415337b5fb93"
+    },
+    {
+      "path": "App/Resources/dinpro_regular.otf",
+      "bytes": 87364,
+      "sha256": "617311af2fbd10bf1a1c15643661740c83fb812ac56fcd83478c00e239eb5080"
+    },
+    {
+      "path": "App/Resources/nutrition-calc-provenance.json",
+      "bytes": 214,
+      "sha256": "a56364833de4fc00f70b0df0f9e3b1556e2fd6cbe1a59d0f14e7fc737a709247"
+    },
+    {
+      "path": "App/Resources/nutrition-calc.js",
+      "bytes": 14199,
+      "sha256": "297e74a6019a4abc22780138c7a7032c29703bdbabd83b4ec4a064c5d2bcfca7"
+    },
+    {
+      "path": "App/Resources/proxima_nova_regular.otf",
+      "bytes": 62892,
+      "sha256": "0e9dbcd81a017784b6f02abf7d43285f48fa98caa49955ca5e1351ed24239399"
+    },
+    {
+      "path": "App/Resources/pulse-home-mock.json",
+      "bytes": 46516,
+      "sha256": "edf837964ace0a64d820d310ede7eb5df74c781b5341a15abe1b95a40d4386dc"
+    },
+    {
+      "path": "App/Views/AccountView.swift",
+      "bytes": 10070,
+      "sha256": "3f25fda8b60da1ed8775a586f26fa1f43c9a13b53dde76ce307f67915a721ab1"
+    },
+    {
+      "path": "App/Views/DashboardViews.swift",
+      "bytes": 19813,
+      "sha256": "d9f70c3761ae45b28d4bdb12efe3ccd3d9c8acfba483f17e5bca905c9b8b38c3"
+    },
+    {
+      "path": "App/Views/DetailViews.swift",
+      "bytes": 22088,
+      "sha256": "502f516c5e1629d6a09cffcbcf38ceda9bb3f62616b4379b2328b1fe6ed22fa5"
+    },
+    {
+      "path": "App/Views/ExperienceTierView.swift",
+      "bytes": 2235,
+      "sha256": "b3b32643c63d3a136c0361be030604f1ba96369e263d55bc381236585f3ab179"
+    },
+    {
+      "path": "App/Views/HealthImportView.swift",
+      "bytes": 6761,
+      "sha256": "7c42d6618b114e68e06d34d878765dda35343935796e32989ee6ed998d90718c"
+    },
+    {
+      "path": "App/Views/LiveView.swift",
+      "bytes": 14990,
+      "sha256": "2d57402630102962d81e566537f7ac00312e640b359618f463fccc194c09cc68"
+    },
+    {
+      "path": "App/Views/MeasurementExportView.swift",
+      "bytes": 14834,
+      "sha256": "9fcd0185e898389f92c7eed9dd046cd88d3c256e048573045d71e48b9626d62d"
+    },
+    {
+      "path": "App/Views/NutritionComponents.swift",
+      "bytes": 11281,
+      "sha256": "d7d1d751332aedba1edef0b7570da1059ed54a058ddeab43759a25c72b66d111"
+    },
+    {
+      "path": "App/Views/NutritionForms.swift",
+      "bytes": 14262,
+      "sha256": "0652e1ae7f6c689a35dd21de05aa1d7beba92eb744efbd8f66849141490791a4"
+    },
+    {
+      "path": "App/Views/NutritionSettings.swift",
+      "bytes": 14635,
+      "sha256": "33ace4db4a5c199f2bf84666bfc48f2b3cbe566120b83811830df9eb49aa49cb"
+    },
+    {
+      "path": "App/Views/NutritionViews.swift",
+      "bytes": 16350,
+      "sha256": "126b84438a0e77704a6a3cd968fed38831f9746305d06f803b720ae5a06fd4f8"
+    },
+    {
+      "path": "App/Views/ReferenceComponents.swift",
+      "bytes": 11675,
+      "sha256": "342866efe0556a47f1cc3b1f1f88dfcc0ee57f212a4bbf3fa9fce7f0ea9524b6"
+    },
+    {
+      "path": "App/Views/ReferenceLiveView.swift",
+      "bytes": 24568,
+      "sha256": "4b36afc948538597a5dc514970765684fc8044a69df727cc95c4c2c87e90d995"
+    },
+    {
+      "path": "App/Views/RootView.swift",
+      "bytes": 16314,
+      "sha256": "75e470ab1ac687e740f303c390f267cf58293f4eb406f0daff603500d949614d"
+    },
+    {
+      "path": "App/Views/SecondaryViews.swift",
+      "bytes": 17998,
+      "sha256": "8329fcff68526936bb708e5c1f2e97f7f83db3566df8f471b04504175ffde4cd"
+    },
+    {
+      "path": "App/Views/Theme.swift",
+      "bytes": 9294,
+      "sha256": "ee09f79d550e450bf3a9eeca74937a82f2ce45621f2842795d63f4e0f1554baa"
+    },
+    {
+      "path": "App/Views/WorkoutView.swift",
+      "bytes": 7385,
+      "sha256": "c2c15a48e35d9ca42290f898454e4f2644d7fa7e37d67860379ac7a6bb707384"
+    },
+    {
+      "path": "App/WHOOPApp.swift",
+      "bytes": 708,
+      "sha256": "5a1ccc4ac902e93e72750fa67d2a024a0b02f0197c0799b0cac92d8cd21bfb52"
+    },
+    {
+      "path": "App/WhoopWordmark.swift",
+      "bytes": 11014,
+      "sha256": "6ebd819d1cb6b5f67686221a51c1077692f3c15243e366ac934148e4f164c668"
+    },
+    {
+      "path": "App/WorkoutRecorder.swift",
+      "bytes": 5670,
+      "sha256": "e40a23db8345215f9e8f9b08718b12a0afb36edf779843ccf49963cfcc046a00"
+    },
+    {
+      "path": "Build IPA.command",
+      "bytes": 503,
+      "sha256": "1f13cdfed7d8f281f88f35482f81be126260ecd93970845ffb0a0d4cbddedd10"
+    },
+    {
+      "path": "CORE-NOTES.md",
+      "bytes": 10402,
+      "sha256": "1a8acfa2b24f2fb0f3bb8ff02199b66f4f739193d3ee897eec285f6542a20cc0"
+    },
+    {
+      "path": "Configuration/Info.plist",
+      "bytes": 2528,
+      "sha256": "73798abb7154a803facb6db15ea4517a304d09b74bd28161ee3fb28999629ce2"
+    },
+    {
+      "path": "Configuration/WHOOP.entitlements",
+      "bytes": 239,
+      "sha256": "e82a7f6e130b0fe65a40214c15b4116c5245125329c63954d9ccdd9cc80f039e"
+    },
+    {
+      "path": "Core/CameraOverlayData.swift",
+      "bytes": 3352,
+      "sha256": "56116b4458508d8b37120e94916bc01c911da92d578d108a0f52963c3b7d786b"
+    },
+    {
+      "path": "Core/ExampleData.swift",
+      "bytes": 1686,
+      "sha256": "3014187bc99caa707a89b7ce935fc879727dbdb92a980d03a6fc87da17498533"
+    },
+    {
+      "path": "Core/HeartRateMeasurement.swift",
+      "bytes": 596,
+      "sha256": "91149cc3c1fac027601dde3dfed0886bd78726af618a08e5e327d4530466620f"
+    },
+    {
+      "path": "Core/ImportReader.swift",
+      "bytes": 10999,
+      "sha256": "845307926a5163e1224867c398233e9c28d2d7178f200127a1f15148abeaaa1e"
+    },
+    {
+      "path": "Core/LiveStrainEngine.swift",
+      "bytes": 6575,
+      "sha256": "af8b522eda52790d6e625296b8b57db0c2510378f5aa355286fcd1b3d92002e7"
+    },
+    {
+      "path": "Core/LiveWorkoutAttributes.swift",
+      "bytes": 870,
+      "sha256": "eb0c7aa9580f30f2550031673a620bc5ef7ef2ac6a45c5f59dced1b11f268df9"
+    },
+    {
+      "path": "Core/LocalBackup.swift",
+      "bytes": 8111,
+      "sha256": "d947d96aaf2763e7d643e9c436e14442424c1baa7c938d62f01b1958b7210582"
+    },
+    {
+      "path": "Core/MeasurementExport.swift",
+      "bytes": 18052,
+      "sha256": "be5b70ed4f793dbfcf3291285c80ca3009bb9a887570808fe8210d16db59fd01"
+    },
+    {
+      "path": "Core/Models.swift",
+      "bytes": 9570,
+      "sha256": "b422b2f77f387f24d26ebd8afdb355b4bc53282b0cc79b99cc768935a806ae32"
+    },
+    {
+      "path": "Core/NutritionModels.swift",
+      "bytes": 11412,
+      "sha256": "8b344270f871210b4d426f80ebab9c00294a918b66170ceb0b95ded2fc9eeca6"
+    },
+    {
+      "path": "Core/Resources/strain-lookup.json",
+      "bytes": 9370,
+      "sha256": "28b114fa360be19aafeb805f58d52ff49ae9de1c5d400bd58904a082af404ad2"
+    },
+    {
+      "path": "Core/SleepIntervals.swift",
+      "bytes": 1416,
+      "sha256": "4aaf0b699b181db2bc4be0be48edad755799fd42568362ee8885366620814bb2"
+    },
+    {
+      "path": "Core/StrainCalculator.swift",
+      "bytes": 7513,
+      "sha256": "885df96dbddd11f3600ffd6a8fd1d9d244828a60bd00205d343768dce1b3aff8"
+    },
+    {
+      "path": "Core/WhoopAccountData.swift",
+      "bytes": 12659,
+      "sha256": "5a43226095b711853a948b05f52c573735d27700b18bb1564392ac2be08dcfd5"
+    },
+    {
+      "path": "Core/WhoopCommands.swift",
+      "bytes": 2393,
+      "sha256": "2a6d475843d318cf64149a4288b5ba0c9d77571177bb94e333d60136c7dc3c0b"
+    },
+    {
+      "path": "Core/WhoopDeviceTime.swift",
+      "bytes": 2092,
+      "sha256": "536fb296b0d826533133961a686acc69c41634f8d5144fa288a1469b73042bed"
+    },
+    {
+      "path": "Core/WhoopFrames.swift",
+      "bytes": 7588,
+      "sha256": "7820cd7672ee856d74a48948bc5fd48e6ed69711e4199beb211880d384cfedef"
+    },
+    {
+      "path": "Core/WhoopHistory.swift",
+      "bytes": 2583,
+      "sha256": "ba2d26900c5faaceb5c28f64c61a9602616c6bcd3ec6c7f870ef92a5e7e0d417"
+    },
+    {
+      "path": "Core/WhoopLiveSession.swift",
+      "bytes": 2952,
+      "sha256": "89b489fd3b5e712e1237c6c337e8b5ffe389675fd2f4574ec44ba48a6149cfa2"
+    },
+    {
+      "path": "DISCLAIMER.md",
+      "bytes": 7283,
+      "sha256": "c53322038f7f95a61633c1af6ea21d30754e5b465dee3786796d72593ad67b71"
+    },
+    {
+      "path": "Docs/ACCOUNT-SYNC.md",
+      "bytes": 10019,
+      "sha256": "9a7ab12910322472840ee685e39893c9138ef4a0b75e0a5ea0be78c1cee2c151"
+    },
+    {
+      "path": "Docs/APPLE-HEALTH.md",
+      "bytes": 5185,
+      "sha256": "a02a75d07ea96398402e9b20f4c945a3346907681daf4e0f7d56a30b680eb5be"
+    },
+    {
+      "path": "Docs/ASSET-PROVENANCE.json",
+      "bytes": 1250,
+      "sha256": "1dbd4c1a1e1fd2c8e240f5714053167eb39dfb650e4aff5db945dbb59e5a4fff"
+    },
+    {
+      "path": "Docs/AccountAPI/README.md",
+      "bytes": 10704,
+      "sha256": "7b75061ac89c2b91ce8a508e9c725b529d368aaa2ae8cd43c1ec103d1ae08e82"
+    },
+    {
+      "path": "Docs/AccountAPI/SOURCES.json",
+      "bytes": 3432,
+      "sha256": "51e39076d0efad5463122714c82dadfe175beb602230b74bf78400ced8333300"
+    },
+    {
+      "path": "Docs/AccountAPI/VALIDATION.json",
+      "bytes": 2141,
+      "sha256": "43098ea49c24162a3748f4b3498f607547898281aaa866af06e5fcc4d2b094ea"
+    },
+    {
+      "path": "Docs/AccountAPI/evidence/README.md.json",
+      "bytes": 12940,
+      "sha256": "3baa9888fc87b36aee9b2c0205207ec92192e2cb9f0a652ddb8d57de69b50ce4"
+    },
+    {
+      "path": "Docs/AccountAPI/evidence/tests-conftest.py.json",
+      "bytes": 3413,
+      "sha256": "23bef101acb0f1bff7cada951e40a2714ee238ed656fee17fb03d240dca77e4e"
+    },
+    {
+      "path": "Docs/AccountAPI/evidence/tests-test_client.py.json",
+      "bytes": 1076,
+      "sha256": "4ebe0c0a7d24d2b08825323948eb045e96b12ae7a434faee5f59e824a2a7fad8"
+    },
+    {
+      "path": "Docs/AccountAPI/evidence/whoop-auth.py.json",
+      "bytes": 2957,
+      "sha256": "37cac452f0d6ac4b9880992c20de614944e26ea5889778223de812f65704be0d"
+    },
+    {
+      "path": "Docs/AccountAPI/evidence/whoop-client.py.json",
+      "bytes": 2748,
+      "sha256": "5e0ccdae1dafc65d0718894d912a27a8031d188bc7299bdefc23ee49e6f14889"
+    },
+    {
+      "path": "Docs/BACKUP-FORMAT.md",
+      "bytes": 4936,
+      "sha256": "764e7aafd01860feb3a201a8c19708a082cfae56832f34fd33b2bee6081fbbae"
+    },
+    {
+      "path": "Docs/Codemagic/SOURCES.json",
+      "bytes": 1192,
+      "sha256": "6443b39457e7604f46d5ea097dbc1d335817d2859599d5c407a7b184f9222ad6"
+    },
+    {
+      "path": "Docs/Codemagic/add-app.source.txt",
+      "bytes": 616,
+      "sha256": "226da916155fbd68c36b902ebbbc1a5102c5015fdd17110ca7db51415023c81b"
+    },
+    {
+      "path": "Docs/Codemagic/official-ios-guide.source.txt",
+      "bytes": 6432,
+      "sha256": "cd253da098283bf3bd60a0e1f11ccf63b96a3f0619242a895aa91993659c6da4"
+    },
+    {
+      "path": "Docs/Codemagic/yaml-guide.source.txt",
+      "bytes": 23760,
+      "sha256": "bc44ee7389ef401421529d4498faa8db596cc0c5d03fc0c45c3cbfc1c850756d"
+    },
+    {
+      "path": "Docs/DATA-EXPORT.md",
+      "bytes": 4360,
+      "sha256": "003e2e203825a32171222fd1de13c76258363e03eee6d729e32e00bd3aa79e2a"
+    },
+    {
+      "path": "Docs/DEVICE-HISTORY.md",
+      "bytes": 2878,
+      "sha256": "76d3b835b5d1798d98609c804909740783122e63e067052ef55d4c586832563c"
+    },
+    {
+      "path": "Docs/DEVICE-STREAM.md",
+      "bytes": 3603,
+      "sha256": "fb7cad3bca455fe232798f92d96ffedb1807f8732fd6b64c7296197d8e42d4d2"
+    },
+    {
+      "path": "Docs/DEVICE-TIME.md",
+      "bytes": 4631,
+      "sha256": "4556c17442cddc61fbc7565176008024d6483d696ab843fd1f029ff67a38f2f7"
+    },
+    {
+      "path": "Docs/INSTALL-IPHONE.md",
+      "bytes": 5830,
+      "sha256": "828ef9ade1cfae3935a347ba226007d1f3ede92e80b80d551cba9645f1421cf6"
+    },
+    {
+      "path": "Docs/LIVE-MEDIA.md",
+      "bytes": 4717,
+      "sha256": "3a8edd9f44c14e1787b98c3b5f035fca3df34ef916bf1100d0683f20bcb6679e"
+    },
+    {
+      "path": "Docs/LIVE-REFERENCE.md",
+      "bytes": 5664,
+      "sha256": "94d455e19f4a0436daacd79159027b367867b43f824c1f1c42872afd71097662"
+    },
+    {
+      "path": "Docs/LIVE-STRAIN.md",
+      "bytes": 8573,
+      "sha256": "da6d00400ccff6ad102a8a6087c2006619517bbdb53923e2a5fa9ddb1f815724"
+    },
+    {
+      "path": "Docs/NUTRITION.md",
+      "bytes": 9661,
+      "sha256": "263fb0138ae1dbd86acbe7ac0287edac65e2e40b10e217d3817977ca4611b0e0"
+    },
+    {
+      "path": "Docs/Nutrition-font.json",
+      "bytes": 464,
+      "sha256": "91f7d9a1fbb129ff304f4f36fed20f268b5b32cbf4b5cb0f9e2b87bc4ae237a6"
+    },
+    {
+      "path": "Docs/PARITY.md",
+      "bytes": 3602,
+      "sha256": "bd2ef643be9d20ea4e20e38713efa2c8009981405800a4836cd3047ad1e0f4eb"
+    },
+    {
+      "path": "Docs/PROFILE-PERSONALIZATION.md",
+      "bytes": 5174,
+      "sha256": "afe9917dc255c87d109c8ca192e7ad3b001bc46a363d983d63923779b38eb5b8"
+    },
+    {
+      "path": "Docs/PULSE-TRACKER.md",
+      "bytes": 3493,
+      "sha256": "f40d5c063b473790095e214cc7a73a400a534df5bac3f6a2ffba0c7ffcd39e0b"
+    },
+    {
+      "path": "Docs/PULSE-fonts.json",
+      "bytes": 1155,
+      "sha256": "7d573dab5f44e54375374160e0c6a202fe68b3d80ca0f70b39b90b9e4bf3ddee"
+    },
+    {
+      "path": "Docs/RECONSTRUCTION.md",
+      "bytes": 6183,
+      "sha256": "425cc3d69d135ae2d85a3ea4ac8db79de789e8f6697eec542efecfb41c7a8ee8"
+    },
+    {
+      "path": "Docs/REFERENCE-UI.md",
+      "bytes": 4636,
+      "sha256": "25d33d91e8d139b3872d0887660b39a411b6aa32ebd7dfafa08e6e5140a51128"
+    },
+    {
+      "path": "Docs/WHOOP-PROTOCOL.md",
+      "bytes": 9159,
+      "sha256": "12b8ac48d1b417129e75f7b859935809b59c320e9b3ca6a593eb3e4ed9db7cc6"
+    },
+    {
+      "path": "Docs/WHOOP-fonts.json",
+      "bytes": 1054,
+      "sha256": "241b57afbc55e19b694030eb330ce4d75c166d834f68e94cc19678fda3127e75"
+    },
+    {
+      "path": "EXPANSION-CONTRACT.md",
+      "bytes": 1504,
+      "sha256": "09305f6089094c7f742a7f98629492c322d781a1be00fcbf8c78365405562265"
+    },
+    {
+      "path": "Examples/example-day.json",
+      "bytes": 558,
+      "sha256": "bf15881692cccefc48ead525d857c190c08cdc0d7465aad45fefb16c36e0a6de"
+    },
+    {
+      "path": "Examples/heart-rate.csv",
+      "bytes": 165,
+      "sha256": "501760e8b44da41fcb0a38864979a4ed163b24df035cfd070c224df13bcd0b84"
+    },
+    {
+      "path": "IMPLEMENTATION-CONTRACT.md",
+      "bytes": 4828,
+      "sha256": "abf522ee25d5eb580c83c95fe3406e19d9df4b1cc7f97d7cfc7008d8663f4076"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 5603,
+      "sha256": "6581224cd341c05996116bcb6c24e3b1fb36e03c3b0b3b78147a3ac17464542c"
+    },
+    {
+      "path": "LiveActivityWidget/Info.plist",
+      "bytes": 752,
+      "sha256": "efb5963747e1d510f127918c846a32948545ea5e9c711fedc24c47a600a8da02"
+    },
+    {
+      "path": "LiveActivityWidget/WorkoutLiveWidget.swift",
+      "bytes": 3403,
+      "sha256": "6177066814d96e0fa9599c9b1e4fc6aea34f337c6068f389902063867222724a"
+    },
+    {
+      "path": "NOTICE",
+      "bytes": 1651,
+      "sha256": "0c95b9341258f322b1f608d23b77e02fc23fc9d6009013c8d1eb74679ad4c934"
+    },
+    {
+      "path": "Package.swift",
+      "bytes": 488,
+      "sha256": "baafdfae0c6046eebf23c73203dbdefe4721551814a029e52ca33c4cd9c221fa"
+    },
+    {
+      "path": "README-CODEMAGIC.md",
+      "bytes": 4075,
+      "sha256": "0106c85c212f45c1493fbbdd7ae0e302d500220194b5942ebd9ad637221e1693"
+    },
+    {
+      "path": "README.md",
+      "bytes": 11335,
+      "sha256": "17d442a22d254ab8caeeb1858052c348f1473cd3169588930957096aebefa295"
+    },
+    {
+      "path": "STATUS.md",
+      "bytes": 6803,
+      "sha256": "4f3432c153b11a4a5faba30dcf2666026a9ba35a231ea1336ea6028490bd50c2"
+    },
+    {
+      "path": "Scripts/build-nutrition.mjs",
+      "bytes": 1252,
+      "sha256": "9a211de40d5f117e710a3792828219101f9245ebd03f181cdc5c5ebd12f7162c"
+    },
+    {
+      "path": "Scripts/build-on-mac.sh",
+      "bytes": 681,
+      "sha256": "23038249c6de9f5b8cd1852f2b3771dc09042dede9778e18ab094bb9ac43c2c0"
+    },
+    {
+      "path": "Scripts/export-signed-ipa-on-mac.sh",
+      "bytes": 2264,
+      "sha256": "fd0d961bb48e7da226814aa50a5a6eb302b90e5b91d1310b4a3952c40aa4c8a3"
+    },
+    {
+      "path": "Scripts/generate-project.py",
+      "bytes": 10895,
+      "sha256": "eb432ab4b4b60f37779088062ddf284269be487d0de8b657a34be1a6cf515758"
+    },
+    {
+      "path": "Scripts/package-codemagic.py",
+      "bytes": 1893,
+      "sha256": "3be0ad451ec9411b7a23430a3ab29a00e62071b7c780e1588ed3573e8eebacc6"
+    },
+    {
+      "path": "Scripts/package-ipa-on-mac.sh",
+      "bytes": 1957,
+      "sha256": "6d3f692e5566122447610f8cb0b99473e41f6d017ea45a014a2cf426d879d6ef"
+    },
+    {
+      "path": "Scripts/package-source.py",
+      "bytes": 2273,
+      "sha256": "ce278b79b953873e86d352b610ec10e0a84e0cc42f062658758c2c11be1d9607"
+    },
+    {
+      "path": "Scripts/tests/test_validate_ipa.py",
+      "bytes": 5318,
+      "sha256": "6e91676f24879b994239263e6d40fadc4943017424aa99fec16b97772cf9b60b"
+    },
+    {
+      "path": "Scripts/validate-ipa.py",
+      "bytes": 6090,
+      "sha256": "c6a98102c568c43ceccc81ee439094852d0536b9d45e4aa0873fb08186a7f95d"
+    },
+    {
+      "path": "Scripts/validate-nutrition-resource.py",
+      "bytes": 734,
+      "sha256": "79b421cbd50dba5480ac656fa70e900899f3e9b3c3a0a342dd39670077c346d1"
+    },
+    {
+      "path": "Scripts/validate-project.swift",
+      "bytes": 3707,
+      "sha256": "68e2cb3ff4fa7a80af58cf06b096d02dfc2bbb449cfb9d8623630678d94e6838"
+    },
+    {
+      "path": "Server/.env.example",
+      "bytes": 827,
+      "sha256": "83423a9c8c0a74b412854065bfe9384926cd7bb7dfb34a356e0e7e55ed9e33a5"
+    },
+    {
+      "path": "Server/.gitignore",
+      "bytes": 18,
+      "sha256": "8770d3862f55451e8b8bcba3b2f0099efef7cfa644df79be9bfc169a9c98fde4"
+    },
+    {
+      "path": "Server/bridge.mjs",
+      "bytes": 17717,
+      "sha256": "83e94163ef71e387217f36c12fc8ae648a0a378afcb09fbffa0615b82567dfa8"
+    },
+    {
+      "path": "Server/config.mjs",
+      "bytes": 1444,
+      "sha256": "0534446e17173f73eabcce24ed9add701cc8ff6851a466690e327c033a19c197"
+    },
+    {
+      "path": "Server/package.json",
+      "bytes": 245,
+      "sha256": "858ed1492ed2cc5d968fc3e350b4b94fbefb234af17e32b156d8e675453ac4ae"
+    },
+    {
+      "path": "Server/server.mjs",
+      "bytes": 1390,
+      "sha256": "43861742a59baa6a82f3770f72b5470c42e188b6e1f9b8b45a87143a355b0b4e"
+    },
+    {
+      "path": "Server/store.mjs",
+      "bytes": 4203,
+      "sha256": "56a079aa54ad73024b67c947dc875b735ad6d259a9eb462377e08e0927be3ece"
+    },
+    {
+      "path": "Server/test/bridge.test.mjs",
+      "bytes": 27909,
+      "sha256": "76473d786000d7ea12383f1271e0a5cee3a22578d7b4e9c93b77fe2c0a3923d8"
+    },
+    {
+      "path": "Tests/WHOOPCoreTests/BackupTests.swift",
+      "bytes": 11687,
+      "sha256": "0fdeee36dc5a38a4ca4ed24bd475353bfd467a2115442c5d5edda52b433e908e"
+    },
+    {
+      "path": "Tests/WHOOPCoreTests/CoreTests.swift",
+      "bytes": 15739,
+      "sha256": "d5abdc76ea982bdc9c9e13d430ecc346f3aed919288dad636f9562e995f38f7d"
+    },
+    {
+      "path": "Tests/WHOOPCoreTests/Fixtures/NutritionCalculation.json",
+      "bytes": 6381,
+      "sha256": "75f7b393dcecb2d2b6ce03e2012d94eeac106c4dadcff63afd7c704e8f2e31ad"
+    },
+    {
+      "path": "Tests/WHOOPCoreTests/Fixtures/WhoopHistoryFixtures.json",
+      "bytes": 5322,
+      "sha256": "c7662cde803af553689c8cc48613a853f834c0fd07f9c24047ade76e73ae9417"
+    },
+    {
+      "path": "Tests/WHOOPCoreTests/LiveStrainTests.swift",
+      "bytes": 8485,
+      "sha256": "3a5757393de63b014128c3e959dbc6d0a4ab1bb0041c8ad0f58fb0b56dce78a5"
+    },
+    {
+      "path": "Tests/WHOOPCoreTests/MeasurementExportTests.swift",
+      "bytes": 17083,
+      "sha256": "b8a2d0080c5dba13b3068f90cacf6146d21db5dbad41266779ae1faf9115b326"
+    },
+    {
+      "path": "Tests/WHOOPCoreTests/NutritionStorageTests.swift",
+      "bytes": 3460,
+      "sha256": "3c3b314bdf5ba782bb7ad40c5682fa9caf0b038a234b39ae14e4d5eb79001c9c"
+    },
+    {
+      "path": "Tests/WHOOPCoreTests/SleepIntervalTests.swift",
+      "bytes": 2014,
+      "sha256": "7e5dc422a0c159e0700e75a51d4f47baf4b37c2225a367a5ca9a02cb993bac1b"
+    },
+    {
+      "path": "Tests/WHOOPCoreTests/WhoopAccountTests.swift",
+      "bytes": 10646,
+      "sha256": "19be616461334abca474857ada85406d5b9a5c90782a02fdacc6c3a179025382"
+    },
+    {
+      "path": "Tests/WHOOPCoreTests/WhoopCommandTests.swift",
+      "bytes": 3744,
+      "sha256": "995ac43a8eb82b046a3ab7d0ea5e27e255611e98d7f140e0af97f77cb504c2dd"
+    },
+    {
+      "path": "Tests/WHOOPCoreTests/WhoopDeviceTimeTests.swift",
+      "bytes": 2905,
+      "sha256": "a3ea200d5e1a71d5132d8f93b64d3374eeb347ac6fe1baf2bafd904882cfdcd8"
+    },
+    {
+      "path": "Tests/WHOOPCoreTests/WhoopFrameTests.swift",
+      "bytes": 10424,
+      "sha256": "23f86e103f619fba9f24878f3f680caefcc0c274b3a65d2215b023e52afbe6ff"
+    },
+    {
+      "path": "Tests/WHOOPCoreTests/WhoopHistoryTests.swift",
+      "bytes": 4394,
+      "sha256": "3efd74b31fee57163d23c738bfd0021c859ac295efba88442c73331aa0617c69"
+    },
+    {
+      "path": "Tests/WHOOPCoreTests/WhoopLiveSessionTests.swift",
+      "bytes": 4507,
+      "sha256": "c3061c6d8fb7844f8505df0baca4f5ddd3253a569be94cb9567db5a264a62511"
+    },
+    {
+      "path": "VALIDATION.json",
+      "bytes": 3268,
+      "sha256": "2b035b979f01cf4966137952c274f978c7722700386fb798e843b004b3e964b0"
+    },
+    {
+      "path": "Validation/app-syntax.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Validation/before-in-app-export.json",
+      "bytes": 4134,
+      "sha256": "d3afca06f0a20e08347acb8cae224908450a62400219b926c547b902b6942fe9"
+    },
+    {
+      "path": "Validation/before-personalized-profile.json",
+      "bytes": 3038,
+      "sha256": "9bc6f196c1f3e6d2adb3b250be44ee92c2567bbec37fdee3f2482d8d3375e79c"
+    },
+    {
+      "path": "Validation/before-pulse-home.json",
+      "bytes": 14596,
+      "sha256": "90e129268b45c9e77f1744d9738088a5f651cf9de99a29c13b046447e2b9d651"
+    },
+    {
+      "path": "Validation/before-reference-live.json",
+      "bytes": 4140,
+      "sha256": "f3d75c5287e88178d15198a08e776475212cd3590bfc0a0f6d78f2474d219655"
+    },
+    {
+      "path": "Validation/codemagic-package-check.log",
+      "bytes": 2275,
+      "sha256": "d27691fe033d4d5c9abf27fc26e45e3032b7c8a6d461333189aa706f20f6a08f"
+    },
+    {
+      "path": "Validation/core-tests.log",
+      "bytes": 25955,
+      "sha256": "1a1bb9eb47a563c2eade4ecbe8384d8baf68f27bfde26a1255bb43025351f853"
+    },
+    {
+      "path": "Validation/history-tests.log",
+      "bytes": 3388,
+      "sha256": "bfc09a832fa771249aec5fa7a8ecff5eaf10beb533cc016c3e17a0251de0d709"
+    },
+    {
+      "path": "Validation/ipa-build-attempt.log",
+      "bytes": 69,
+      "sha256": "e15f3f039796d2ee3ddc4598c739589774828c21a834448a0d55e763ced99236"
+    },
+    {
+      "path": "Validation/ipa-validator-tests.log",
+      "bytes": 1903,
+      "sha256": "5492b822db0061b7872e593848702464e3b7bebcb2b99ec3f5d91c6a0b97fd9e"
+    },
+    {
+      "path": "Validation/live-reference-all-core-tests.log",
+      "bytes": 30935,
+      "sha256": "89d6b3e0f013e78ca7f81ba4ae935dfce03e6a6f673a97ea51859444fadaab6a"
+    },
+    {
+      "path": "Validation/live-reference-presenter-tests.log",
+      "bytes": 4081,
+      "sha256": "7d218d69ebdda0888d5b15cec026d25dfb13be7abfe413ff3e8b2c951e8b0001"
+    },
+    {
+      "path": "Validation/live-reference-project.log",
+      "bytes": 243,
+      "sha256": "6874f982dcd0680d020e6de57e88704665798e1fa6cdaeb6e9fef03163d92e99"
+    },
+    {
+      "path": "Validation/live-reference-swift-syntax.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Validation/measurement-export-all-core-tests.log",
+      "bytes": 29102,
+      "sha256": "584dea30651819590ad1faad78b19b5ee1fbfea0844006ef24af3f17bafc063c"
+    },
+    {
+      "path": "Validation/measurement-export-project.log",
+      "bytes": 243,
+      "sha256": "1685098410881f2af14bdfb8a1468743e3cf8ce5da3010a1a36c0b66ddb2ffdc"
+    },
+    {
+      "path": "Validation/measurement-export-swift-syntax.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Validation/measurement-export-tests.log",
+      "bytes": 5743,
+      "sha256": "919892c70bb91dd504b894a746d439c05d72590695da342ce556cad769f465eb"
+    },
+    {
+      "path": "Validation/nutrition-and-server-tests.log",
+      "bytes": 5509,
+      "sha256": "802b99b1176cf7b883f002c188b44dd42510633cec4cee1b30b50ca73d456c34"
+    },
+    {
+      "path": "Validation/nutrition-tests.log",
+      "bytes": 2454,
+      "sha256": "64e95fe426325acfd3f62a0742e8072cbbe3485e26ba80e22e64663d22d4c235"
+    },
+    {
+      "path": "Validation/profile-all-core-tests.log",
+      "bytes": 34448,
+      "sha256": "0d4e7b3e220140e1e7772e6eed653bae36906beb6f6c328cb6d4af7dcbcdfffe"
+    },
+    {
+      "path": "Validation/profile-project.log",
+      "bytes": 243,
+      "sha256": "6874f982dcd0680d020e6de57e88704665798e1fa6cdaeb6e9fef03163d92e99"
+    },
+    {
+      "path": "Validation/profile-swift-syntax.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Validation/profile-targeted-tests.log",
+      "bytes": 11431,
+      "sha256": "8be564833827e6e61ba02f19a433ca0c1b1f3c9b92f3170f354ae6fc335711e1"
+    },
+    {
+      "path": "Validation/project-structure.log",
+      "bytes": 243,
+      "sha256": "ece6b403e765151d994a14db603bae32c6ca065f8fd2799830450b9cadbc7538"
+    },
+    {
+      "path": "Validation/pulse-browser-checks.json",
+      "bytes": 618,
+      "sha256": "e999d8cb52cf70e9c75a858c83b6494bec1cdf632de65c962dbeedd3c571e7dc"
+    },
+    {
+      "path": "Validation/pulse-ipa-validator-tests.log",
+      "bytes": 1903,
+      "sha256": "199a8a4bff8c7f5b1c4bc674c812cda911d57f4a68069728f3473fb2e82edceb"
+    },
+    {
+      "path": "Validation/pulse-mock-data-check.log",
+      "bytes": 105,
+      "sha256": "a642e7fc655c120091431f5c10f4470451ba0a071c33c155350242ee50829166"
+    },
+    {
+      "path": "Validation/pulse-no-expiry-checks.json",
+      "bytes": 790,
+      "sha256": "08f3452c49cbe2a9abf004a876671b27fd2c83557b1dc3ed5efe7cd9b4dff648"
+    },
+    {
+      "path": "Validation/pulse-no-expiry-data-check.log",
+      "bytes": 132,
+      "sha256": "4d18af8a41a046b95d8a6e190d4255efa943e796c26736e062e81171a16e2787"
+    },
+    {
+      "path": "Validation/pulse-no-expiry-project-check.log",
+      "bytes": 243,
+      "sha256": "5da02618ec365df13447fbe00d513cc865e5a8f4e14fe6e098d8e60678bc8a96"
+    },
+    {
+      "path": "Validation/pulse-no-expiry-swift-syntax.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Validation/pulse-project-check.log",
+      "bytes": 243,
+      "sha256": "1a9ff18a7b790915b1884da07c5230a3738d62bde8f0d9978f7d2732ad07ae2e"
+    },
+    {
+      "path": "Validation/pulse-reference-checks.json",
+      "bytes": 740,
+      "sha256": "d6e87cba4029355ab467178afc9665b904dbd335d49e2f62da08941e57ae5180"
+    },
+    {
+      "path": "Validation/pulse-reference-data-check.log",
+      "bytes": 132,
+      "sha256": "4d18af8a41a046b95d8a6e190d4255efa943e796c26736e062e81171a16e2787"
+    },
+    {
+      "path": "Validation/pulse-reference-project-check.log",
+      "bytes": 243,
+      "sha256": "5da02618ec365df13447fbe00d513cc865e5a8f4e14fe6e098d8e60678bc8a96"
+    },
+    {
+      "path": "Validation/pulse-reference-swift-syntax.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Validation/pulse-swift-syntax.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Validation/pulse-tracker-core-tests.log",
+      "bytes": 5907,
+      "sha256": "eb202a246b5abd42f7a1d2b7268f1f50d2eb4ca4a18be40524fa410cf4531d38"
+    },
+    {
+      "path": "Validation/pulse-tracker-standard-hr-tests.log",
+      "bytes": 1219,
+      "sha256": "1e69313cfd024e7139d3b1128ebcea47c6ac0d4187120c81c68af9ae53851b72"
+    },
+    {
+      "path": "Validation/reference-ui-project.log",
+      "bytes": 178,
+      "sha256": "f900610ad4c5e8e84b2f738357666db99752cca6aef386abb7f0f63aec615402"
+    },
+    {
+      "path": "Validation/reference-ui-syntax.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Validation/server-tests.log",
+      "bytes": 2843,
+      "sha256": "b016796c26a03a549ae658c00d7620966ce1d124651778423143c01aa01846ac"
+    },
+    {
+      "path": "Validation/whoop-home-05-checks.json",
+      "bytes": 926,
+      "sha256": "7156103d09343426027616ff9d4745e737cc3ce612982958664adaf296a90f1d"
+    },
+    {
+      "path": "Validation/whoop-home-05-data-check.log",
+      "bytes": 132,
+      "sha256": "4d18af8a41a046b95d8a6e190d4255efa943e796c26736e062e81171a16e2787"
+    },
+    {
+      "path": "Validation/whoop-home-05-project-check.log",
+      "bytes": 243,
+      "sha256": "5da02618ec365df13447fbe00d513cc865e5a8f4e14fe6e098d8e60678bc8a96"
+    },
+    {
+      "path": "Validation/whoop-home-05-swift-syntax.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "WHOOP.xcodeproj/project.pbxproj",
+      "bytes": 24195,
+      "sha256": "48c126163ec20eb3833cbabbcf8fc38c8cac5c96baf18d23ce8136b64cd86dd0"
+    },
+    {
+      "path": "WHOOP.xcodeproj/xcshareddata/xcschemes/WHOOP.xcscheme",
+      "bytes": 2085,
+      "sha256": "c0ffabfac234e24874d7d29fe6d2766864c0398b7f765068bc4aafcd122317cc"
+    },
+    {
+      "path": "codemagic.yaml",
+      "bytes": 1395,
+      "sha256": "3469cd93fab24d6cf4ae49aa7608c7e51cdf1a6b936fa7201fd41229d009d1fd"
+    },
+    {
+      "path": "design/home/PULSE-Home-full.png",
+      "bytes": 534183,
+      "sha256": "29723f8a3f571cd42130d28501a50aa89e1dc8acf76fbf2ab8dd32aa234b668d"
+    },
+    {
+      "path": "design/home/PULSE-Home-review.png",
+      "bytes": 389749,
+      "sha256": "e018864afb09cecc0cdb9dbd9ceb77eab869df77d67f13bc13f47c66dbc410e8"
+    },
+    {
+      "path": "design/home/PULSE-Home.png",
+      "bytes": 271578,
+      "sha256": "4f5020fb19a78c582b26e08ff597dfceaa3802a013f28c5942453c28b3832c5d"
+    },
+    {
+      "path": "design/home/REVIEW.md",
+      "bytes": 260,
+      "sha256": "3f71f9f31c5946b5dfeaffcd523d5fbadd4d96f850dd3c987ffbaadcb61053dc"
+    },
+    {
+      "path": "design/home/REVISION-03.md",
+      "bytes": 5366,
+      "sha256": "eda0bd6ba4f4d8a290548a9a5743ebfa3d45989fa0e244a70fab1ab35a9994d8"
+    },
+    {
+      "path": "design/home/REVISION-04.md",
+      "bytes": 2321,
+      "sha256": "3e10f49b48ceeb7ecb3acfe644b42ff5871f0f8dd0b4f2869efb898957c8fb65"
+    },
+    {
+      "path": "design/home/REVISION-05.md",
+      "bytes": 3477,
+      "sha256": "d3c518cf6d85821986ce8fdafb340892a16dd72923256d863e0385b531a8fc94"
+    },
+    {
+      "path": "design/home/browser-checks.json",
+      "bytes": 618,
+      "sha256": "e999d8cb52cf70e9c75a858c83b6494bec1cdf632de65c962dbeedd3c571e7dc"
+    },
+    {
+      "path": "design/home/pulse-icon.svg",
+      "bytes": 423,
+      "sha256": "dbebe83f03ad37a213d921dff19e6a2d0aa33437929a249e24d0356ddcfda1b1"
+    },
+    {
+      "path": "design/home/revision-03/01-Home-top.png",
+      "bytes": 220125,
+      "sha256": "c17adb237999fcbf328c508468ff7ec0dbf61a76755c3839c6b634abef28045c"
+    },
+    {
+      "path": "design/home/revision-03/02-Home-my-day.png",
+      "bytes": 183071,
+      "sha256": "15fbf3bb2b90e0b6f999bb86e7433cb1cf0fb98ed5e257ee470300a8afa09736"
+    },
+    {
+      "path": "design/home/revision-03/03-Home-journal-plan.png",
+      "bytes": 165243,
+      "sha256": "7fc1d1a67b7b0e6006be4ef1faec145916f7f1326ad1f0d84dea3bf1731223c6"
+    },
+    {
+      "path": "design/home/revision-03/04-Home-dashboard.png",
+      "bytes": 190311,
+      "sha256": "e46f52e24537338fcd6fefadb0677acb3a976146167c27ec83ccadbe9591f563"
+    },
+    {
+      "path": "design/home/revision-03/05-Home-stress-metrics.png",
+      "bytes": 171107,
+      "sha256": "a7e92c745133e0103183ac9e3f0028b3bfe478fe6a4b807290c88eb706d8c38a"
+    },
+    {
+      "path": "design/home/revision-03/06-Home-discover.png",
+      "bytes": 211381,
+      "sha256": "cc50d20a108548036ab7e5e45b89b96f252f85817a4fde8f4c0ce14bb31025d9"
+    },
+    {
+      "path": "design/home/revision-03/07-Home-quick-menu.png",
+      "bytes": 294122,
+      "sha256": "16a8314b366444e7aed4c42e729d32df6bf957187e32b095a78404d8333b4a04"
+    },
+    {
+      "path": "design/home/revision-03/Home-full.png",
+      "bytes": 706549,
+      "sha256": "cb5497e3b2da1da2881da5279d7b09d61a32b4c521b3d9e1d92a7738af8794b6"
+    },
+    {
+      "path": "design/home/revision-03/Home-review-gallery.jpg",
+      "bytes": 607050,
+      "sha256": "369cfada356845ac6a05b5d66d22fa9d676bdf3fd3dd0b3bc7025476c4ac22c1"
+    },
+    {
+      "path": "design/home/revision-03/checks.json",
+      "bytes": 740,
+      "sha256": "d6e87cba4029355ab467178afc9665b904dbd335d49e2f62da08941e57ae5180"
+    },
+    {
+      "path": "design/home/revision-03/layout-measurements.json",
+      "bytes": 764,
+      "sha256": "84a318910b3afb706c5908f8c1511575bfdbc5979e765947ba750c336ff95212"
+    },
+    {
+      "path": "design/home/revision-04/01-Home-top.png",
+      "bytes": 199989,
+      "sha256": "df323a594533053916ae787a92fed254b5ac7c473e50c465600303c1d939e811"
+    },
+    {
+      "path": "design/home/revision-04/02-Home-my-day.png",
+      "bytes": 176513,
+      "sha256": "d50fdfc7b5ba1fe3aa409a3124b8cd5b9a7a2bc9b84856d46a97950cc45268ae"
+    },
+    {
+      "path": "design/home/revision-04/03-Home-journal-plan.png",
+      "bytes": 163652,
+      "sha256": "dd1bdd9fac71d3aad5285c49f6893d2662cd678b8de7b0d0b0caffbe98a1a932"
+    },
+    {
+      "path": "design/home/revision-04/04-Home-dashboard.png",
+      "bytes": 185486,
+      "sha256": "fdc555f8f6ae9a347dd329ddaa94e89224aba091c839e7f4f449f5fd930f5c76"
+    },
+    {
+      "path": "design/home/revision-04/05-Home-stress-metrics.png",
+      "bytes": 168235,
+      "sha256": "75c4b33a8a3510c468e4283f2f1def417e8cee9cb14acf53dd5ec83fbfe9024b"
+    },
+    {
+      "path": "design/home/revision-04/06-Home-discover.png",
+      "bytes": 211178,
+      "sha256": "3993c6e079e155db8f68c1be4f920711050644e889510e53e2e1d6a477bc2d90"
+    },
+    {
+      "path": "design/home/revision-04/07-Home-quick-menu.png",
+      "bytes": 273752,
+      "sha256": "72df88e55ec7cfdef48a9e72ee563ef90e4a116eb14c5e7e7c6637c24a935de1"
+    },
+    {
+      "path": "design/home/revision-04/Home-full.png",
+      "bytes": 668399,
+      "sha256": "813548a9e983b14bf7df727d0b2013c3103587bdc53a124a5dfd0ea2986da053"
+    },
+    {
+      "path": "design/home/revision-04/Home-review-gallery.jpg",
+      "bytes": 588178,
+      "sha256": "952fb9ab02931c15b033f51946a3e3732aaf1d85f3363e6e92ba344772eeb0d5"
+    },
+    {
+      "path": "design/home/revision-04/checks.json",
+      "bytes": 790,
+      "sha256": "08f3452c49cbe2a9abf004a876671b27fd2c83557b1dc3ed5efe7cd9b4dff648"
+    },
+    {
+      "path": "design/home/revision-05/01-Home-top.png",
+      "bytes": 197240,
+      "sha256": "a1ab99894d46116c08144f8aa0a465cbb432a598f2277dd86825e97571440466"
+    },
+    {
+      "path": "design/home/revision-05/02-Home-my-day.png",
+      "bytes": 176663,
+      "sha256": "7b6aa7e5085c14a46a5a9797878e810b22625da6b48ed52aec11b80eaf7ace49"
+    },
+    {
+      "path": "design/home/revision-05/03-Home-journal-plan.png",
+      "bytes": 161177,
+      "sha256": "b4abf1f5a4c6c9c7ac4bee268ccc4be0037bab11890526d609ac6c84bdda1ae1"
+    },
+    {
+      "path": "design/home/revision-05/04-Home-dashboard.png",
+      "bytes": 184140,
+      "sha256": "35ae05cbf7b1aebaf9631c36447d4daabb2bbef1ed76ffc916f6dddb69acc288"
+    },
+    {
+      "path": "design/home/revision-05/05-Home-stress-metrics.png",
+      "bytes": 166186,
+      "sha256": "99e88dccbab0f81f2a1f9c1f1d46302af1070dfcfe1679f27df1edb33a1c9ec4"
+    },
+    {
+      "path": "design/home/revision-05/06-Home-discover.png",
+      "bytes": 209295,
+      "sha256": "10dfc491be2421ef7ccef399936d0c993f9afb97d3f6f32da3cb15f558722f2f"
+    },
+    {
+      "path": "design/home/revision-05/07-Home-quick-menu.png",
+      "bytes": 245837,
+      "sha256": "46fac24f7e6ffe140544cc858852a434ac7049c62bb4c32557bc1b0f153801d9"
+    },
+    {
+      "path": "design/home/revision-05/Home-full.png",
+      "bytes": 658109,
+      "sha256": "e195424d1c08d9cf6cfc4519cb2a79439e9423b530b106f0909417c12fa10c79"
+    },
+    {
+      "path": "design/home/revision-05/Home-review-gallery.jpg",
+      "bytes": 587879,
+      "sha256": "d083b5ba29d3542fabf15f10ff50dfb9e77088ce7cb7aeefce5242349be29569"
+    },
+    {
+      "path": "design/home/revision-05/checks.json",
+      "bytes": 926,
+      "sha256": "7156103d09343426027616ff9d4745e737cc3ce612982958664adaf296a90f1d"
+    },
+    {
+      "path": "design/live/01-Overview.png",
+      "bytes": 663677,
+      "sha256": "65fcba7dc6ec507555ece302433204444f30b5ac582d82211edd870bbbfcb3c7"
+    },
+    {
+      "path": "design/live/02-Strain.png",
+      "bytes": 646996,
+      "sha256": "faffb2cdcb307953ca880dc4637a9e423f1c9359351678c1f23a6b2ae25da9fb"
+    },
+    {
+      "path": "design/live/03-Recovery.png",
+      "bytes": 655703,
+      "sha256": "529dcb5772f37de7e22beadba4c388ade68ada2e57792b26c53c65aa35711120"
+    },
+    {
+      "path": "design/live/04-Sleep.png",
+      "bytes": 654533,
+      "sha256": "f6f3ce688af23d051e4153463d1326ac8b7a8f25551076b6a217864563fbf33d"
+    },
+    {
+      "path": "design/live/05-Live.png",
+      "bytes": 642878,
+      "sha256": "33d7db64c0ae4ce0e079b275f479ce41ca1dc91e3c64493ee2f36f45ad9d414e"
+    },
+    {
+      "path": "design/live/Live-gallery.jpg",
+      "bytes": 451866,
+      "sha256": "9e6cc047c33fed6b463124d1e519dd65cb7d03cc20c197840b7adc4d2a777128"
+    },
+    {
+      "path": "design/live/checks.json",
+      "bytes": 564,
+      "sha256": "1177737f978a4a81850b0ff31da2d4b9fb3a24db8de1c1815d91dec7a8669a83"
+    },
+    {
+      "path": "design/live/metrics.json",
+      "bytes": 1776,
+      "sha256": "6c61b4c771db445e4e1c681898b2e7064b3d8ed4730926cc9efdc3c539531682"
+    },
+    {
+      "path": "design/profile/01-Profile.png",
+      "bytes": 151986,
+      "sha256": "c33991072d5efc59858ef778a770185fa5dbde19aa452893a376a25fdc2688da"
+    },
+    {
+      "path": "design/profile/02-Highlights.png",
+      "bytes": 120546,
+      "sha256": "b66721ad9896640fe156aeb326cf4f24306347702c559d04866fd56b15930066"
+    },
+    {
+      "path": "design/profile/03-Personalize.png",
+      "bytes": 83786,
+      "sha256": "a57b7b8e47b6351c725df1f61a14f10f18a3e1de9c83291a9cbc2309bf330b56"
+    },
+    {
+      "path": "design/profile/04-Export.png",
+      "bytes": 126275,
+      "sha256": "6b29e156517769520f6808bba27f500b45f6dce11cd707a3328e7eb0bced77b5"
+    },
+    {
+      "path": "design/profile/Profile-gallery.jpg",
+      "bytes": 286874,
+      "sha256": "99ad9faeb4e1fd4b2842c417f2f2c1d5a219c4a83fd8c2e517404bcc853ecb73"
+    },
+    {
+      "path": "design/profile/checks.json",
+      "bytes": 414,
+      "sha256": "5feb3d026c3a50c73b587b658b63d83aa015a73b01e221f7f028c588344cfcf5"
+    },
+    {
+      "path": "design/reference-index.json",
+      "bytes": 4493,
+      "sha256": "7420fd71a33cd94dce1293869811d8f1fd1287a54249168c7ac24d6b4ce2da9a"
+    },
+    {
+      "path": "design/tokens/README.md",
+      "bytes": 2427,
+      "sha256": "576183b82cb246882abcafc03f8335bf049ae008d8e8eb9e6b4ebb8d26688f34"
+    },
+    {
+      "path": "design/tokens/home.json",
+      "bytes": 4090,
+      "sha256": "df8afcf2acf78ad25b5ae03dcca4cd90e4c9e03a458f8dc51d533852747b48c9"
+    },
+    {
+      "path": "design/tokens/live.json",
+      "bytes": 1850,
+      "sha256": "93f8b9bd92a3c2f92738854c6b78195b0e71116e953bce9f6d0cc0c2373db88b"
+    },
+    {
+      "path": "design/tokens/profile.json",
+      "bytes": 995,
+      "sha256": "35635ed2ba21a8914a07c26cae6740de00b1ec58d95b77caf737b5e00c3c4360"
+    },
+    {
+      "path": "lib/nutrition/calc.ts",
+      "bytes": 14003,
+      "sha256": "7d1ba1480ce96874cca6b1b15e117818b53026cfbe6009663c290e3e9e4a97c2"
+    },
+    {
+      "path": "lib/nutrition/prompts.ts",
+      "bytes": 1456,
+      "sha256": "f2a29052beb32ed4a980a1786118e74e0efd761e769e199027208b3922440f45"
+    },
+    {
+      "path": "lib/nutrition/routes.ts",
+      "bytes": 7421,
+      "sha256": "1ac4dbbc798b62a4b41bfeff4d954bf7f4fef51b6d3bf301514c8c6916680b44"
+    },
+    {
+      "path": "lib/nutrition/tests/calc.test.mjs",
+      "bytes": 5589,
+      "sha256": "36695171bbd5ff0198b2be27273d996a3ad7a92b3bcda493616c34b84778f74b"
+    },
+    {
+      "path": "lib/nutrition/tests/routes.test.mjs",
+      "bytes": 4141,
+      "sha256": "ca308e5970d6a9a178e1cd246b76a95e6a9d8d021df9e0d3df1c629f22ba6bef"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 1880,
+      "sha256": "a4c45bcbc04d6c46c48a4cfb756ad645dbf1269b41805e55e3f0f6483e036fa3"
+    },
+    {
+      "path": "package.json",
+      "bytes": 416,
+      "sha256": "927e8f33e63a11a6b748cffc6eb936bb426ba1b4ce16219a924c7c1c4a71fee8"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 326,
+      "sha256": "9e7417e6e13024eb982fed0fb945f2293c3d0c265685da4a7c135af7a0f5f378"
+    }
+  ]
+}

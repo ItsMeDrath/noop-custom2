@@ -1,0 +1,66 @@
+{
+  "scope": "Reference full-screen Live camera, Home routing, shared photo/video overlay; in-app export retained",
+  "checked_at": "2026-11-10",
+  "entry": "Home \u2192 + \u2192 Create WHOOP Live",
+  "portable_core": {
+    "tests_passed": 130,
+    "new_overlay_tests_passed": 7,
+    "failures": 0
+  },
+  "swift_frontend_syntax": "passed",
+  "project_structure": "passed",
+  "app_swift_sources": 34,
+  "browser": {
+    "scope": "Browser layout only, not native camera execution",
+    "checks": [
+      "overview labels and actual Swift-presenter values",
+      "all five overlay modes select and render",
+      "no fabricated live heart rate in disconnected preview",
+      "bottom drawer opens and closes",
+      "browser capture cannot claim a real photo or video",
+      "camera canvas uses the reference 9:16 aspect ratio",
+      "no JavaScript errors"
+    ],
+    "source": "Core/CameraOverlayData.swift",
+    "metrics_sha256": "6c61b4c771db445e4e1c681898b2e7064b3d8ed4730926cc9efdc3c539531682"
+  },
+  "logs": {
+    "live-reference-presenter-tests.log": {
+      "path": "Validation/live-reference-presenter-tests.log",
+      "sha256": "7d218d69ebdda0888d5b15cec026d25dfb13be7abfe413ff3e8b2c951e8b0001"
+    },
+    "live-reference-all-core-tests.log": {
+      "path": "Validation/live-reference-all-core-tests.log",
+      "sha256": "89d6b3e0f013e78ca7f81ba4ae935dfce03e6a6f673a97ea51859444fadaab6a"
+    },
+    "live-reference-swift-syntax.log": {
+      "path": "Validation/live-reference-swift-syntax.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "live-reference-project.log": {
+      "path": "Validation/live-reference-project.log",
+      "sha256": "6874f982dcd0680d020e6de57e88704665798e1fa6cdaeb6e9fef03163d92e99"
+    }
+  },
+  "changed_source_sha256": {
+    "Core/CameraOverlayData.swift": "56116b4458508d8b37120e94916bc01c911da92d578d108a0f52963c3b7d786b",
+    "Tests/WHOOPCoreTests/CoreTests.swift": "d5abdc76ea982bdc9c9e13d430ecc346f3aed919288dad636f9562e995f38f7d",
+    "App/Views/ReferenceLiveView.swift": "4b36afc948538597a5dc514970765684fc8044a69df727cc95c4c2c87e90d995",
+    "App/LiveCamera.swift": "0a36e85e4f1d40512061227e338da50e6a35fb710fc9bf233e06ab181146133c",
+    "App/WhoopWordmark.swift": "6ebd819d1cb6b5f67686221a51c1077692f3c15243e366ac934148e4f164c668",
+    "App/Pulse/PulseHomeView.swift": "02f3414d99949234d7e790ce38c400b2429d34809874cb20c9d52b89052bba2a",
+    "App/WHOOPApp.swift": "5a1ccc4ac902e93e72750fa67d2a024a0b02f0197c0799b0cac92d8cd21bfb52",
+    "WHOOP.xcodeproj/project.pbxproj": "48c126163ec20eb3833cbabbcf8fc38c8cac5c96baf18d23ce8136b64cd86dd0"
+  },
+  "camera_geometry": "design/tokens/live.json",
+  "illustrative_data_labeled": true,
+  "reference_fixtures_written_to_store": false,
+  "apple_sdk_build": false,
+  "native_camera_test": false,
+  "native_photos_test": false,
+  "native_video_recording_test": false,
+  "simulator_capture": false,
+  "exact_visual_match": false,
+  "signed_ipa_produced": false,
+  "review": "Docs/LIVE-REFERENCE.md"
+}

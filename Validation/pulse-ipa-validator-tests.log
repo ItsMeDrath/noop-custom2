@@ -1,0 +1,17 @@
+test_arm64_ios_structure_accepted_without_claiming_signature (test_validate_ipa.IPAValidationTests.test_arm64_ios_structure_accepted_without_claiming_signature) ... ok
+test_arm64_simulator_load_command_is_rejected_even_if_plist_says_iphone (test_validate_ipa.IPAValidationTests.test_arm64_simulator_load_command_is_rejected_even_if_plist_says_iphone) ... ok
+test_declared_live_activities_require_an_embedded_extension (test_validate_ipa.IPAValidationTests.test_declared_live_activities_require_an_embedded_extension) ... ok
+test_device_widget_is_validated_and_listed (test_validate_ipa.IPAValidationTests.test_device_widget_is_validated_and_listed) ... ok
+test_missing_platform_and_truncated_load_commands_are_rejected (test_validate_ipa.IPAValidationTests.test_missing_platform_and_truncated_load_commands_are_rejected) ... ok
+test_multiple_main_apps_are_rejected (test_validate_ipa.IPAValidationTests.test_multiple_main_apps_are_rejected) ... ok
+test_nonexecutable_permission_is_rejected (test_validate_ipa.IPAValidationTests.test_nonexecutable_permission_is_rejected) ... ok
+test_other_apple_platforms_are_rejected (test_validate_ipa.IPAValidationTests.test_other_apple_platforms_are_rejected) ... ok
+test_simulator_info_is_rejected_even_if_executable_says_iphone (test_validate_ipa.IPAValidationTests.test_simulator_info_is_rejected_even_if_executable_says_iphone) ... ok
+test_simulator_widget_is_rejected_even_with_a_device_main_binary (test_validate_ipa.IPAValidationTests.test_simulator_widget_is_rejected_even_with_a_device_main_binary) ... ok
+test_unsafe_zip_path_and_duplicate_entries_are_rejected (test_validate_ipa.IPAValidationTests.test_unsafe_zip_path_and_duplicate_entries_are_rejected) ... ok
+test_x86_64_is_rejected (test_validate_ipa.IPAValidationTests.test_x86_64_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.025s
+
+OK

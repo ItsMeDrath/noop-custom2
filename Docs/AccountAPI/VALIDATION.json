@@ -1,0 +1,35 @@
+{
+  "checkedAt": "2026-11-08",
+  "nodeVersion": "v24.22.1",
+  "dependencies": "Node built-ins only; no downloaded source executed",
+  "tests": {
+    "command": "cd Server && npm test",
+    "passed": 33,
+    "failed": 0,
+    "type": "Actual local HTTP route handlers with injectable fake upstream transport; all account/token values synthetic",
+    "coverage": [
+      "Missing/invalid configuration and safe health response",
+      "Provider authorization URL, separate OAuth/native state, fixed callback",
+      "Pending and pairing expiry, nonce/duplicate validation, wrong verifier, replay and concurrent redemption",
+      "Encrypted durable token reload, ciphertext authentication, private permissions and process lock",
+      "Refresh rotation, single-flight concurrent expiry/401 refresh, disconnect-refresh race",
+      "Invalid-grant cleanup, provider 401/429/500/non-JSON/invalid-JSON redaction",
+      "Pagination, cursor repetition, fixed upstream host, ISO time bounds and input target rejection",
+      "Historical end windows normalize UTC seconds/milliseconds, reject invalid/future/pre-2000/duplicate dates before upstream calls, preserve default windows and enforce exact boundaries",
+      "Literal upstream JSON unsafe integer 9007199254740993 and nonfinite number rejected with generic 503; finite fractional scores preserved",
+      "Request bounds including chunked bodies without Content-Length, row/page/upstream body bounds, timeout and rate limiting",
+      "Bridge session expiry and explicit local disconnect"
+    ]
+  },
+  "startupSmoke": {
+    "command": "node --use-env-proxy --env-file-if-exists=.env server.mjs",
+    "result": "Unconfigured server started; localhost GET /health returned HTTP 200 with configured:false and no-store headers; process stopped cleanly",
+    "providerRequests": 0
+  },
+  "publicEvidence": "SOURCES.json: retrieved third-party SDK source and synthetic fixture shapes; no official specification content reachable",
+  "liveWHOOPValidation": false,
+  "realLoginPerformed": false,
+  "realAccountRequestsPerformed": false,
+  "deployed": false,
+  "networkConfigurationChanged": false
+}

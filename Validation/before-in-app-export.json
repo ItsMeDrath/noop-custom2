@@ -1,0 +1,91 @@
+{
+  "scope": "WHOOP Home revision 05; original supplied branding and typography restored, no expiry warning",
+  "checked_at": "2026-11-10",
+  "app_swift_sources": 32,
+  "widget_swift_sources": 1,
+  "swift_frontend_syntax": "passed",
+  "project_structure": "passed",
+  "swift_fixture_dto_decode": "passed",
+  "expiry_banner_present": false,
+  "expiry_fixture_present": false,
+  "display_name": "WHOOP",
+  "registered_fonts": [
+    "Inter-Regular",
+    "DINPro-Regular",
+    "DINPro-Medium",
+    "DINPro-Bold",
+    "ProximaNova-Regular"
+  ],
+  "font_name_validation": "passed",
+  "browser": {
+    "scope": "Browser review only, not native SDK execution or reference pixel diff",
+    "checks": [
+      "reference score labels and values",
+      "original wordmark, monogram, and DIN display font loaded",
+      "date control centered independently of avatar and battery widths",
+      "no membership-expiry banner or expiry date",
+      "four activities and eight dashboard metrics",
+      "mini-rings appear in scrolled Home header",
+      "five-row quick action menu opens and closes",
+      "dashboard customization changes the selected metric only",
+      "tracker route retains real-native-data boundary",
+      "sample date navigation refreshes rings",
+      "Coach sheet explicitly uses sample conversation",
+      "no page errors or external service requests"
+    ],
+    "mock_sha256": "edf837964ace0a64d820d310ede7eb5df74c781b5341a15abe1b95a40d4386dc",
+    "tokens_sha256": "df8afcf2acf78ad25b5ae03dcca4cd90e4c9e03a458f8dc51d533852747b48c9"
+  },
+  "logs": {
+    "swift-syntax.log": {
+      "path": "Validation/whoop-home-05-swift-syntax.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "project-check.log": {
+      "path": "Validation/whoop-home-05-project-check.log",
+      "sha256": "5da02618ec365df13447fbe00d513cc865e5a8f4e14fe6e098d8e60678bc8a96"
+    },
+    "data-check.log": {
+      "path": "Validation/whoop-home-05-data-check.log",
+      "sha256": "4d18af8a41a046b95d8a6e190d4255efa943e796c26736e062e81171a16e2787"
+    },
+    "checks.json": {
+      "path": "Validation/whoop-home-05-checks.json",
+      "sha256": "7156103d09343426027616ff9d4745e737cc3ce612982958664adaf296a90f1d"
+    }
+  },
+  "home_source_sha256": {
+    "App/Pulse/PulseComponents.swift": "1b654c7e0d96a8a416d32b6fcd38be5d2450cca325e9b2193e07ceb4ab1ea18a",
+    "App/Pulse/PulseHomeCards.swift": "b133a9dc59190acad5f07cfe1663ec5c30c49c05373c1338c22aa6595ceca555",
+    "App/Pulse/PulseHomeCharts.swift": "0cb8c0f2a12c01f4fb68c04e20e6b972bb449f0ce45d44fc26c38d1b5ea37126",
+    "App/Pulse/PulseHomeData.swift": "7f482a72501ecf1142ed48980898ac1d7bf3387876b2b7d3ae30b9c5b68b4a2a",
+    "App/Pulse/PulseHomePanels.swift": "7d3c37a09739e784fb171890718009c823f58de8960130f2f6f4879f2af43309",
+    "App/Pulse/PulseHomeView.swift": "681d3b82173fab77374bb03999525dd9401aa4e45478cc9a5d3ddd97ebbe22c2",
+    "App/Pulse/PulseTrackerView.swift": "08f448af977f8762434e27b1bccd779c15910853d12b75ed08d9736c296d7b35",
+    "App/WHOOPApp.swift": "93a6e8c0c3e7984fc5b2d491f53d3d96f0f3a73d5390f1798a1b3c07ec936fa0",
+    "App/WhoopWordmark.swift": "5fa1e03c1a0d59d2ba569ad4f56ce2a153d09f84fb73a91cf9fd258a3897daf9"
+  },
+  "mock_sha256": "edf837964ace0a64d820d310ede7eb5df74c781b5341a15abe1b95a40d4386dc",
+  "tokens_sha256": "df8afcf2acf78ad25b5ae03dcca4cd90e4c9e03a458f8dc51d533852747b48c9",
+  "project_sha256": "0763ffa6fb020372e3b531bfe88c7aa0d1b0f40e948e20d0edd1440dba981b41",
+  "device_adapter_sha256": "a714933ec3e3bed76a998c46b061bd22988533338f234c7f80048eb20cd7cb6d",
+  "font_sources": "Docs/WHOOP-fonts.json",
+  "previous_test_source_comparison": {
+    "portable_core": {
+      "sources_unchanged": true,
+      "source_count": 31
+    },
+    "nutrition_and_server": {
+      "sources_unchanged": true,
+      "source_count": 19
+    }
+  },
+  "apple_sdk_build": false,
+  "simulator_capture": false,
+  "exact_visual_match": false,
+  "original_animation_timings_verified": false,
+  "physical_tracker_test": false,
+  "signed_ipa_produced": false,
+  "next_primary_screen_started": false,
+  "review": "design/home/REVISION-05.md"
+}

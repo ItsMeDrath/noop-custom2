@@ -1,0 +1,346 @@
+{
+  "day": "2026-11-09",
+  "goals": {
+    "maintenance": 2136,
+    "calories": 2136,
+    "weightKg": 80,
+    "protein": 160,
+    "carbs": 214,
+    "fat": 71
+  },
+  "totals": {
+    "eaten": 500,
+    "protein": 25,
+    "carbs": 40,
+    "fat": 12,
+    "exercise": 0,
+    "estimatedBurned": 2136,
+    "balance": 1636,
+    "fatChangeKg": -0.21246753246753247
+  },
+  "meals": [
+    {
+      "meal": "breakfast",
+      "kcal": 500,
+      "protein": 25,
+      "carbs": 40,
+      "fat": 12
+    },
+    {
+      "meal": "lunch",
+      "kcal": 0,
+      "protein": 0,
+      "carbs": 0,
+      "fat": 0
+    },
+    {
+      "meal": "dinner",
+      "kcal": 0,
+      "protein": 0,
+      "carbs": 0,
+      "fat": 0
+    },
+    {
+      "meal": "snack",
+      "kcal": 0,
+      "protein": 0,
+      "carbs": 0,
+      "fat": 0
+    }
+  ],
+  "series": [
+    {
+      "day": "2026-10-11",
+      "eaten": null,
+      "protein": null,
+      "balance": null,
+      "goal": 2136,
+      "completed": false
+    },
+    {
+      "day": "2026-10-12",
+      "eaten": null,
+      "protein": null,
+      "balance": null,
+      "goal": 2136,
+      "completed": false
+    },
+    {
+      "day": "2026-10-13",
+      "eaten": null,
+      "protein": null,
+      "balance": null,
+      "goal": 2136,
+      "completed": false
+    },
+    {
+      "day": "2026-10-14",
+      "eaten": null,
+      "protein": null,
+      "balance": null,
+      "goal": 2136,
+      "completed": false
+    },
+    {
+      "day": "2026-10-15",
+      "eaten": null,
+      "protein": null,
+      "balance": null,
+      "goal": 2136,
+      "completed": false
+    },
+    {
+      "day": "2026-10-16",
+      "eaten": null,
+      "protein": null,
+      "balance": null,
+      "goal": 2136,
+      "completed": false
+    },
+    {
+      "day": "2026-10-17",
+      "eaten": null,
+      "protein": null,
+      "balance": null,
+      "goal": 2136,
+      "completed": false
+    },
+    {
+      "day": "2026-10-18",
+      "eaten": null,
+      "protein": null,
+      "balance": null,
+      "goal": 2136,
+      "completed": false
+    },
+    {
+      "day": "2026-10-19",
+      "eaten": null,
+      "protein": null,
+      "balance": null,
+      "goal": 2136,
+      "completed": false
+    },
+    {
+      "day": "2026-10-20",
+      "eaten": null,
+      "protein": null,
+      "balance": null,
+      "goal": 2136,
+      "completed": false
+    },
+    {
+      "day": "2026-10-21",
+      "eaten": null,
+      "protein": null,
+      "balance": null,
+      "goal": 2136,
+      "completed": false
+    },
+    {
+      "day": "2026-10-22",
+      "eaten": null,
+      "protein": null,
+      "balance": null,
+      "goal": 2136,
+      "completed": false
+    },
+    {
+      "day": "2026-10-23",
+      "eaten": null,
+      "protein": null,
+      "balance": null,
+      "goal": 2136,
+      "completed": false
+    },
+    {
+      "day": "2026-10-24",
+      "eaten": null,
+      "protein": null,
+      "balance": null,
+      "goal": 2136,
+      "completed": false
+    },
+    {
+      "day": "2026-10-25",
+      "eaten": null,
+      "protein": null,
+      "balance": null,
+      "goal": 2136,
+      "completed": false
+    },
+    {
+      "day": "2026-10-26",
+      "eaten": null,
+      "protein": null,
+      "balance": null,
+      "goal": 2136,
+      "completed": false
+    },
+    {
+      "day": "2026-10-27",
+      "eaten": null,
+      "protein": null,
+      "balance": null,
+      "goal": 2136,
+      "completed": false
+    },
+    {
+      "day": "2026-10-28",
+      "eaten": null,
+      "protein": null,
+      "balance": null,
+      "goal": 2136,
+      "completed": false
+    },
+    {
+      "day": "2026-10-29",
+      "eaten": null,
+      "protein": null,
+      "balance": null,
+      "goal": 2136,
+      "completed": false
+    },
+    {
+      "day": "2026-10-30",
+      "eaten": null,
+      "protein": null,
+      "balance": null,
+      "goal": 2136,
+      "completed": false
+    },
+    {
+      "day": "2026-10-31",
+      "eaten": null,
+      "protein": null,
+      "balance": null,
+      "goal": 2136,
+      "completed": false
+    },
+    {
+      "day": "2026-11-01",
+      "eaten": null,
+      "protein": null,
+      "balance": null,
+      "goal": 2136,
+      "completed": false
+    },
+    {
+      "day": "2026-11-02",
+      "eaten": null,
+      "protein": null,
+      "balance": null,
+      "goal": 2136,
+      "completed": false
+    },
+    {
+      "day": "2026-11-03",
+      "eaten": null,
+      "protein": null,
+      "balance": null,
+      "goal": 2136,
+      "completed": false
+    },
+    {
+      "day": "2026-11-04",
+      "eaten": null,
+      "protein": null,
+      "balance": null,
+      "goal": 2136,
+      "completed": false
+    },
+    {
+      "day": "2026-11-05",
+      "eaten": null,
+      "protein": null,
+      "balance": null,
+      "goal": 2136,
+      "completed": false
+    },
+    {
+      "day": "2026-11-06",
+      "eaten": null,
+      "protein": null,
+      "balance": null,
+      "goal": 2136,
+      "completed": false
+    },
+    {
+      "day": "2026-11-07",
+      "eaten": null,
+      "protein": null,
+      "balance": null,
+      "goal": 2136,
+      "completed": false
+    },
+    {
+      "day": "2026-11-08",
+      "eaten": null,
+      "protein": null,
+      "balance": null,
+      "goal": 2136,
+      "completed": false
+    },
+    {
+      "day": "2026-11-09",
+      "eaten": 500,
+      "protein": 25,
+      "balance": 1636,
+      "goal": 2136,
+      "completed": true
+    }
+  ],
+  "averageEaten": 500,
+  "averages": [
+    {
+      "range": 7,
+      "eaten": 500,
+      "protein": 25
+    },
+    {
+      "range": 30,
+      "eaten": 500,
+      "protein": 25
+    }
+  ],
+  "loggedDays": 1,
+  "completeDays": 1,
+  "weeklyBalance": 1636,
+  "weeklyFatChangeKg": -0.21246753246753247,
+  "loggingStreak": 1,
+  "weightSeries": [],
+  "weightUnit": "kg",
+  "latestWeight": null,
+  "caloriesDial": {
+    "value": 1636,
+    "target": 2136,
+    "fraction": 0.2340823970037453,
+    "status": "progress"
+  },
+  "proteinDial": {
+    "value": 25,
+    "target": 160,
+    "fraction": 0.15625,
+    "status": "progress"
+  },
+  "carbsDial": {
+    "value": 40,
+    "target": 214,
+    "fraction": 0.18691588785046728,
+    "status": "progress"
+  },
+  "fatDial": {
+    "value": 12,
+    "target": 71,
+    "fraction": 0.16901408450704225,
+    "status": "progress"
+  },
+  "netDial": {
+    "value": 1636,
+    "target": 100,
+    "fraction": 1,
+    "status": "over"
+  },
+  "hasLog": true,
+  "isComplete": true
+}

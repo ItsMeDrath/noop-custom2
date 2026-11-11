@@ -1,0 +1,59 @@
+[0/1] Planning build
+Building for debugging...
+[0/11] Write sources
+[2/11] Write swift-version-457096A79D733C59.txt
+[4/13] Compiling WHOOPCore CameraOverlayData.swift
+[5/13] Emitting module WHOOPCore
+[6/14] Wrapping AST for WHOOPCore for debugging
+[8/25] Emitting module WHOOPCoreTests
+[9/28] Compiling WHOOPCoreTests WhoopHistoryTests.swift
+[10/28] Compiling WHOOPCoreTests WhoopLiveSessionTests.swift
+[11/28] Compiling WHOOPCoreTests resource_bundle_accessor.swift
+[12/28] Compiling WHOOPCoreTests NutritionStorageTests.swift
+[13/28] Compiling WHOOPCoreTests SleepIntervalTests.swift
+[14/28] Compiling WHOOPCoreTests WhoopAccountTests.swift
+[15/28] Compiling WHOOPCoreTests WhoopCommandTests.swift
+[16/28] Compiling WHOOPCoreTests WhoopDeviceTimeTests.swift
+[17/28] Compiling WHOOPCoreTests WhoopFrameTests.swift
+[18/28] Compiling WHOOPCoreTests BackupTests.swift
+[19/28] Compiling WHOOPCoreTests CoreTests.swift
+[20/28] Compiling WHOOPCoreTests LiveStrainTests.swift
+[21/28] Compiling WHOOPCoreTests MeasurementExportTests.swift
+[22/29] /tmp/whoop-complete-build/x86_64-unknown-linux-gnu/debug/WHOOPCorePackageDiscoveredTests.derived/all-discovered-tests.swift
+[23/30] Write sources
+[24/30] Wrapping AST for WHOOPCoreTests for debugging
+[26/33] Emitting module WHOOPCorePackageDiscoveredTests
+[27/33] Compiling WHOOPCorePackageDiscoveredTests all-discovered-tests.swift
+[28/33] Compiling WHOOPCorePackageDiscoveredTests WHOOPCoreTests.swift
+[29/34] /tmp/whoop-complete-build/x86_64-unknown-linux-gnu/debug/WHOOPCorePackageTests.derived/runner.swift
+[30/35] Write sources
+[31/35] Wrapping AST for WHOOPCorePackageDiscoveredTests for debugging
+[33/37] Emitting module WHOOPCorePackageTests
+[34/37] Compiling WHOOPCorePackageTests runner.swift
+[35/37] Write Objects.LinkFileList
+[36/37] Linking WHOOPCorePackageTests.xctest
+Build complete! (6.24s)
+Test Suite 'Selected tests' started at 2026-11-10 04:24:33.124
+Test Suite 'CameraOverlayDataTests' started at 2026-11-10 04:24:33.126
+Test Case 'CameraOverlayDataTests.testDetailModesUseTheSameMetricAsOverview' started at 2026-11-10 04:24:33.126
+Test Case 'CameraOverlayDataTests.testDetailModesUseTheSameMetricAsOverview' passed (0.011 seconds)
+Test Case 'CameraOverlayDataTests.testLiveEnergyIsLabeledDayCaloriesAndTimerIsBounded' started at 2026-11-10 04:24:33.138
+Test Case 'CameraOverlayDataTests.testLiveEnergyIsLabeledDayCaloriesAndTimerIsBounded' passed (0.102 seconds)
+Test Case 'CameraOverlayDataTests.testLiveHRRequiresFreshReceivedTimestampIncludingTenSecondBoundary' started at 2026-11-10 04:24:33.239
+Test Case 'CameraOverlayDataTests.testLiveHRRequiresFreshReceivedTimestampIncludingTenSecondBoundary' passed (0.002 seconds)
+Test Case 'CameraOverlayDataTests.testMissingOrInvalidHRIsNotReplacedByHistoricalOrExampleSamples' started at 2026-11-10 04:24:33.241
+Test Case 'CameraOverlayDataTests.testMissingOrInvalidHRIsNotReplacedByHistoricalOrExampleSamples' passed (0.001 seconds)
+Test Case 'CameraOverlayDataTests.testOverviewUsesDayStrainRecoveryAndActualSleepDuration' started at 2026-11-10 04:24:33.243
+Test Case 'CameraOverlayDataTests.testOverviewUsesDayStrainRecoveryAndActualSleepDuration' passed (0.001 seconds)
+Test Case 'CameraOverlayDataTests.testRecoveryThresholdsAndZeroScores' started at 2026-11-10 04:24:33.244
+Test Case 'CameraOverlayDataTests.testRecoveryThresholdsAndZeroScores' passed (0.001 seconds)
+Test Case 'CameraOverlayDataTests.testUnavailableAndOutOfRangeScoresStayUnavailable' started at 2026-11-10 04:24:33.245
+Test Case 'CameraOverlayDataTests.testUnavailableAndOutOfRangeScoresStayUnavailable' passed (0.0 seconds)
+Test Suite 'CameraOverlayDataTests' passed at 2026-11-10 04:24:33.245
+	 Executed 7 tests, with 0 failures (0 unexpected) in 0.119 (0.119) seconds
+Test Suite 'Selected tests' passed at 2026-11-10 04:24:33.245
+	 Executed 7 tests, with 0 failures (0 unexpected) in 0.119 (0.119) seconds
+◇ Test run started.
+↳ Testing Library Version: 6.2.1 (c9d57c83568b06d)
+↳ Target Platform: x86_64-unknown-linux-gnu
+✔ Test run with 0 tests in 0 suites passed after 0.001 seconds.

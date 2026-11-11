@@ -1,0 +1,11 @@
+{
+  "scope": "Illustrative browser layout; native storage and Files picker not exercised",
+  "checks": [
+    "chosen streak and age shown on profile",
+    "highlights match actual Swift export fixture",
+    "age inputs have no upper bound and custom streak saves in layout preview",
+    "invalid age is visible in editor",
+    "four export choices and profile/highlights summary",
+    "no JavaScript errors"
+  ]
+}

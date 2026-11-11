@@ -1,0 +1,88 @@
+
+> test
+> npm run build && node --test lib/nutrition/tests/*.test.mjs && npm test --prefix Server
+
+
+> build
+> node Scripts/build-nutrition.mjs && tsc --noEmit
+
+(node:162100) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+Generated native offline nutrition calculator from the single TypeScript source.
+✔ Mifflin–St Jeor, sex coefficient, activity and goal offsets are explicit (7.965398ms)
+✔ imperial profile and later weight logs normalize before target calculation (1.380728ms)
+✔ manual overrides work without a profile and macro percentages are calculated centrally (0.785342ms)
+✔ unlogged days never fabricate deficits, fat changes or averages (0.553447ms)
+✔ meal totals, exercise and 7700-kcal energy equivalent use only matching dates (1.733058ms)
+✔ weekly totals include completed days only; incomplete eating still appears on intake chart (1.133785ms)
+✔ 7/30-day averages ignore missing logs; protein chart uses actual totals (2.328074ms)
+✔ logging streak deduplicates same-day foods and stops at calendar gaps (1.097457ms)
+✔ rolling weight averages use seven calendar days and retain recorded dates (15.01932ms)
+✔ malformed dates, duplicate IDs, unsupported ranges and nonfinite values fail before calculation (1.962246ms)
+✔ dial fill is bounded; status text accompanies over-target values (0.497933ms)
+✔ generated offline native bundle produces exactly the canonical response (30.171023ms)
+✔ zero manual macro targets are valid and over-target fill stays truthful (1.255533ms)
+✔ text, photo, exercise and review contracts are validated with typed output (59.75379ms)
+✔ invalid provider JSON retries exactly once and the second valid schema succeeds (2.994131ms)
+✔ invalid values never bypass zod; two failures return a friendly redacted error (4.397277ms)
+✔ missing keys do not contact any provider (0.347832ms)
+✔ HTTP rate limits and provider failures do not retry or expose their bodies (3.23312ms)
+✔ empty text, remote image URLs, invalid image headers and invalid weights are rejected before upstream access (3.3591ms)
+✔ review rejects impossible dates and negative energy totals before upstream access (1.562536ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 436.986637
+
+> test
+> node --test test/*.test.mjs
+
+✔ missing and malformed config stays unconfigured, health redacts values (177.504597ms)
+✔ real local routes: OAuth state, proof-bound native pairing, import and encrypted disconnect (117.090478ms)
+✔ provider and native TTLs expire; callback nonce and duplicates are checked (19.131669ms)
+✔ provider denial redirects with generic error and original app state, consumes state (13.802388ms)
+✔ concurrent callback and pairing replays exchange and persist only once (31.70801ms)
+✔ pagination uses fixed host, ISO bounds and nextToken; unknown targets rejected (52.891441ms)
+✔ repeated cursors and row/response bounds fail instead of truncating (26.075391ms)
+✔ expired access token refresh is single-flight during concurrent requests and rotation persists (59.304639ms)
+✔ upstream 401 refreshes once, concurrent stale responses share rotated access token (38.092986ms)
+✔ disconnect racing refresh never resurrects encrypted provider session (40.07282ms)
+✔ invalid refresh grant removes saved session, provider errors and exceptions are redacted (55.469643ms)
+✔ storage authenticates ciphertext, refuses permissive files and excludes multiple writers (30.861249ms)
+✔ malformed input, JSON size, auth, bounded pending state and rate limiting are enforced (63.91239ms)
+✔ session expiry is enforced and refreshed tokens cannot extend bridge bearer life (19.53898ms)
+▶ row, page, upstream response size and malformed envelopes are bounded with redacted errors
+  ✔ row-limit (38.583473ms)
+  ✔ page-limit (29.683754ms)
+  ✔ page-size (23.017888ms)
+  ✔ cursor-type (27.268664ms)
+  ✔ record-type (31.866417ms)
+  ✔ body-limit (39.100081ms)
+✔ row, page, upstream response size and malformed envelopes are bounded with redacted errors (192.223444ms)
+▶ upstream 429, 500, non-JSON and second 401 use generic errors
+  ✔ rate-limit (29.554552ms)
+  ✔ server-error (38.887803ms)
+  ✔ non-json (26.002404ms)
+  ✔ invalid-json (31.391506ms)
+  ✔ second-unauthorized (52.484041ms)
+✔ upstream 429, 500, non-JSON and second 401 use generic errors (180.277806ms)
+✔ whole import deadline aborts a stalled fake upstream without leaking its details (57.707918ms)
+✔ chunked JSON bodies enforce the 64 KiB limit without relying on Content-Length (15.524837ms)
+✔ historical end timestamp selects a bounded window for every upstream collection (41.61192ms)
+✔ historical end rejects invalid, duplicate, non-UTC, pre-2000 and future values before upstream access (73.995673ms)
+✔ historical end accepts exact boundary timestamps; absent end retains current default window (43.987864ms)
+✔ upstream literal unsafe integers and nonfinite numbers fail generically; fractional scores survive (115.561557ms)
+✔ nutrition routes reuse authenticated sessions and never forward a key to the client (45.912038ms)
+✔ authenticated nutrition missing-key and oversized-image failures stay friendly and bounded (54.027086ms)
+ℹ tests 35
+ℹ suites 0
+ℹ pass 35
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2001.111854
