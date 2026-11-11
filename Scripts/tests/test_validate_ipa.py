@@ -1,7 +1,10 @@
 """Synthetic package fixtures test validation, never produce a runnable iPhone app."""
 import importlib.util
+import os
 import plistlib
+import shutil
 import struct
+import subprocess
 import tempfile
 import unittest
 import warnings
@@ -99,6 +102,49 @@ class IPAValidationTests(unittest.TestCase):
     def test_multiple_main_apps_are_rejected(self):
         with self.assertRaisesRegex(ValueError, 'exactly one'):
             validator.validate(self.fixture(extra=lambda z:z.writestr('Payload/Other.app/file', 'bad')))
+
+class DeviceBuildScriptTests(unittest.TestCase):
+    def test_generic_destination_reaches_build_and_build_failure_stops_packaging(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            scripts = root / 'Scripts'
+            scripts.mkdir()
+            source = Path(__file__).parents[1] / 'package-ipa-on-mac.sh'
+            shutil.copyfile(source, scripts / source.name)
+            commands = root / 'commands'
+            commands.mkdir()
+            stubs = {
+                'uname': '#!/bin/bash\necho Darwin\n',
+                'python3': '#!/bin/bash\nexit 0\n',
+                'xcodebuild': '''#!/bin/bash
+if [[ "$1" == -version ]]; then echo 'Xcode fixture'; exit 0; fi
+destination=0
+architecture=0
+for argument in "$@"; do
+  [[ "$argument" == -destination ]] && destination=1
+  [[ "$argument" == -arch ]] && architecture=1
+done
+if (( destination && architecture )); then
+  echo 'destination implies architecture, architecture must not also be specified' >&2
+  exit 70
+fi
+echo 'Device build reached; deliberate test build failure' >&2
+exit 65
+''',
+            }
+            for name, content in stubs.items():
+                command = commands / name
+                command.write_text(content)
+                command.chmod(0o755)
+            environment = dict(os.environ, PATH=str(commands) + os.pathsep + os.environ['PATH'])
+            result = subprocess.run(['bash', str(scripts / source.name)], env=environment,
+                                    text=True, capture_output=True, timeout=15)
+            self.assertEqual(result.returncode, 65, result.stdout + result.stderr)
+            self.assertIn('Device build reached', result.stdout)
+            self.assertNotIn('destination implies architecture', result.stdout + result.stderr)
+            self.assertFalse((root / 'build' / 'WHOOP-unsigned.ipa').exists())
+            self.assertEqual(list((root / 'build').glob('ipa.*')), [])
+
 
 if __name__ == '__main__':
     unittest.main()

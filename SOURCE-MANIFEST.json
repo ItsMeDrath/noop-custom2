@@ -648,8 +648,8 @@
     },
     {
       "path": "Scripts/package-ipa-on-mac.sh",
-      "bytes": 1957,
-      "sha256": "6d3f692e5566122447610f8cb0b99473e41f6d017ea45a014a2cf426d879d6ef"
+      "bytes": 2106,
+      "sha256": "c04fc376add383cd37302326d718d57c40d31ac4b277167c727c4084f02596ed"
     },
     {
       "path": "Scripts/package-source.py",
@@ -658,8 +658,8 @@
     },
     {
       "path": "Scripts/tests/test_validate_ipa.py",
-      "bytes": 5318,
-      "sha256": "6e91676f24879b994239263e6d40fadc4943017424aa99fec16b97772cf9b60b"
+      "bytes": 7324,
+      "sha256": "d6195e113c2ac7f883dd18fb2ad5f27b402e9776776d8aba9972f05537d1e543"
     },
     {
       "path": "Scripts/validate-ipa.py",

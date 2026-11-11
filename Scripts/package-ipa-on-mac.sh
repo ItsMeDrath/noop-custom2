@@ -13,8 +13,10 @@ TASK_LOG_DIR="$(mktemp -d "$TASK_ROOT/build/device-build.XXXXXX")"
 printf 'Build log: %s\n' "$TASK_LOG_DIR/xcodebuild.log"
 xcodebuild -version
 python3 Scripts/validate-nutrition-resource.py
+# The generic iOS destination selects device architectures. Xcode rejects -arch
+# together with -destination; validate-ipa.py checks the resulting arm64 binary.
 xcodebuild -project WHOOP.xcodeproj -scheme WHOOP -configuration Release \
-  -destination 'generic/platform=iOS' -sdk iphoneos -arch arm64 \
+  -destination 'generic/platform=iOS' -sdk iphoneos \
   -derivedDataPath build/DeviceDerivedData \
   -resultBundlePath "$TASK_LOG_DIR/WHOOP.xcresult" \
   CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY='' build \
