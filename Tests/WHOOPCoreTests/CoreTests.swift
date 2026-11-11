@@ -1,6 +1,36 @@
 import XCTest
 @testable import WHOOPCore
 
+final class LaunchDayDataTests: XCTestCase {
+    private let now = Date(timeIntervalSince1970: 1_794_398_400)
+
+    func testFirstLaunchStartsOnTodayWithoutScoresOrExampleDays() {
+        let initial = LaunchDayData(now: now)
+        XCTAssertTrue(initial.days.isEmpty)
+        XCTAssertEqual(initial.selectedDate, DayCalendar.start(of: now))
+    }
+
+    func testExistingExampleInstallOpensTodayWithoutAdoptingItsScores() {
+        let examples = ExampleData.days()
+        XCTAssertFalse(examples.isEmpty)
+        let initial = LaunchDayData(savedDays: examples, selectedDate: examples[0].date, now: now)
+        XCTAssertTrue(initial.days.isEmpty)
+        XCTAssertEqual(initial.selectedDate, DayCalendar.start(of: now))
+    }
+
+    func testMigrationPreservesEveryRealMeasurementAndSelectedDay() {
+        var recorded = DailySnapshot.empty(on: now)
+        recorded.recovery = 74
+        recorded.strain = 9.4
+        recorded.heartRates = [HeartRateSample(timestamp: now, bpm: 71)]
+        var earlier = DailySnapshot.empty(on: now.addingTimeInterval(-86_400))
+        earlier.sleepMinutes = 431
+        let initial = LaunchDayData(savedDays: ExampleData.days() + [recorded, earlier], selectedDate: earlier.date, now: now)
+        XCTAssertEqual(initial.days, [earlier, recorded])
+        XCTAssertEqual(initial.selectedDate, earlier.date)
+    }
+}
+
 final class BluetoothTests: XCTestCase {
     func testEightBitAndOtherFlags() {
         XCTAssertEqual(HeartRateMeasurement.decode(Data([0, 72])), 72)

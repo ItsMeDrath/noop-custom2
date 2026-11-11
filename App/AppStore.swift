@@ -59,19 +59,20 @@ final class AppStore: ObservableObject {
         if let data = try? Data(contentsOf: storageURL),
            let state = try? decoder.decode(SavedState.self, from: data), state.version == 1,
            let restoredProfile = try? (state.profile ?? ProfilePersonalization()).validated() {
-            days = state.days.sorted { $0.date < $1.date }
+            let initial = LaunchDayData(savedDays: state.days, selectedDate: state.selectedDate)
+            days = initial.days
             activities = state.activities
             journal = state.journal
-            selectedDate = state.selectedDate
+            selectedDate = initial.selectedDate
             whoopAccountUserID = state.whoopAccountUserID
             nutrition = state.nutrition ?? NutritionData()
             profile = restoredProfile
         } else {
-            let examples = ExampleData.days()
-            days = examples
+            let initial = LaunchDayData()
+            days = initial.days
             activities = []
             journal = []
-            selectedDate = examples.last?.date ?? Self.utc.startOfDay(for: Date())
+            selectedDate = initial.selectedDate
             if FileManager.default.fileExists(atPath: storageURL.path) {
                 let backup = documents.appendingPathComponent("whoop-unreadable-\(UUID().uuidString).json")
                 do {
@@ -219,6 +220,16 @@ final class AppStore: ObservableObject {
         let previous = profile
         profile = validated
         do { try writeState() } catch { profile = previous; throw error }
+    }
+
+    func completeSetup() throws {
+        guard !isImporting else { throw ProfilePersonalizationError.invalid("Wait for your import to finish before opening Home.") }
+        let before = stateSnapshot()
+        let initial = LaunchDayData(savedDays: days, selectedDate: Date())
+        days = initial.days
+        selectedDate = initial.selectedDate
+        do { try writeState(); tab = .home }
+        catch { restoreState(before); throw error }
     }
 
     func makeBackup() throws -> Data {

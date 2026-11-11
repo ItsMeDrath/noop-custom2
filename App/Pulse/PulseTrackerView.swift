@@ -48,7 +48,7 @@ struct PulseTrackerView: View {
                     } else {
                         Button(tracker.isScanning ? "STOP SEARCHING" : "SEARCH FOR DEVICES") {
                             if tracker.isScanning { tracker.stop() } else { tracker.scan() }
-                        }.buttonStyle(PulseTrackerButton())
+                        }.buttonStyle(PulseTrackerButton()).disabled(tracker.isConnecting)
                         if tracker.isScanning {
                             ProgressView("Searching nearby Bluetooth trackers…").font(PulseFont.body(12)).tint(PulseColor.load).frame(minHeight: 44)
                         }
@@ -67,7 +67,7 @@ struct PulseTrackerView: View {
                                             Image(systemName: "chevron.right").font(.system(size: 11))
                                         }.frame(minHeight: 44)
                                     }
-                                }.buttonStyle(.plain).accessibilityLabel("Connect to \(item.name), signal \(item.rssi) dBm")
+                                }.buttonStyle(.plain).disabled(tracker.isConnecting).accessibilityLabel("Connect to \(item.name), signal \(item.rssi) dBm")
                             }
                         } else if !tracker.isScanning {
                             PulseCard {

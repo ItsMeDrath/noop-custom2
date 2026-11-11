@@ -34,7 +34,9 @@ final class DeviceModel: NSObject, ObservableObject, @preconcurrency CBCentralMa
     private lazy var central = CBCentralManager(delegate: self, queue: .main)
     private var discovered: [UUID: CBPeripheral] = [:]
     private var active: CBPeripheral?
+    var isConnecting: Bool { active != nil && connectedName == nil }
     private var pendingScan = false
+    private var pendingReconnectID: UUID?
     private var scanToken = UUID()
     private var connectionToken = UUID()
     private let heartService = CBUUID(string: "180D")
@@ -45,7 +47,27 @@ final class DeviceModel: NSObject, ObservableObject, @preconcurrency CBCentralMa
          CBUUID(string: "FD4B0001-CCE1-4033-93CE-002D5875F58A")]
     }
 
+    /// Only restores a sensor this app previously connected to; never scans automatically.
+    func reconnectSavedDevice() {
+        guard active == nil, !pendingScan,
+              let saved = UserDefaults.standard.string(forKey: "whoop.tracker.identifier"),
+              let identifier = UUID(uuidString: saved) else { return }
+        pendingReconnectID = identifier
+        if central.state == .poweredOn { reconnectPendingDevice() }
+    }
+    private func reconnectPendingDevice() {
+        guard let identifier = pendingReconnectID else { return }
+        pendingReconnectID = nil
+        guard let peripheral = central.retrievePeripherals(withIdentifiers: [identifier]).first else {
+            status = "Search again to reconnect your tracker."; return
+        }
+        discovered[identifier] = peripheral
+        connect(NearbyDevice(id: identifier, name: peripheral.name ?? "Your tracker", rssi: 0))
+    }
+
     func scan() {
+        guard !isConnecting else { return }
+        pendingReconnectID = nil
         pendingScan = true
         switch central.state {
         case .poweredOn: startScan()
@@ -56,6 +78,8 @@ final class DeviceModel: NSObject, ObservableObject, @preconcurrency CBCentralMa
         }
     }
     func stop() {
+        // Do not initialize CoreBluetooth (or prompt for access) just to leave a screen.
+        guard pendingScan || isScanning else { return }
         pendingScan = false
         scanToken = UUID()
         central.stopScan()
@@ -93,6 +117,7 @@ final class DeviceModel: NSObject, ObservableObject, @preconcurrency CBCentralMa
         }
     }
     func disconnect() {
+        pendingReconnectID = nil
         connectionToken = UUID()
         if let active { central.cancelPeripheralConnection(active) }
         active = nil; connectedName = nil; heartRate = nil; heartRateReceivedAt = nil; resetCustomState()
@@ -101,7 +126,9 @@ final class DeviceModel: NSObject, ObservableObject, @preconcurrency CBCentralMa
 
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         switch central.state {
-        case .poweredOn: if pendingScan { startScan() }
+        case .poweredOn:
+            if pendingScan { startScan() }
+            else { reconnectPendingDevice() }
         case .poweredOff:
             isScanning = false; heartRate = nil; heartRateReceivedAt = nil; connectedName = nil; active = nil; resetCustomState()
             status = "Bluetooth is off. Turn it on to connect a sensor."
@@ -126,6 +153,7 @@ final class DeviceModel: NSObject, ObservableObject, @preconcurrency CBCentralMa
         guard active?.identifier == peripheral.identifier else { return }
         connectionToken = UUID()
         connectedName = peripheral.name ?? "Sensor"
+        UserDefaults.standard.set(peripheral.identifier.uuidString, forKey: "whoop.tracker.identifier")
         status = "Connected. Checking for heart-rate broadcast…"
         peripheral.discoverServices(scanServices)
     }

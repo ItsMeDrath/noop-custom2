@@ -143,7 +143,7 @@ struct ScoreRing: View {
         ZStack {
             Circle().stroke(Color.white.opacity(0.10), lineWidth: large ? 16 : 5)
             Circle().trim(from: 0, to: metric.fraction(day))
-                .stroke(metric.color, style: StrokeStyle(lineWidth: large ? 16 : 5, lineCap: .round))
+                .stroke(metric == .recovery ? PulseColor.recoveryScore(day.recovery.map(Double.init)) : metric.color, style: StrokeStyle(lineWidth: large ? 16 : 5, lineCap: .round))
                 .rotationEffect(.degrees(-90))
             if let fraction = comparisonFraction, (0...1).contains(fraction) {
                 Circle().trim(from: max(0, fraction - 0.0025), to: min(1, fraction + 0.0025))
@@ -160,7 +160,7 @@ struct ScoreRing: View {
                     Text(metric == .sleep ? "SLEEP\nPERFORMANCE" : metric == .strain ? "DAY STRAIN" : "RECOVERY")
                         .font(WFont.label(12)).tracking(1.2).multilineTextAlignment(.center)
                 } else {
-                    Text(metric.text(day)).font(WFont.number(25, bold: true))
+                    Text(metric.value(day) == nil ? "NO DATA" : metric.text(day)).font(WFont.number(metric.value(day) == nil ? 12 : 25, bold: true))
                         .foregroundStyle(.white).minimumScaleFactor(0.6).lineLimit(1)
                 }
             }.padding(10)

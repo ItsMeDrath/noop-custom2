@@ -2,6 +2,23 @@ name: Build iPhone IPA
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'App/**'
+      - 'Core/**'
+      - 'Tests/**'
+      - 'Configuration/**'
+      - 'LiveActivityWidget/**'
+      - 'WHOOP.xcodeproj/**'
+      - 'Scripts/**'
+      - 'Package.swift'
+      - 'lib/nutrition/calc.ts'
+      - '.github/workflows/ios-ipa.yml'
+
+concurrency:
+  group: iphone-ipa-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: read

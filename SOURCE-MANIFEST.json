@@ -1,5 +1,5 @@
 {
-  "scope": "WHOOP with personalized profile, saved-data highlights, Live camera and measurement export in the existing iOS project, with legacy reconstruction source retained. No signed iPhone binary or account credentials.",
+  "scope": "WHOOP iOS source with first-run setup, functional personal Home, tracker connection, nutrition, Live and saved-data exports; no compiled IPA or credentials.",
   "files": [
     {
       "path": ".gitattributes",
@@ -8,8 +8,8 @@
     },
     {
       "path": ".github/workflows/ios-ipa.yml",
-      "bytes": 2215,
-      "sha256": "286f3c8a3a59900ba46869e4ad3b71321bf9429efde399d435d76326f1eab1de"
+      "bytes": 2593,
+      "sha256": "ad30b41799479a7643ea4629dc45ec076613b32163a2407dc2269ffda117bdd9"
     },
     {
       "path": ".gitignore",
@@ -33,13 +33,13 @@
     },
     {
       "path": "App/AppStore.swift",
-      "bytes": 17857,
-      "sha256": "8b5a451bdd5744e293286c05918968b35dde6ea88f7b68acf1d72e16798972c5"
+      "bytes": 18349,
+      "sha256": "7903fc8f6432f31879b3c58ac10ab7b20c7ac861f51ec2a0e4b03de9a3ea8a05"
     },
     {
       "path": "App/DeviceModel.swift",
-      "bytes": 18406,
-      "sha256": "a714933ec3e3bed76a998c46b061bd22988533338f234c7f80048eb20cd7cb6d"
+      "bytes": 19855,
+      "sha256": "4b18856e060fba6209d0af8cbe4017c52cf1137d5b9515ee89e1efcc8460d2af"
     },
     {
       "path": "App/HealthDataModel.swift",
@@ -93,8 +93,8 @@
     },
     {
       "path": "App/Pulse/PulseTrackerView.swift",
-      "bytes": 8427,
-      "sha256": "08f448af977f8762434e27b1bccd779c15910853d12b75ed08d9736c296d7b35"
+      "bytes": 8489,
+      "sha256": "48ad0b7b792cc2f5088c00274613f8532492e8e6e1787cd7e559911d259d616d"
     },
     {
       "path": "App/Resources/BrandColors.xcassets/Contents.json",
@@ -178,8 +178,8 @@
     },
     {
       "path": "App/Views/DashboardViews.swift",
-      "bytes": 19813,
-      "sha256": "d9f70c3761ae45b28d4bdb12efe3ccd3d9c8acfba483f17e5bca905c9b8b38c3"
+      "bytes": 23357,
+      "sha256": "8c4b75b5a7c60d07793ac7ca3a016112da4bcf9cb97cc4de81af7e32114a8dda"
     },
     {
       "path": "App/Views/DetailViews.swift",
@@ -238,18 +238,18 @@
     },
     {
       "path": "App/Views/RootView.swift",
-      "bytes": 16314,
-      "sha256": "75e470ab1ac687e740f303c390f267cf58293f4eb406f0daff603500d949614d"
+      "bytes": 16737,
+      "sha256": "d01b28273959fba4d3962671dc58be05eaef5f992f30148249d50fd837dbb111"
     },
     {
       "path": "App/Views/SecondaryViews.swift",
-      "bytes": 17998,
-      "sha256": "8329fcff68526936bb708e5c1f2e97f7f83db3566df8f471b04504175ffde4cd"
+      "bytes": 18718,
+      "sha256": "27c5d69f1c7679e24eb88bbcb589c5584d4ded2b9a1bfb435d4e73aaf8051900"
     },
     {
       "path": "App/Views/Theme.swift",
-      "bytes": 9294,
-      "sha256": "ee09f79d550e450bf3a9eeca74937a82f2ce45621f2842795d63f4e0f1554baa"
+      "bytes": 9445,
+      "sha256": "6c1732b96f3aa92ae17173efe1eb104ada2b915120a8254897b29d15dfea4d40"
     },
     {
       "path": "App/Views/WorkoutView.swift",
@@ -258,8 +258,8 @@
     },
     {
       "path": "App/WHOOPApp.swift",
-      "bytes": 708,
-      "sha256": "5a1ccc4ac902e93e72750fa67d2a024a0b02f0197c0799b0cac92d8cd21bfb52"
+      "bytes": 13774,
+      "sha256": "1f28e18fb55087794bc3d0429c71d8cf037edebce548d8b8961fd805ef90eccd"
     },
     {
       "path": "App/WhoopWordmark.swift",
@@ -333,8 +333,8 @@
     },
     {
       "path": "Core/Models.swift",
-      "bytes": 9570,
-      "sha256": "b422b2f77f387f24d26ebd8afdb355b4bc53282b0cc79b99cc768935a806ae32"
+      "bytes": 10060,
+      "sha256": "1493abe0fdd3be63ccdbb41f98be1bfdc1e3230e27761b5f668ae568dccc5739"
     },
     {
       "path": "Core/NutritionModels.swift",
@@ -395,6 +395,11 @@
       "path": "Docs/ACCOUNT-SYNC.md",
       "bytes": 10019,
       "sha256": "9a7ab12910322472840ee685e39893c9138ef4a0b75e0a5ea0be78c1cee2c151"
+    },
+    {
+      "path": "Docs/APP-STARTUP.md",
+      "bytes": 3190,
+      "sha256": "1784fe00661a705804c7c75ef960be9b0949d0fbbd0da4c058ab1ff55e8f2890"
     },
     {
       "path": "Docs/APPLE-HEALTH.md",
@@ -613,8 +618,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 11335,
-      "sha256": "17d442a22d254ab8caeeb1858052c348f1473cd3169588930957096aebefa295"
+      "bytes": 12102,
+      "sha256": "582a70cb1ca01849ba428984f20a4acf997e909fa5eb20c3f937568922e00bd3"
     },
     {
       "path": "STATUS.md",
@@ -723,8 +728,8 @@
     },
     {
       "path": "Tests/WHOOPCoreTests/CoreTests.swift",
-      "bytes": 15739,
-      "sha256": "d5abdc76ea982bdc9c9e13d430ecc346f3aed919288dad636f9562e995f38f7d"
+      "bytes": 17091,
+      "sha256": "a2825390a834f6d5ef40d7a785845492a5b84e2583466604cc84d6d93d74b171"
     },
     {
       "path": "Tests/WHOOPCoreTests/Fixtures/NutritionCalculation.json",
@@ -788,8 +793,8 @@
     },
     {
       "path": "VALIDATION.json",
-      "bytes": 3268,
-      "sha256": "2b035b979f01cf4966137952c274f978c7722700386fb798e843b004b3e964b0"
+      "bytes": 4735,
+      "sha256": "2e125330888a919b63a11d63edf98a28db8f3bd781e7ca9828a8ffc2ed0bdb48"
     },
     {
       "path": "Validation/app-syntax.log",
@@ -1005,6 +1010,11 @@
       "path": "Validation/server-tests.log",
       "bytes": 2843,
       "sha256": "b016796c26a03a549ae658c00d7620966ce1d124651778423143c01aa01846ac"
+    },
+    {
+      "path": "Validation/startup-core-tests.log",
+      "bytes": 38160,
+      "sha256": "a5072f333ae501d15b8944f4d95f346f4bd02bd2bc7ce264aa13fadb3bd2c095"
     },
     {
       "path": "Validation/whoop-home-05-checks.json",

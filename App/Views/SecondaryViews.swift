@@ -34,6 +34,7 @@ struct ProfileView: View {
     let openJournal: () -> Void
     let openDevice: () -> Void
     let exportData: () -> Void
+    @State private var personalizing = false
     var body: some View {
         VStack(spacing: 24) {
             HStack { Text("YOUR PROFILE").font(WFont.number(35, bold: true)); Spacer() }
@@ -42,6 +43,8 @@ struct ProfileView: View {
                     .overlay(Image(systemName: "person.crop.circle").font(.system(size: 84, weight: .ultraLight)).foregroundStyle(WColor.muted))
                 Text("YOUR PERSONAL RECORD").font(WFont.label(12)).tracking(1.2)
                 SourceBadge(source: store.selectedDay.source, isEmpty: !selectedDayExists(in: store))
+                if !store.profile.displayName.isEmpty { Text(store.profile.displayName).font(WFont.number(25, bold: true)) }
+                Button("PERSONALIZE PROFILE & VIEW HIGHLIGHTS") { personalizing = true }.buttonStyle(WButton(filled: false))
             }.padding(.vertical, 10)
             HStack(spacing: 12) {
                 MiniMetric(title: "DAYS", value: store.days.count.formatted(), unit: "saved", symbol: "calendar", color: WColor.blue)
@@ -58,7 +61,7 @@ struct ProfileView: View {
             }
             Text("Your journal and activity log are stored on this iPhone. Day-data exports include measurements and supplied scores, not your journal notes.")
                 .font(WFont.body(14)).foregroundStyle(WColor.muted).multilineTextAlignment(.center)
-        }
+        }.fullScreenCover(isPresented: $personalizing) { WHOOPProfileView(fallbackName: "Your Profile", fallbackInitials: "YOU") }
     }
 }
 
@@ -104,6 +107,7 @@ struct MenuView: View {
     let openProfile: () -> Void
     let openJournal: () -> Void
     @State private var confirmExamples = false
+    @State private var referenceHome = false
     var body: some View {
         VStack(alignment: .leading, spacing: 22) {
             Text("MORE").font(WFont.number(35, bold: true)).tracking(0.5)
@@ -154,6 +158,8 @@ struct MenuView: View {
                 VStack(spacing: 0) {
                     MenuActionRow(title: "Show example week", symbol: "sparkles") { confirmExamples = true }
                     Divider()
+                    MenuActionRow(title: "Screenshot layout preview", symbol: "rectangle.on.rectangle") { referenceHome = true }
+                    Divider()
                     MenuActionRow(title: "About this edition", symbol: "info.circle", action: openAbout)
                 }
             }
@@ -166,6 +172,7 @@ struct MenuView: View {
         .confirmationDialog("Replace local data with an example week?", isPresented: $confirmExamples, titleVisibility: .visible) {
             Button("Replace with examples", role: .destructive) { showExamples() }
         } message: { Text("This replaces imported days, journal entries and logged activities on this iPhone. Save a full backup first if you want to keep a copy, including journal entries and activities. Example scores are labelled throughout the app.") }
+        .sheet(isPresented: $referenceHome) { PulseHomeView().presentationDragIndicator(.visible) }
     }
 }
 

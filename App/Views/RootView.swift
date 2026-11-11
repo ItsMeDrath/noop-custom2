@@ -3,7 +3,7 @@ import UniformTypeIdentifiers
 import WHOOPCore
 
 private enum AppSheet: String, Identifiable {
-    case journal, activity, device, data, about, reference, healthImport, workout, activities, account, stress, live, tier
+    case journal, activity, device, data, about, reference, healthImport, workout, activities, account, stress, live, tier, measurementExport
     var id: String { rawValue }
 }
 
@@ -24,6 +24,8 @@ struct RootView: View {
     @State private var restoringBackup = false
     @State private var pendingBackup: LocalBackup?
     @State private var exportName = "WHOOP-day-data"
+    @State private var showingLive = false
+    @State private var attemptedReconnect = false
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     var body: some View {
@@ -33,7 +35,7 @@ struct RootView: View {
                 VStack(spacing: 22) {
                     switch store.tab {
                     case .home:
-                        HomeView(openMetric: openMetric, openJournal: { sheet = .journal }, openActivity: { sheet = .activity }, openWorkout: { showingStartOptions = true }, openHealth: { store.tab = .health }, openStress: { sheet = .stress }, openActivities: { sheet = .activities })
+                        HomeView(openMetric: openMetric, openJournal: { sheet = .journal }, openActivity: { sheet = .activity }, openWorkout: { showingStartOptions = true }, openHealth: { store.tab = .health }, openStress: { sheet = .stress }, openActivities: { sheet = .activities }, openDevice: { sheet = .device }, openHealthImport: { sheet = .healthImport }, openAccount: { sheet = .account })
                     case .sleep: MetricDetailView(metric: .sleep, embedded: true)
                     case .recovery: MetricDetailView(metric: .recovery, embedded: true)
                     case .strain: MetricDetailView(metric: .strain, embedded: true)
@@ -53,7 +55,7 @@ struct RootView: View {
                                  }, clearData: { confirmClear = true },
                                  openHealthImport: { sheet = .healthImport }, openWorkout: { sheet = .workout },
                                  openActivities: { sheet = .activities }, exportBackup: exportBackup,
-                                 restoreBackup: { restoringBackup = true; importing = true }, openLive: { sheet = .live }, openTier: { sheet = .tier }, openAccount: { sheet = .account }, openHealth: { store.tab = .health }, openCommunity: { store.tab = .community }, openProfile: { store.tab = .profile }, openJournal: { sheet = .journal })
+                                 restoreBackup: { restoringBackup = true; importing = true }, openLive: { showingLive = true }, openTier: { sheet = .tier }, openAccount: { sheet = .account }, openHealth: { store.tab = .health }, openCommunity: { store.tab = .community }, openProfile: { store.tab = .profile }, openJournal: { sheet = .journal })
                     }
                 }.padding(.horizontal, 15).padding(.top, 8).padding(.bottom, 70)
                     .frame(maxWidth: 680).frame(maxWidth: .infinity)
@@ -81,7 +83,7 @@ struct RootView: View {
                 switch route {
                 case .journal: JournalEditorView()
                 case .activity: ActivityEditorView()
-                case .device: DeviceSheetView()
+                case .device: PulseTrackerView()
                 case .data: DataHelpView()
                 case .about: AboutView()
                 case .reference: ReferenceStrainView()
@@ -92,6 +94,7 @@ struct RootView: View {
                 case .stress: StressMonitorView()
                 case .live: LiveView()
                 case .tier: ExperienceTierView()
+                case .measurementExport: MeasurementExportView()
                 }
             }.preferredColorScheme(.dark).presentationDragIndicator(.visible)
         }
@@ -100,14 +103,15 @@ struct RootView: View {
                 .environment(\.timeZone, TimeZone(secondsFromGMT: 0)!)
                 .environment(\.calendar, DayCalendar.utc)
         }
+        .fullScreenCover(isPresented: $showingLive) { ReferenceLiveView(reference: nil) }
         .confirmationDialog("Start activity", isPresented: $showingStartOptions, titleVisibility: .visible) {
             Button("Record workout without camera") { sheet = .workout }
-            Button("Record with Live camera") { sheet = .live }
+            Button("Record with Live camera") { showingLive = true }
         }
         .confirmationDialog("Add to your day", isPresented: $showingQuickActions, titleVisibility: .visible) {
             Button("Add activity") { sheet = .activity }
             Button("Start activity") { sheet = .workout }
-            Button("Record with Live camera") { sheet = .live }
+            Button("Record with Live camera") { showingLive = true }
             Button("Fill out journal") { sheet = .journal }
         }
         .fileImporter(isPresented: $importing, allowedContentTypes: [.json, .commaSeparatedText], allowsMultipleSelection: false) { result in
@@ -151,13 +155,19 @@ struct RootView: View {
             }
         } message: { Text("This replaces saved day data, journal entries, activities and nutrition records. Save a full backup first if you want to keep the current data.") }
         .task { recorder.bind(device); liveActivity.bind(recorder) }
+        .onAppear {
+            if !attemptedReconnect { attemptedReconnect = true; device.reconnectSavedDevice() }
+        }
+        .alert("Your data needs attention", isPresented: Binding(get: { store.persistenceError != nil }, set: { if !$0 { store.persistenceError = nil } })) {
+            Button("OK") { store.persistenceError = nil }
+        } message: { Text(store.persistenceError ?? "") }
     }
 
     private var header: some View {
         HStack {
             Button { store.tab = .profile } label: {
                 Image(systemName: "person.crop.circle").font(.system(size: 24, weight: .light))
-                    .foregroundStyle(.white).frame(width: 34, height: 38)
+                    .foregroundStyle(.white).frame(width: 44, height: 44)
             }.accessibilityLabel("Your profile").frame(width: 54, alignment: .leading)
             Spacer()
             DaySelector(compact: true).frame(maxWidth: 174)
@@ -168,11 +178,10 @@ struct RootView: View {
             }
             Button { sheet = .device } label: {
                 HStack(spacing: 6) {
-                    if let hr = device.heartRate { Text("\(Int(hr))").font(WFont.number(12)) }
                     Image(systemName: device.connectedName == nil ? "sensor.tag.radiowaves.forward" : "sensor.tag.radiowaves.forward.fill")
                         .font(.system(size: 20, weight: .light))
                 }.foregroundStyle(device.connectedName == nil ? WColor.muted : WColor.green)
-                    .frame(minWidth: 34, minHeight: 38)
+                    .frame(minWidth: 44, minHeight: 44)
             }.accessibilityLabel(device.connectedName == nil ? "Connect a device" : "View connected device")
                 .frame(width: 54, alignment: .trailing)
         }.padding(.horizontal, 15).padding(.top, 5).padding(.bottom, 6)
@@ -208,10 +217,7 @@ struct RootView: View {
         } catch { message = error.localizedDescription }
     }
     private func exportData() {
-        do {
-            exportDocument = JSONExportDocument(data: try MeasurementExport.make(days: store.days, format: .json, profile: store.profile).data)
-            exportName = "WHOOP-day-data"; exporting = true
-        } catch { message = error.localizedDescription }
+        sheet = .measurementExport
     }
 }
 
@@ -245,7 +251,7 @@ struct DaySelector: View {
     var compact = false
     var body: some View {
         HStack {
-            Button { store.moveDay(-1) } label: { Image(systemName: "chevron.left").font(.system(size: compact ? 11 : 16)).frame(width: compact ? 26 : 40, height: compact ? 32 : 44) }
+            Button { store.moveDay(-1) } label: { Image(systemName: "chevron.left").font(.system(size: compact ? 11 : 16)).frame(width: 44, height: 44) }
                 .accessibilityLabel("Previous day")
             Spacer()
             Button { pickingDate = true } label: {
@@ -256,10 +262,10 @@ struct DaySelector: View {
                         Text(utcDateText(store.selectedDate, style: .dateTime.month(.abbreviated).day())).font(WFont.body(13)).foregroundStyle(WColor.muted)
                         Image(systemName: "chevron.down").font(.system(size: 8, weight: .bold)).foregroundStyle(WColor.muted)
                     }
-                }
+                }.frame(minHeight: 44)
             }.accessibilityLabel("Choose date, \(utcDateText(store.selectedDate, style: Date.FormatStyle(date: .complete, time: .omitted)))")
             Spacer()
-            Button { store.moveDay(1) } label: { Image(systemName: "chevron.right").font(.system(size: compact ? 11 : 16)).frame(width: compact ? 26 : 40, height: compact ? 32 : 44) }
+            Button { store.moveDay(1) } label: { Image(systemName: "chevron.right").font(.system(size: compact ? 11 : 16)).frame(width: 44, height: 44) }
                 .disabled(DayCalendar.utc.isDateInToday(store.selectedDate)).accessibilityLabel("Next day")
         }.foregroundStyle(.white)
             .background { if compact { Capsule().fill(WColor.elevated.opacity(0.55)) } }

@@ -1,3 +1,11 @@
+# Current launch: welcome, tracker setup and personal Home
+
+First launch now opens **Welcome → Profile → Find your tracker → Import data → Home**. Tracker search uses the existing Bluetooth adapter, and connecting/importing later is supported. Setup completion is remembered on this iPhone; later launches go to the functional Home dashboard with your saved data and fresh live readings. The supplied screenshot values are no longer the app's launch data. More keeps an explicit screenshot preview.
+
+See [startup behavior, migration and validation](Docs/APP-STARTUP.md). All **146 portable tests** and **13 packaging tests** pass; physical-device behavior requires iPhone testing. The GitHub workflow runs an Apple build after relevant updates to main.
+
+---
+
 # Current update: personal profile and exported highlights
 
 Tap the Home avatar → **Edit** to set your name, username, age, WHOOP Age display and day streak. Ages have no numeric upper limit. Data Highlights show saved-data extrema and consecutive-day streaks in the reference Profile layout. **More → Export Data** now includes personalization and highlights in JSON, plus a profile/highlights CSV. Profile-only export and JSON re-import are supported.

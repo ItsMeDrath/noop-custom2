@@ -4,6 +4,7 @@ import WHOOPCore
 
 struct HomeView: View {
     @EnvironmentObject private var store: AppStore
+    @EnvironmentObject private var tracker: DeviceModel
     let openMetric: (ScoreMetric) -> Void
     let openJournal: () -> Void
     let openActivity: () -> Void
@@ -11,15 +12,30 @@ struct HomeView: View {
     let openHealth: () -> Void
     let openStress: () -> Void
     let openActivities: () -> Void
+    let openDevice: () -> Void
+    let openHealthImport: () -> Void
+    let openAccount: () -> Void
     private var day: DailySnapshot { store.selectedDay }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 19) {
+            HStack {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(store.profile.displayName.isEmpty ? "Your overview" : "Hi, \(store.profile.displayName)").font(WFont.number(28, bold: true))
+                    Text("Make today count.").font(WFont.body(15)).foregroundStyle(WColor.muted)
+                }
+                Spacer()
+                Button(action: openDevice) {
+                    Image(systemName: "sensor.tag.radiowaves.forward").font(.system(size: 23, weight: .light)).foregroundStyle(tracker.connectedName == nil ? WColor.muted : WColor.green).frame(width: 48, height: 48)
+                }.accessibilityLabel(tracker.connectedName == nil ? "Connect your tracker" : "Tracker connected, view device")
+            }
             overview
-            dailyHighlight
+            if !selectedDayExists(in: store) { setupCard }
+            liveHeartRate
+            if day.hrv != nil { dailyHighlight }
             HStack(spacing: 9) {
                 MonitorShortcut(title: "HEALTH MONITOR", value: "VIEW METRICS", symbol: "heart.text.square", color: WColor.sleep, action: openHealth)
-                MonitorShortcut(title: "STRESS MONITOR", value: "NOT AVAILABLE", symbol: "waveform.path.ecg", color: WColor.sleep, action: openStress)
+                MonitorShortcut(title: "NUTRITION", value: "LOG YOUR FOOD", symbol: "fork.knife", color: WColor.green, action: { store.tab = .nutrition })
             }
             VStack(alignment: .leading, spacing: 10) {
                 Text("My Day").font(WFont.number(22, bold: true))
@@ -35,7 +51,7 @@ struct HomeView: View {
                 }.buttonStyle(.plain)
             }
             activities
-            tonight
+            if day.sleepMinutes > 0 || day.sleepNeededMinutes > 0 { tonight }
             Button(action: openJournal) {
                 WCard(padding: 13) {
                     HStack {
@@ -59,6 +75,43 @@ struct HomeView: View {
                             Text("BPM AVG").font(WFont.label(9)).foregroundStyle(WColor.muted)
                         }
                         HeartRateChart(samples: day.heartRates).frame(height: 145).padding(.top, 12)
+                    }
+                }
+            }
+        }
+    }
+
+    private var setupCard: some View {
+        WCard(padding: 18) {
+            VStack(alignment: .leading, spacing: 14) {
+                Text("Your day starts here").font(WFont.number(23, bold: true))
+                Text("Connect your tracker to see live heart rate and record workouts. Import saved measurements to add sleep, Recovery and daily Strain to your overview.")
+                    .font(WFont.body(15)).foregroundStyle(WColor.muted)
+                Button(tracker.connectedName == nil ? "CONNECT MY TRACKER" : "VIEW MY TRACKER", action: openDevice).buttonStyle(WButton())
+                HStack(spacing: 12) {
+                    Button("APPLE HEALTH", action: openHealthImport).buttonStyle(WButton(filled: false))
+                    Button("WHOOP ACCOUNT", action: openAccount).buttonStyle(WButton(filled: false))
+                }
+                Text("You can also import a data file in More → Your data.").font(WFont.body(12)).foregroundStyle(WColor.muted)
+            }
+        }
+    }
+
+    private var liveHeartRate: some View {
+        TimelineView(.periodic(from: .now, by: 1)) { timeline in
+            WCard {
+                VStack(alignment: .leading, spacing: 12) {
+                    HStack { Text("LIVE HEART RATE").font(WFont.label(11)).tracking(0.8); Spacer(); Image(systemName: "heart.fill").foregroundStyle(WColor.blue) }
+                    if let bpm = tracker.heartRate, let received = tracker.heartRateReceivedAt, (0...10).contains(timeline.date.timeIntervalSince(received)) {
+                        HStack(alignment: .firstTextBaseline, spacing: 6) {
+                            Text(bpm.formatted(.number.precision(.fractionLength(0)))).font(WFont.number(40, bold: true)).monospacedDigit()
+                            Text("BPM").font(WFont.label(12)).foregroundStyle(WColor.muted)
+                        }
+                        Text(tracker.connectedName ?? "Connected sensor").font(WFont.body(13)).foregroundStyle(WColor.green)
+                    } else {
+                        Text(tracker.connectedName == nil ? "Connect a tracker to begin" : "Waiting for a heart-rate sample").font(WFont.body(17))
+                        Button(tracker.connectedName == nil ? "FIND MY TRACKER" : "CHECK CONNECTION", action: openDevice)
+                            .font(WFont.label(11)).foregroundStyle(WColor.blue).frame(minHeight: 44)
                     }
                 }
             }

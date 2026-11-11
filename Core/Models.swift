@@ -15,6 +15,16 @@ public enum DayCalendar {
     public static func start(of date: Date) -> Date { utc.startOfDay(for: date) }
 }
 
+/// A personal session starts empty and never adopts screenshot/example scores.
+public struct LaunchDayData: Equatable, Sendable {
+    public let days: [DailySnapshot]
+    public let selectedDate: Date
+    public init(savedDays: [DailySnapshot] = [], selectedDate: Date? = nil, now: Date = Date()) {
+        days = savedDays.filter { $0.source != .example }.sorted { $0.date < $1.date }
+        self.selectedDate = DayCalendar.start(of: days.isEmpty ? now : (selectedDate ?? now))
+    }
+}
+
 public struct HeartRateSample: Codable, Identifiable, Equatable, Sendable {
     public var timestamp: Date
     public var bpm: Double

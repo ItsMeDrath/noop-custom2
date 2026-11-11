@@ -1,9 +1,9 @@
 {
-  "scope": "Personalized profile, unlimited display-age text, chosen day streak and exported saved-data highlights",
-  "checked_at": "2026-11-10",
-  "entry": "Home avatar \u2192 Edit; More \u2192 Export Data",
+  "scope": "Welcome, personal setup, Bluetooth discovery and functional Home routing",
+  "checked_at": "2026-11-11",
+  "entry": "Welcome \u2192 Profile \u2192 Tracker search \u2192 Data \u2192 personal Home; returning users \u2192 Home",
   "portable_core": {
-    "tests_passed": 143,
+    "tests_passed": 146,
     "new_profile_tests": 13,
     "failures": 0
   },
@@ -37,19 +37,30 @@
     "profile-project.log": {
       "path": "Validation/profile-project.log",
       "sha256": "6874f982dcd0680d020e6de57e88704665798e1fa6cdaeb6e9fef03163d92e99"
+    },
+    "startup-core-tests.log": {
+      "path": "Validation/startup-core-tests.log",
+      "sha256": "a5072f333ae501d15b8944f4d95f346f4bd02bd2bc7ce264aa13fadb3bd2c095"
     }
   },
   "changed_source_sha256": {
-    "Core/Models.swift": "b422b2f77f387f24d26ebd8afdb355b4bc53282b0cc79b99cc768935a806ae32",
+    "Core/Models.swift": "1493abe0fdd3be63ccdbb41f98be1bfdc1e3230e27761b5f668ae568dccc5739",
     "Core/MeasurementExport.swift": "be5b70ed4f793dbfcf3291285c80ca3009bb9a887570808fe8210d16db59fd01",
     "Core/LocalBackup.swift": "d947d96aaf2763e7d643e9c436e14442424c1baa7c938d62f01b1958b7210582",
-    "App/AppStore.swift": "8b5a451bdd5744e293286c05918968b35dde6ea88f7b68acf1d72e16798972c5",
-    "App/Pulse/PulseHomeView.swift": "19262dd9edfeca5c39f52f1fa89c2772c53d21ac9609c0f7f2d61948da0cb5fd",
-    "App/Pulse/PulseHomePanels.swift": "c19f1e45ab30d71efdbb1dc539298838a0a2a6ec5bde29f639130e6776398641",
+    "App/AppStore.swift": "7903fc8f6432f31879b3c58ac10ab7b20c7ac861f51ec2a0e4b03de9a3ea8a05",
+    "App/Pulse/PulseHomeView.swift": "8c56c069bd85d5d5a86251cfa3bed07b399f48e68f6fb8712127cd98266dac11",
+    "App/Pulse/PulseHomePanels.swift": "99617732159d26f71f2d291c17d07532d16cb8ba05b182805cfa02ac51ccc328",
     "App/Pulse/PulseComponents.swift": "d7488e4d58a8132cdcc7abbe4c6e420af46ec56deac36ae5ce2b2c33bdd14655",
     "App/Views/MeasurementExportView.swift": "9fcd0185e898389f92c7eed9dd046cd88d3c256e048573045d71e48b9626d62d",
-    "App/Views/RootView.swift": "75e470ab1ac687e740f303c390f267cf58293f4eb406f0daff603500d949614d",
-    "Tests/WHOOPCoreTests/MeasurementExportTests.swift": "b8a2d0080c5dba13b3068f90cacf6146d21db5dbad41266779ae1faf9115b326"
+    "App/Views/RootView.swift": "d01b28273959fba4d3962671dc58be05eaef5f992f30148249d50fd837dbb111",
+    "Tests/WHOOPCoreTests/MeasurementExportTests.swift": "b8a2d0080c5dba13b3068f90cacf6146d21db5dbad41266779ae1faf9115b326",
+    "App/DeviceModel.swift": "4b18856e060fba6209d0af8cbe4017c52cf1137d5b9515ee89e1efcc8460d2af",
+    "App/Pulse/PulseTrackerView.swift": "48ad0b7b792cc2f5088c00274613f8532492e8e6e1787cd7e559911d259d616d",
+    "App/Views/DashboardViews.swift": "8c4b75b5a7c60d07793ac7ca3a016112da4bcf9cb97cc4de81af7e32114a8dda",
+    "App/Views/SecondaryViews.swift": "27c5d69f1c7679e24eb88bbcb589c5584d4ded2b9a1bfb435d4e73aaf8051900",
+    "App/Views/Theme.swift": "6c1732b96f3aa92ae17173efe1eb104ada2b915120a8254897b29d15dfea4d40",
+    "App/WHOOPApp.swift": "1f28e18fb55087794bc3d0429c71d8cf037edebce548d8b8961fd805ef90eccd",
+    "Tests/WHOOPCoreTests/CoreTests.swift": "a2825390a834f6d5ef40d7a785845492a5b84e2583466604cc84d6d93d74b171"
   },
   "export_formats": [
     "personalized JSON",
@@ -68,5 +79,21 @@
   "native_file_exporter_test": false,
   "exact_visual_match": false,
   "signed_ipa_produced": false,
-  "review": "Docs/PROFILE-PERSONALIZATION.md"
+  "review": "Docs/APP-STARTUP.md",
+  "startup": {
+    "first_run_shown": true,
+    "completion_key": "whoop.setup.completed.v1",
+    "default_examples": false,
+    "saved_personal_measurements_preserved": true,
+    "tracker_discovery": "Existing CoreBluetooth adapter",
+    "live_heart_rate_freshness_seconds": 10,
+    "reconnect": "Previously connected peripheral identifier, no automatic scan",
+    "data_sources": [
+      "Apple Health",
+      "configured WHOOP account bridge",
+      "JSON or heart-rate CSV"
+    ],
+    "native_build": "pending CI",
+    "physical_device_test": false
+  }
 }
